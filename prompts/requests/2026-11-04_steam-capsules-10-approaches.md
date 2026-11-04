@@ -37,3 +37,9 @@ Delivered: `work/capsules-v1/out/12g1…12g8`. Script: `work/capsules-v1/c12g.py
 Ask: new logo, thorough, hand-made/SVG, analyse Steam game logos, 3 options + look-and-feel recommendation.
 Delivered: `work/logo-lab/` (A Popcorn Pop, B Going Viral, C Capy Planet). Recommended: B + C icon.
 **Verdict:** _pending_
+
+## Logo round 3
+Ask: remove C; fuse rows in D/E/F (E: CAPYVERSE bigger, tighter); fix Toybox Y/V overlap; 3 more; Stumble Guys logo through
+GPT 2.5 + manual clean-up of black gaps; Steam 21-logo grid with the winner at the end.
+Delivered: `work/logo-lab/` round 3 (D2, E2, F2, G, H, I, GPT Stumble). Winner: H Viral Stumble. Prompt: `work/logo-lab/gpt/prompt.txt`.
+**Verdict:** _pending_

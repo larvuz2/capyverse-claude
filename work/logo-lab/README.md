@@ -22,3 +22,14 @@ capsule mocks via `mock.py` (uses `work/capsules-v1/c12g.py`, `build(logo_path=.
 - `logo_def.py`: D Toybox (bouncy two rows, cream/orange, sticker outline), E Stumble (Stumble Guys structure:
   small white tilted CAPYVERSE over huge gold ODYSSEY on a navy 3D block), F Marquee (arched CAPYVERSE + ODYSSEY tag)
 - `page/steam_logos_with_ours.jpg`: research grid with B inserted. Recommendation: B, runner-up E.
+
+## Round 3 — unified lockups, collision-free, + GPT 2.5 Stumble style
+
+- `lockup.py`: letters placed with explicit matrices; `Row.check()` tests real glyph outlines (shapely) for touching
+  neighbours; `draw()` renders all rows as one object (shared silhouette, outline, 3D block, sticker).
+- `logo_v3.py`: D2 Toybox, E2 Stumble (CAPYVERSE big), F2 Marquee, G Popcorn Band, H Viral Stumble (winner), I Jetpack.
+  Auto-kerning fixed the old Toybox collisions (Y/V 585 px², A/P, E/R, S/E).
+- `gpt/`: Stumble Guys logo -> GPT Image 2.5 edit (`gpt/prompt.txt`, 3 takes) + nano-banana-pro (2 takes);
+  take `gpt25_2` upscaled 3x (SeedVR) and cleaned by `clean_gpt.py` (even navy outline, black blobs removed, transparent)
+  -> `out/logo_gpt_stumble.png`.
+- `page/steam_logos_with_winner.jpg`: the 21 research logos + H at the end.

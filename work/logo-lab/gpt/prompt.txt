@@ -1,0 +1,18 @@
+GAME LOGO — TYPOGRAPHY STYLE TRANSFER. Use the attached logo ONLY as the style reference for the lettering. Create a NEW logo that reads exactly "CAPYVERSE ODYSSEY", on a plain flat white background.
+
+TEXT — VERY IMPORTANT:
+* Two rows. Top row: CAPYVERSE. Bottom row: ODYSSEY.
+* CAPYVERSE is the BIGGER word (about 1.4x the letter height of ODYSSEY). ODYSSEY sits directly under it, centred, tucked tight so both rows read as ONE object.
+* Spell it exactly: C-A-P-Y-V-E-R-S-E and O-D-Y-S-S-E-Y. No extra words, no ™, no taglines.
+
+STYLE — match the reference exactly:
+* The same chunky, rounded, bouncy display letters with slightly irregular hand-made shapes and playful per-letter tilt.
+* CAPYVERSE: the reference's bright yellow-to-orange vertical gradient fill with a glossy highlight on the top of each letter.
+* ODYSSEY: the reference's white letters with soft grey shading.
+* The same thick dark outline around every letter and the same deep 3D extrusion going down-right under the whole lockup.
+* Letters sit close and may slightly overlap, like the reference, but every letter stays fully readable.
+
+CRITICAL RULES:
+* Flat pure white background, nothing else in the image: no characters, no icons, no badges, no effects, no frame.
+* Do NOT copy the words STUMBLE or GUYS.
+* Clean vector-like finish, crisp edges, centred, with generous margin around the logo.

@@ -63,9 +63,9 @@ a { color: var(--blue); }
 
 <div class="wrap">
   <header style="display:grid;gap:16px">
-    <span class="badge">Logo exploration · 6 directions</span>
+    <span class="badge">Logo exploration · round 3</span>
     <h1>Capyverse <span>Logo Lab</span></h1>
-    <p class="lede">Six logo directions (A–F) for Capyverse Odyssey, drawn as vector art (no AI): real font outlines re-set letter by letter, plus hand-drawn shapes for the capybara, popcorn, verified badge and planet. Every one is a clean SVG with no font dependency, tested on the #12 capsule and at Steam's smallest sizes.</p>
+    <p class="lede">Logo directions for Capyverse Odyssey for Capyverse Odyssey, drawn as vector art (no AI): real font outlines re-set letter by letter, plus hand-drawn shapes for the capybara, popcorn, verified badge and planet. Every one is a clean SVG with no font dependency, tested on the #12 capsule and at Steam's smallest sizes.</p>
   </header>
 
   <section>
@@ -112,69 +112,93 @@ a { color: var(--blue); }
     </div>
   </section>
 
-  <section class="dir" id="c">
-    <header><span class="letter">C</span><h2>Capy Planet, wordmark only</h2><span class="muted">Chango, emblem removed</span></header>
-    <div class="stage dark"><img src="logo_c_word.png" alt="Logo C wordmark" width="1180" height="245"></div>
-    <ol class="notes">
-      <li>The emblem is gone as asked; what's left is the wordmark: Chango, very wide and chunky, tightened by hand, in Cappy orange.</li>
-      <li>Cream ODYSSEY between two jetpack-cyan rules.</li>
-    </ol>
+  <section>
+    <h2>Round 3: one object, no collisions</h2>
+    <p class="muted">Feedback applied: C removed; D, E and F rebuilt so both rows read as one object; the Y/V overlap in Toybox fixed; three new directions (G, H, I). A collision checker measures every pair of neighbouring letters from their real outlines and widens the spacing until none touch. It found four collisions in the old Toybox: Y/V, A/P, E/R, S/E.</p>
+  </section>
+
+  <section class="dir" id="d2">
+    <header><span class="letter">D</span><h2>Toybox</h2><span class="muted">Luckiest Guy, rows fused</span></header>
+    <div class="stage brand"><img src="logo_d2.png" alt="Logo D: Toybox" width="1293" height="424" loading="lazy"></div>
+    <ol class="notes"><li>Rows fused into one shape, with one shared outline and 3D block under both words. Letters are auto-kerned until no two touch, and the gaps between them are closed by a solid silhouette so the background never shows through.</li><li>Y/V, A/P, E/R and S/E collisions fixed by kerning (the old Y overlapped the V by 585 px²).</li></ol>
     <div class="two">
-      <figure><img src="mock_c2.jpg" alt="Logo C wordmark on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
-      <dl class="score"><dt>Feels like</dt><dd>A classic arcade title card: calm and confident.</dd><dt>Strength</dt><dd>The simplest of the set, and very clean on dark backgrounds.</dd><dt>Weakness</dt><dd>Without the emblem it has no twist, and the orange disappears on the orange brand background.</dd></dl>
+      <figure><img src="mock_d2.jpg" alt="Logo D on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
+      <dl class="score"><dt>Feels like</dt><dd>Party Animals, a toy box label.</dd><dt>Strength</dt><dd>Warm and friendly; now a single sticker shape.</dd><dt>Weakness</dt><dd>ODYSSEY's orange sits close to the brand orange; the cream sticker carries the contrast.</dd></dl>
     </div>
   </section>
 
-  <section class="dir" id="d">
-    <header><span class="letter">D</span><h2>Toybox</h2><span class="muted">Luckiest Guy, two rows</span></header>
-    <div class="stage brand"><img src="logo_d.png" alt="Logo D: Toybox" width="1239" height="493"></div>
-    <ol class="notes">
-      <li>Luckiest Guy, CAPYVERSE stacked on ODYSSEY; every letter bounced and tilted by hand.</li>
-      <li>Cream-to-butter CAPYVERSE over an orange ODYSSEY, with a deep brown 3D extrusion and a popcorn-cream sticker outline.</li>
-    </ol>
+  <section class="dir" id="e2">
+    <header><span class="letter">E</span><h2>Stumble</h2><span class="muted">CAPYVERSE now the big word</span></header>
+    <div class="stage brand"><img src="logo_e2.png" alt="Logo E: Stumble" width="1446" height="468" loading="lazy"></div>
+    <ol class="notes"><li>CAPYVERSE is the big gold word on top; ODYSSEY is smaller and white, tucked tight underneath.</li><li>One navy 3D block under both rows, tilted up like the Stumble Guys logo.</li></ol>
     <div class="two">
-      <figure><img src="mock_d.jpg" alt="Logo D on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
-      <dl class="score"><dt>Feels like</dt><dd>Party Animals, a toy box label.</dd><dt>Strength</dt><dd>Friendly, warm and very readable as a block; both words get equal weight.</dd><dt>Weakness</dt><dd>ODYSSEY's orange sits close to the brand orange; it relies on the sticker outline for contrast.</dd></dl>
+      <figure><img src="mock_e2.jpg" alt="Logo E on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
+      <dl class="score"><dt>Feels like</dt><dd>Stumble Guys, Fall Guys.</dd><dt>Strength</dt><dd>Pops on every background; the name is the hero.</dd><dt>Weakness</dt><dd>Close to the Stumble Guys formula.</dd></dl>
     </div>
   </section>
 
-  <section class="dir" id="e">
-    <header><span class="letter">E</span><h2>Stumble</h2><span class="muted">Inspired mainly by Stumble Guys</span></header>
-    <div class="stage brand"><img src="logo_e.png" alt="Logo E: Stumble" width="1175" height="602"></div>
-    <ol class="notes">
-      <li>Built on the Stumble Guys structure: a smaller white first word tilted up, then a huge second word in a yellow-to-orange gradient sitting on a thick navy 3D block.</li>
-      <li>ODYSSEY's letters bounce and lean into each other; a white shine on the top third of each letter gives the toy-plastic look.</li>
-    </ol>
+  <section class="dir" id="f2">
+    <header><span class="letter">F</span><h2>Marquee</h2><span class="muted">Arch and tag fused</span></header>
+    <div class="stage brand"><img src="logo_f2.png" alt="Logo F: Marquee" width="1311" height="404" loading="lazy"></div>
+    <ol class="notes"><li>CAPYVERSE arched like a carnival sign; the ODYSSEY tag tucks up into the arch and shares its outline, so it reads as one sign.</li></ol>
     <div class="two">
-      <figure><img src="mock_e.jpg" alt="Logo E on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
-      <dl class="score"><dt>Feels like</dt><dd>Stumble Guys and Fall Guys: a chaotic multiplayer party game.</dd><dt>Strength</dt><dd>The navy block makes it pop on yellow, orange and dark backgrounds alike. Genre-recognizable at a glance.</dd><dt>Weakness</dt><dd>Because it borrows the Stumble Guys formula closely, it says "party game" more than "Capyverse"; the big word is ODYSSEY, not the name.</dd></dl>
+      <figure><img src="mock_f2.jpg" alt="Logo F on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
+      <dl class="score"><dt>Feels like</dt><dd>A funfair marquee.</dd><dt>Strength</dt><dd>Strong silhouette; ODYSSEY stays readable small.</dd><dt>Weakness</dt><dd>Orange on orange; needs the cream sticker.</dd></dl>
     </div>
   </section>
 
-  <section class="dir" id="f">
-    <header><span class="letter">F</span><h2>Marquee</h2><span class="muted">Luckiest Guy, arched</span></header>
-    <div class="stage brand"><img src="logo_f.png" alt="Logo F: Marquee" width="1197" height="512"></div>
-    <ol class="notes">
-      <li>CAPYVERSE arched like a carnival marquee (the carnival and bowling worlds), in Cappy orange with a brown extrusion.</li>
-      <li>ODYSSEY in a riveted cream tag hanging below.</li>
-    </ol>
+  <section class="dir" id="g">
+    <header><span class="letter">G</span><h2>Popcorn Band</h2><span class="muted">New</span></header>
+    <div class="stage brand"><img src="logo_g.png" alt="Logo G: Popcorn Band" width="1386" height="382" loading="lazy"></div>
+    <ol class="notes"><li>CAPYVERSE in butter-yellow sits on a red-and-white popcorn-bucket band; the letters overlap the band edge so word and band are one object.</li><li>White ODYSSEY with a brown outline on the stripes: Cappy's popcorn gatling in logo form.</li></ol>
     <div class="two">
-      <figure><img src="mock_f.jpg" alt="Logo F on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
-      <dl class="score"><dt>Feels like</dt><dd>A funfair sign, Crab Champions' arched confidence.</dd><dt>Strength</dt><dd>The arch gives a strong silhouette; the tag keeps ODYSSEY readable even small.</dd><dt>Weakness</dt><dd>Same orange-on-orange contrast issue as D on the brand background.</dd></dl>
+      <figure><img src="mock_g.jpg" alt="Logo G on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
+      <dl class="score"><dt>Feels like</dt><dd>A cinema snack counter, very on-brand for Cappy.</dd><dt>Strength</dt><dd>The most Cappy-specific idea that stays simple.</dd><dt>Weakness</dt><dd>The stripes get busy at the smallest size.</dd></dl>
+    </div>
+  </section>
+
+  <section class="dir" id="h">
+    <header><span class="letter">H</span><h2>Viral Stumble</h2><span class="muted">New: B + E combined</span></header>
+    <div class="stage brand"><img src="logo_h.png" alt="Logo H: Viral Stumble" width="1501" height="430" loading="lazy"></div>
+    <ol class="notes"><li>E's chunky Luckiest Guy build and navy block, with B's story pieces: verified badge, red notification pill, play-button O.</li><li>White letters with a hot-pink offset shadow; slightly sheared forward.</li></ol>
+    <div class="two">
+      <figure><img src="mock_h.jpg" alt="Logo H on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
+      <dl class="score"><dt>Feels like</dt><dd>Stumble Guys energy with an internet-culture twist.</dd><dt>Strength</dt><dd>Tells the 'capybaras went viral' story and keeps the party-game look you liked.</dd><dt>Weakness</dt><dd>The badge and pill add two small parts to keep crisp in the final art.</dd></dl>
+    </div>
+  </section>
+
+  <section class="dir" id="i">
+    <header><span class="letter">I</span><h2>Jetpack</h2><span class="muted">New</span></header>
+    <div class="stage brand"><img src="logo_i.png" alt="Logo I: Jetpack" width="1490" height="498" loading="lazy"></div>
+    <ol class="notes"><li>CAPYVERSE climbs a ramp letter by letter and leans forward, like it's taking off on a jetpack; ODYSSEY trails underneath.</li><li>Two cyan thruster streaks behind the C; gold over white on a navy block, fused with a cream sticker.</li></ol>
+    <div class="two">
+      <figure><img src="mock_i.jpg" alt="Logo I on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
+      <dl class="score"><dt>Feels like</dt><dd>Fast, arcade, Roboquest-like.</dd><dt>Strength</dt><dd>The most motion of the set.</dd><dt>Weakness</dt><dd>The tilt makes it read slightly smaller in a box.</dd></dl>
+    </div>
+  </section>
+
+  <section class="dir" id="gpt_stumble">
+    <header><span class="letter">GPT</span><h2>Stumble Guys style via GPT 2.5</h2><span class="muted">AI typography, cleaned by hand</span></header>
+    <div class="stage brand"><img src="logo_gpt_stumble.png" alt="Logo GPT: Stumble Guys style via GPT 2.5" width="1400" height="523" loading="lazy"></div>
+    <ol class="notes"><li>The Stumble Guys logo went into GPT Image 2.5 as a style reference only, with a prompt to set CAPYVERSE ODYSSEY in the same typography (CAPYVERSE bigger, rows tucked together, no Stumble words). 3 takes on GPT 2.5 and 2 on nano-banana-pro; take 3 was the cleanest.</li><li>Manual clean-up: GPT filled every gap between letters and rows with solid black. A script rebuilt the outline from the letters themselves at an even width, removed the black blobs, recoloured the outline to brand navy and cut it out on transparency (upscaled 3× first).</li></ol>
+    <div class="two">
+      <figure><img src="mock_gpt.jpg" alt="Logo GPT on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
+      <dl class="score"><dt>Feels like</dt><dd>The closest to Stumble Guys of the whole set.</dd><dt>Strength</dt><dd>Boldest and most readable at the smallest sizes.</dd><dt>Weakness</dt><dd>It's an AI raster, not vector; the final version should be redrawn as SVG from it (the toolkit here can do that).</dd></dl>
     </div>
   </section>
 
   <section>
     <h2>Size test</h2>
     <p class="muted">Rows: current logo, A, B, C. Columns: small capsule 462×174 on brand gradient and on Steam's dark UI, then the 231×87 list size.</p>
-    <figure><img src="sizes.jpg" alt="Current logo and A, B, C at small sizes" width="1436" height="760" loading="lazy"><figcaption>Round 1: current logo, A, B, C with emblem.</figcaption></figure>
-    <figure><img src="sizes2.jpg" alt="B, C wordmark, D, E, F at small sizes" width="1416" height="920" loading="lazy"><figcaption>Round 2: B, C wordmark, D, E, F.</figcaption></figure>
-    <p>At 231 px, B and E stay fully legible on both backgrounds. D and F hold up thanks to their sticker outline. C loses contrast on orange. The current logo's planks, gear and vines turn into texture.</p>
+    <figure><img src="sizes.jpg" alt="Current logo and round 1 at small sizes" width="1436" height="760" loading="lazy"><figcaption>Round 1: current logo, A, B, C.</figcaption></figure>
+    <figure><img src="sizes3.jpg" alt="Round 3 logos at small sizes" width="1416" height="1288" loading="lazy"><figcaption>Round 3: D, E, F, G, H, I and the GPT Stumble version.</figcaption></figure>
+    <p>At 231 px, H, E and the GPT version stay fully legible on both backgrounds. D, F and G hold up thanks to their sticker outline. The current logo's planks, gear and vines turn into texture.</p>
   </section>
 
   <section class="pick">
-    <h2>Recommendation: B as the logo, E as the runner-up</h2>
-    <p><b>Use B "Going Viral" as the main logo.</b> The game's hook isn't "fantasy adventure", which is what the wooden sign says. It's "the internet's favorite animals in a fast, absurd shooter". B says that in one look, works at every Steam size, and doesn't clash with the 3D renders, because it's flat and graphic like Crab Champions' type. <b>E (Stumble) is the runner-up:</b> it's just as readable and instantly says "party game", but it borrows the Stumble Guys formula closely and makes ODYSSEY the big word instead of the name. If you want E's energy, the next step is to merge them: B's verified badge and play-button O on E's two-row 3D build.</p>
+    <h2>Recommendation: H "Viral Stumble"</h2>
+    <p><b>H is the winner.</b> It keeps the chunky, bouncy Stumble Guys build you liked (one object, CAPYVERSE big, ODYSSEY tucked under), and adds what only Capyverse has: the verified badge and the play-button notification pill tell the "capybaras went viral, Ophelia took it personally" story in one look. It stays readable at 231 px on both the brand gradient and Steam's dark UI, and it's a pure vector file.</p>
+    <p><b>Runner-up: the GPT Stumble version.</b> It's the boldest at small sizes, but it is an AI raster that leans very close to Stumble Guys. If you prefer it, the next step is redrawing it as clean SVG and adding H's badge and pill.</p>
     <h3>Look and feel: "loud internet pop"</h3>
     <p>Flat, chunky, sheared type with an ink outline and one hard hot-pink shadow. Social-UI objects as the graphic language: verified badges, play buttons, hearts, notification pills, view counts. Use them for UI, store banners and trailer titles (e.g. "1.2M CAPYS WATCHING", a verified check on each hero's name card). The 3D game stays as rendered; the graphics on top speak "feed".</p>
     <div class="chips">
@@ -192,12 +216,12 @@ a { color: var(--blue); }
   <section>
     <h2>Files</h2>
     <p class="muted">Pure vector SVGs (letters converted to paths, no fonts needed). Open in Illustrator, Figma or a browser.</p>
-    <div class="files"><a href="logo_c_word.svg" target="_blank" rel="noopener">logo_c_word.svg</a><a href="logo_d.svg" target="_blank" rel="noopener">logo_d.svg</a><a href="logo_e.svg" target="_blank" rel="noopener">logo_e.svg</a><a href="logo_f.svg" target="_blank" rel="noopener">logo_f.svg</a><a href="logo_a.svg" target="_blank" rel="noopener">logo_a.svg</a><a href="logo_b.svg" target="_blank" rel="noopener">logo_b.svg</a></div>
+    <div class="files"><a href="logo_h.svg" target="_blank" rel="noopener">logo_h.svg</a><a href="logo_e2.svg" target="_blank" rel="noopener">logo_e2.svg</a><a href="logo_d2.svg" target="_blank" rel="noopener">logo_d2.svg</a><a href="logo_f2.svg" target="_blank" rel="noopener">logo_f2.svg</a><a href="logo_g.svg" target="_blank" rel="noopener">logo_g.svg</a><a href="logo_i.svg" target="_blank" rel="noopener">logo_i.svg</a><a href="logo_a.svg" target="_blank" rel="noopener">logo_a.svg</a><a href="logo_b.svg" target="_blank" rel="noopener">logo_b.svg</a><a href="logo_gpt_stumble.png" target="_blank" rel="noopener">logo_gpt_stumble.png</a></div>
   </section>
 
   <section>
     <h2>Side by side with the Steam hits</h2>
-    <p class="muted">The same 21 logos from the research grid, with our recommended logo (B) dropped in at the same size, on the same background.</p>
-    <figure><img src="steam_logos_with_ours.jpg" alt="Steam logo grid with Capyverse Odyssey logo B highlighted" width="1920" height="1740" loading="lazy"><figcaption>Capyverse Odyssey (B) is outlined in yellow.</figcaption></figure>
+    <p class="muted">The same 21 logos from the research grid, with the winning Capyverse logo (H) added at the very end, at the same size, on the same background.</p>
+    <figure><img src="steam_logos_with_winner.jpg" alt="Steam logo grid with the winning Capyverse Odyssey logo at the end" width="1920" height="1740" loading="lazy"><figcaption>Capyverse Odyssey (H) is the last cell, outlined in yellow.</figcaption></figure>
   </section>
 </div>
