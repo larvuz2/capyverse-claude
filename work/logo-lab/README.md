@@ -15,3 +15,10 @@ letter by letter; the capybara, popcorn, verified badge, play button and planet 
 Recommendation: B as the logo, C's planet as the app icon. Re-render: `python3 logo_b.py` (needs fonttools, node + playwright).
 Research: 21 Steam library logos (`page/steam_logos.jpg`), type audition (`specimen.png`), size tests (`out/sizes/`),
 capsule mocks via `mock.py` (uses `work/capsules-v1/c12g.py`, `build(logo_path=...)`).
+
+## Round 2 — C without emblem + D, E, F (Luckiest Guy, two rows)
+
+- C → `logo_c.py` `wordmark_only()` → `out/logo_c_word.svg`
+- `logo_def.py`: D Toybox (bouncy two rows, cream/orange, sticker outline), E Stumble (Stumble Guys structure:
+  small white tilted CAPYVERSE over huge gold ODYSSEY on a navy 3D block), F Marquee (arched CAPYVERSE + ODYSSEY tag)
+- `page/steam_logos_with_ours.jpg`: research grid with B inserted. Recommendation: B, runner-up E.

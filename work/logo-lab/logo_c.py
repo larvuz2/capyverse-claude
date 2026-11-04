@@ -90,10 +90,17 @@ def lockup_stacked():
     </svg>'''
 
 
+def wordmark_only():
+    W_, H_ = 1400, 420
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W_} {H_}">{DEFS}
+    {wordmark((W_ - w * 1.0) / 2, 210, 1.0)}
+    </svg>'''
+
+
 def icon():
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">{DEFS}{mark(256, 256, 215)}</svg>'''
 
 
 if __name__ == "__main__":
-    for name, fn, wpx in (("logo_c", lockup_horizontal, 1900), ("logo_c_stacked", lockup_stacked, 1400), ("logo_c_icon", icon, 512)):
+    for name, fn, wpx in (("logo_c_word", wordmark_only, 1400), ("logo_c", lockup_horizontal, 1900), ("logo_c_stacked", lockup_stacked, 1400), ("logo_c_icon", icon, 512)):
         open(f"out/{name}.svg", "w").write(fn()); render(f"out/{name}.svg", f"out/{name}.png", wpx)

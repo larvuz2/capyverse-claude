@@ -7,6 +7,10 @@ cfg = {
   "a": dict(logo_path=f"{L}/logo_a_trim.png", logo_w=1100, logo_xy=(620, 230)),
   "b": dict(logo_path=f"{L}/logo_b_trim.png", logo_w=1100, logo_xy=(620, 230)),
   "c": dict(logo_path=f"{L}/logo_c_stacked_trim.png", logo_w=640, logo_xy=(440, 290)),
+  "c2": dict(logo_path=f"{L}/logo_c_word_trim.png", logo_w=1000, logo_xy=(600, 220)),
+  "d": dict(logo_path=f"{L}/logo_d_trim.png", logo_w=900, logo_xy=(560, 250)),
+  "e": dict(logo_path=f"{L}/logo_e_trim.png", logo_w=880, logo_xy=(560, 270)),
+  "f": dict(logo_path=f"{L}/logo_f_trim.png", logo_w=900, logo_xy=(560, 260)),
   "old": dict(),
 }[which]
 build(f"logo_mock_{which}", plate=OPTIONS["g1_vertical"][0], grade=dict(contrast=1.04, sat=1.05, vignette=0.32), **cfg)
