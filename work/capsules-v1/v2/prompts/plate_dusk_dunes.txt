@@ -1,0 +1,12 @@
+STEAM CAPSULE BACKGROUND PLATE: DUSK OVER THE DUNES.
+
+A vast low-poly desert of smooth faceted dunes stretching to a very low horizon, in the style of the attached screenshots. Huge dramatic dusk sky taking 65% of the frame: a gradient from hot coral-orange at the horizon to violet and deep indigo at the top, a few long flat clouds lit pink from below, first stars appearing. A large pale sun disc sitting just on the horizon at the right third. Distant faceted mesas as dark silhouettes on the horizon. Atmospheric haze.
+
+Calm, epic, wide. The right half of the sky is open (something huge will rise there later).
+
+PLATE RULES — VERY IMPORTANT:
+* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.
+* NO characters, NO animals, NO creatures, NO worms, NO people, NO vehicles in the foreground.
+* NO UI, NO HUD, NO text, NO letters, NO logos, NO watermark.
+* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized faceted low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting.
+* Wide 16:9 frame.

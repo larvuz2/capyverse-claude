@@ -1,0 +1,12 @@
+STEAM CAPSULE BACKGROUND PLATE: CANYON COLOSSUS.
+
+A LOW camera angle looking up a deep orange low-poly desert canyon from the attached screenshots. Towering faceted red-orange cliff walls rise on the far left and far right edges, framing a bright sky. In the CENTER-RIGHT middle ground, a huge crater of cracked, exploding sand and flying rock chunks, with a tall column of sand dust blasting upward (something giant is about to erupt). Hot white sun high in the upper-left, god rays through the dust. Warm golden light, long shadows, scattered rocks in the foreground sand.
+
+Upper-left sky open and bright for the logo.
+
+PLATE RULES — VERY IMPORTANT:
+* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.
+* NO characters, NO animals, NO creatures, NO worms, NO people, NO vehicles in the foreground.
+* NO UI, NO HUD, NO text, NO letters, NO logos, NO watermark.
+* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized faceted low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting.
+* Wide 16:9 frame.

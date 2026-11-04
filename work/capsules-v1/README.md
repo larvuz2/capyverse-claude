@@ -48,3 +48,27 @@ Positions/scales are plain numbers at the top of each `cNN.py`, so tweaks are on
 - Header capsule (920×430) and small capsule (462×174) need their own layouts (different aspect); the
   scripts make that a quick re-layout once a direction is chosen.
 - Ophelia's whiskers on the upper left were lost in the cut; a fresh render with a darker background would key cleaner.
+
+## Round 2 (picks: 01, 04, 09) — Cappy always the hero
+
+Gus picked 01, 04 and 09. Round 2 (`c11.py`–`c20.py`) keeps those directions and makes Cappy 3–4× the size of the other heroes.
+Every hero now carries its FX via helpers in `compose.py`: `cappy()` (popcorn burst + muzzle flare from the gatling),
+`moody()` (disco-ball flares), `jim()` (trumpet confetti), and all of them get **subtle flames from the side-belt
+jetpack cylinders, pointing backward** (anchors fixed in `THRUSTERS` after zooming into the harnesses).
+
+| # | Name | From | Notes |
+|---|---|---|---|
+| 11 | Hero Burst | 01 | Crab Champions-style single hero on the sunburst |
+| 12 | Showdown Stack | 01 | Roboquest-style: Cappy front, Ophelia + crew behind |
+| 13 | Canyon Colossus | 04 | new plate; worm-only layer (`worm_top`) at 2.7× erupting from a crater |
+| 14 | Ophelia Rising | 04 | Risk of Rain scale: colossal Ophelia on the dusk horizon |
+| 15 | Comic Cover | 09 | panel layout, Cappy breaks the frame, tiny "POP!" |
+| 16 | Face-Off | 09 | Cappy vs. Ophelia, one on one |
+| 17 | Saturday Morning | shader | `shaders.ink_cel` (k-means cel bands + ink edges + hatching) |
+| 18 | Night Run | shader | `shaders.pixel` (320px grid, 48 colours, dithered), logo pixelated finer |
+| 19 | Print Run | shader | `shaders.riso` (3-ink halftone separation with misregistration) |
+| 20 | Bleached Sun | shader | `shaders.painted` (edge-preserving stylisation + pale wash), RoR2-inspired |
+
+References studied: Steam capsules of Crab Champions, Risk of Rain 2, Risk of Rain Returns, Hades, Roboquest,
+Gunfire Reborn, Ravenswatch, Brotato, Dave the Diver, Vampire Survivors, Balatro. Common thread: one dominant
+hero, a big logo, a strong single-hue background, the cast as a crowd behind.

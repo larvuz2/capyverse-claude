@@ -12,3 +12,11 @@ notes: `work/capsules-v1/README.md`. Prompts: `work/capsules-v1/prompts/`.
 SeedVR upscale, BiRefNet v2 (all cutouts).
 
 **Gus's verdict:** _pending_
+
+**Verdict round 1:** Gus liked 01, 04, 09.
+
+## Round 2 — 10 more, Cappy the hero
+Ask: same direction as 01/04/09, Cappy bigger than other heroes, subtle popcorn + flares from the gatling, flares on Moody's
+disco ball, subtle backward thrusters from the side-belt jetpacks, 3–4 shader/artistic versions, roguelite references.
+Delivered: `work/capsules-v1/out/11_…` to `20_…`, see README "Round 2". Plate prompts: `work/capsules-v1/v2/prompts/`.
+**Verdict round 2:** _pending_

@@ -13,9 +13,10 @@ ROOT = __file__.rsplit("/", 1)[0]
 
 # Belt-thruster nozzles in each layer's native pixels: (x, y, angle_deg). 180 = straight back (left).
 THRUSTERS = {
-    "cappy": [(262, 402, 196)],
-    "moody": [(256, 186, 192)],
-    "jim": [(166, 128, 190)],
+    # rear end of the striped side-belt jetpack cylinder, pointing backward along its axis
+    "cappy": [(398, 452, 186)],
+    "moody": [(203, 170, 178)],
+    "jim": [(140, 80, 170)],
     "axie": [(985, 535, 188)],
 }
 
@@ -34,8 +35,17 @@ def layer(name):
     return load(f"{ROOT}/layers/L_{name}.png"), 1.0
 
 
+def debar(img, thr=10):
+    """Crop black letterbox bars some image models add."""
+    a = np.asarray(img.convert("L")).astype(np.float32)
+    rows = a.mean(1); top = 0; bot = len(rows)
+    while top < len(rows) // 4 and rows[top] < thr: top += 1
+    while bot > len(rows) * 3 // 4 and rows[bot - 1] < thr: bot -= 1
+    return img.crop((0, top, img.width, bot))
+
+
 def cover(img, focus=(0.5, 0.5)):
-    img = img.convert("RGB")
+    img = debar(img.convert("RGB"))
     s = max(W / img.width, H / img.height)
     img = img.resize((round(img.width * s), round(img.height * s)), Image.LANCZOS)
     x = round((img.width - W) * focus[0]); y = round((img.height - H) * focus[1])
@@ -111,7 +121,7 @@ class Comp:
         if flames and name in THRUSTERS:
             for (fx, fy, ang) in THRUSTERS[name]:
                 if flip: fx, ang = L.width / scale - fx, 180 - ang
-                self.flame(x + fx * scale, y + fy * scale, ang, 330 * scale * flame_len, 70 * scale)
+                self.flame(x + fx * scale, y + fy * scale, ang, 190 * scale * flame_len, 50 * scale)
 
     def _trail(self, L, x, y, length=300, color=(255, 255, 255), opacity=0.35, angle=180):
         a = L.getchannel("A")
@@ -313,3 +323,49 @@ def anchor(name, prop, x, y, scale, flip=False, lw=None):
     px, py = PROPS[prop]
     if flip: px = lw - px
     return x + px * scale, y + py * scale
+
+
+def popcorn_burst(c, x, y, scale, angle=18, n=9, dist=380, seed=6, flare=True):
+    """Subtle popcorn kernels leaving Cappy's gatling muzzle + a small muzzle flare."""
+    import glob
+    rnd = np.random.default_rng(seed)
+    pieces = sorted(glob.glob(f"{ROOT}/layers/popcorn/*.png"))
+    if flare:
+        c.glow(x, y, 150 * scale, (255, 235, 170), 0.7)
+        sparkle(c, x, y, 150 * scale, (255, 245, 210), 0.9, rot=angle)
+    for i in range(n):
+        t = (i + rnd.uniform(0.2, 0.9)) / n
+        a = math.radians(angle + rnd.uniform(-14, 14))
+        d = (40 + t * dist) * scale
+        px, py = x + math.cos(a) * d, y - math.sin(a) * d
+        P = load(pieces[rnd.integers(len(pieces))]).rotate(rnd.uniform(0, 360), Image.BICUBIC, expand=True)
+        s = (0.28 + 0.25 * t) * scale
+        c.place("popcorn", px - P.width * s / 2, py - P.height * s / 2, scale=s, src=P, match=0.05, wrap=0.15)
+
+
+# ---------- hero helpers: every hero carries its signature FX ----------
+LW = {"cappy": 1029, "moody": 432, "jim": 293, "axie": 2233}
+
+
+def cappy(c, x, y, s, flip=False, popcorn=True, **kw):
+    kw.setdefault("rim", dict(color=(255, 238, 190), dir=(-1 if flip else 1, -1), width=8, strength=0.85))
+    c.place("cappy", x, y, scale=s, flip=flip, flames=True, flame_len=1.1, **kw)
+    if popcorn:
+        gx, gy = anchor("cappy", "cappy_gatling", x, y, s, flip=flip, lw=LW["cappy"])
+        popcorn_burst(c, gx, gy, s * 0.85, angle=162 if flip else 18)
+
+
+def moody(c, x, y, s, flip=False, **kw):
+    c.place("moody", x, y, scale=s, flip=flip, flames=True, **kw)
+    disco_flares(c, *anchor("moody", "moody_disco", x, y, s, flip=flip, lw=LW["moody"]), s)
+
+
+def jim(c, x, y, s, flip=False, confetti_n=35, **kw):
+    c.place("jim", x, y, scale=s, flip=flip, flames=True, **kw)
+    if confetti_n:
+        confetti(c, *anchor("jim", "jim_bell", x, y, s, flip=flip, lw=LW["jim"]), s * 0.8,
+                 angle=175 if flip else 5, n=confetti_n, dist=240)
+
+
+def axie(c, x, y, s, flip=False, **kw):
+    c.place("axie", x, y, scale=s, flip=flip, flames=True, **kw)

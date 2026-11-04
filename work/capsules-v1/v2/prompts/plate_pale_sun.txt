@@ -1,0 +1,10 @@
+STEAM CAPSULE BACKGROUND PLATE: BLEACHED SUN.
+
+A pale, foggy, almost white desert landscape with a very limited palette: off-white sky fading into soft warm grey, a HUGE flat coral-red sun disc in the upper-right third, distant low-poly mesas and rock arches in layered pale silhouettes receding into thick haze (atmospheric perspective: each layer lighter), a few tall wasteland crane silhouettes far away, soft dust. Minimal and graphic, lots of empty pale space in the left half.
+
+PLATE RULES — VERY IMPORTANT:
+* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.
+* NO characters, NO animals, NO creatures, NO worms, NO people, NO vehicles in the foreground.
+* NO UI, NO HUD, NO text, NO letters, NO logos, NO watermark.
+* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized faceted low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting.
+* Wide 16:9 frame.

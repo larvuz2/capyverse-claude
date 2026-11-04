@@ -1,4 +1,4 @@
-<title>Capyverse Capsules v1</title>
+<title>Capyverse Capsules</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800&display=swap">
@@ -29,6 +29,8 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5vw, 
 .toggle button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .hint { font-size: 13px; color: var(--muted); }
 .list { display: grid; gap: 48px; }
+.round { font-family: var(--display); font-weight: 400; font-size: 30px; margin: 0; color: var(--fg); border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.pick { background: var(--gold); color: var(--ink); border-color: var(--gold); }
 .cap { display: grid; gap: 14px; }
 .cap figure { margin: 0; }
 .cap img { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 1232 / 706; border-radius: 6px; background: var(--panel); }
@@ -48,8 +50,8 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5vw, 
 
 <div class="wrap" id="app">
   <header>
-    <h1>Capyverse Capsules v1</h1>
-    <p class="lede">Ten directions for the Steam main capsule (1232×706) with the new logo. In every one, <b>the characters are the real Unreal render, not AI</b>. Only the backgrounds, Axie and the clown pin came from image models, then everything was composited by hand.</p>
+    <h1>Capyverse Capsules</h1>
+    <p class="lede">Round 2: ten capsules in the direction of the round 1 picks (01, 04, 09), Cappy always the hero, plus four art-style shaders. Steam main capsule size (1232×706). In every one, <b>the characters are the real Unreal render, not AI</b>. Only the backgrounds, Axie and the clown pin came from image models, then everything was composited by hand.</p>
     <div class="bar">
       <div class="toggle" role="group" aria-label="Preview size">
         <button type="button" id="size-full" aria-pressed="true">Full size</button>
@@ -60,6 +62,7 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5vw, 
   </header>
 
   <main class="list" id="list"></main>
+  <section class="list" id="list1"></section>
 
   <section class="method">
     <h2>How these were made</h2>
@@ -67,35 +70,49 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5vw, 
       <li><b>Cut the base render into layers.</b> Every character group from the 5760px Unreal render, kept as original pixels.</li>
       <li><b>Generate only what was missing.</b> Axie and one clown pin, rendered alone on gray to match the base, then cut out.</li>
       <li><b>AI paints empty backgrounds only.</b> Gameplay screenshots from the store page were the world references, so the plates look like the game.</li>
+      <li><b>Shaders (round 2).</b> Cel+ink, pixel art, risograph and painted looks run as image filters on the finished composite, so the characters stay the real models.</li>
       <li><b>Composite by hand.</b> Color match, rim light, shadows, belt-thruster flames, disco flares, trumpet confetti, and the logo dropped in untouched.</li>
     </ol>
   </section>
 </div>
 
 <script>
-const CAPS = [
-  ["01_sunburst_showdown", "Sunburst Showdown", "The current capsule done right: brand yellow-orange burst, heroes on the left, Ophelia's crew on the right.", ["Heroes vs villains", "Brand colors"]],
-  ["02_attention_kingdom", "Attention Kingdom", "Ophelia's kingdom runs on attention, so she owns a wall of TV screens. The squad flies in to switch her off.", ["Story hook", "Dark"]],
-  ["03_capyverse_planet", "Capyverse Planet", "Low orbit over the planet of worlds from the run map. Pure adventure, no villains.", ["Heroes only", "Space"]],
-  ["04_desert_run", "Desert Run", "The sandworm bursts out of the canyon floor at golden hour while the squad strafes it.", ["Gameplay world", "Heroes vs villains"]],
-  ["05_carnival_horde", "Carnival Horde", "The crowded one: night carnival, a plaza packed with clown pins and bandits, a giant Ophelia over the tents.", ["Crowded", "Horde"]],
-  ["06_strike", "Strike!", "A cosmic bowling lane. Cappy is the bowling ball, a full rack of clown pins waits at the end.", ["Gag", "Space"]],
-  ["07_portal_lobby", "Portal Lobby", "The run begins: the squad blasts out of the lobby portal in every direction.", ["Heroes only", "Lobby"]],
-  ["08_just_cappy", "Just Cappy", "The minimal one: one hero, one color, popcorn firing out of the gatling.", ["Minimal", "Mascot"]],
-  ["09_comic_versus", "Comic Versus", "Halftone split with a lightning seam and a VS badge. The whole store pitch in one read.", ["Graphic", "Heroes vs villains"]],
-  ["10_disco_inferno", "Disco Inferno", "Moody takes the spotlight on the rainbow dance floor, with lasers and a planet-sized disco ball.", ["Moody as hero", "Neon"]],
+const V2 = [
+  ["11_hero_burst", "Hero Burst", "Crab Champions energy: one giant Cappy firing popcorn out of the brand sunburst, the squad trailing small.", ["From 01", "Hero only"]],
+  ["12_showdown_stack", "Showdown Stack", "Roboquest-style: Cappy huge up front, Ophelia and her whole crew stacked behind him.", ["From 01", "Heroes vs villains"]],
+  ["13_canyon_colossus", "Canyon Colossus", "The sandworm erupts at giant scale from the canyon floor; Cappy charges straight at it.", ["From 04", "Gameplay world"]],
+  ["14_ophelia_rising", "Ophelia Rising", "Risk of Rain scale: a colossal Ophelia rises over the dunes at dusk while the squad flies in.", ["From 04", "Epic scale"]],
+  ["15_comic_cover", "Comic Cover", "Issue #1: Cappy smashes out of the main panel, villains wait in the side panels.", ["From 09", "Graphic"]],
+  ["16_face_off", "Face-Off", "Cappy vs. Ophelia, nose to nose across the lightning seam.", ["From 09", "1 vs 1"]],
+  ["17_saturday_morning_cel", "Saturday Morning", "Shader: the real render cel-shaded and inked like a cartoon key frame.", ["Shader", "Cel + ink"]],
+  ["18_night_run_pixel", "Night Run", "Shader: pixel art in the Risk of Rain Returns vein, a night raid on the canyon.", ["Shader", "Pixel art"]],
+  ["19_print_run_riso", "Print Run", "Shader: three-ink risograph poster in pink, yellow and blue on cream paper.", ["Shader", "Riso print"]],
+  ["20_bleached_sun_painted", "Bleached Sun", "Shader: Risk of Rain 2 style painted key art, pale haze and a huge red sun.", ["Shader", "Painted"]],
 ];
-const list = document.getElementById("list");
-list.innerHTML = CAPS.map(([id, name, idea, tags], i) => `
+const V1 = [
+  ["01_sunburst_showdown", "Sunburst Showdown", "Brand yellow-orange burst, heroes left, Ophelia's crew right.", ["Picked"]],
+  ["02_attention_kingdom", "Attention Kingdom", "Ophelia's wall of TV screens; the squad flies in.", []],
+  ["03_capyverse_planet", "Capyverse Planet", "Low orbit over the planet of worlds.", []],
+  ["04_desert_run", "Desert Run", "Sandworm bursts out of the canyon at golden hour.", ["Picked"]],
+  ["05_carnival_horde", "Carnival Horde", "Crowded night carnival full of clown pins.", []],
+  ["06_strike", "Strike!", "Cosmic bowling lane, Cappy as the ball.", []],
+  ["07_portal_lobby", "Portal Lobby", "The squad blasts out of the lobby portal.", []],
+  ["08_just_cappy", "Just Cappy", "Minimal: Cappy, teal, popcorn.", []],
+  ["09_comic_versus", "Comic Versus", "Halftone split with a VS badge.", ["Picked"]],
+  ["10_disco_inferno", "Disco Inferno", "Moody on the rainbow dance floor.", []],
+];
+const card = ([id, name, idea, tags], i) => `
   <article class="cap" id="${id.replace(/_/g, "-")}">
     <figure><img src="caps/${id}.jpg" alt="${name} capsule" width="1232" height="706" loading="${i < 2 ? "eager" : "lazy"}"></figure>
     <div class="meta">
-      <span class="num">${String(i + 1).padStart(2, "0")}</span>
+      <span class="num">${id.slice(0, 2)}</span>
       <h2>${name}</h2>
       <p>${idea}</p>
-      <div class="tags">${tags.map(t => `<span class="tag">${t}</span>`).join("")}</div>
+      <div class="tags">${tags.map(t => `<span class="tag${t === "Picked" ? " pick" : ""}">${t}</span>`).join("")}</div>
     </div>
-  </article>`).join("");
+  </article>`;
+document.getElementById("list").innerHTML = `<h2 class="round">Round 2</h2>` + V2.map(card).join("");
+document.getElementById("list1").innerHTML = `<h2 class="round">Round 1</h2>` + V1.map((x, i) => card(x, i + 10)).join("");
 const app = document.getElementById("app");
 const full = document.getElementById("size-full"), small = document.getElementById("size-small");
 function setSmall(on) {
