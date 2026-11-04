@@ -32,3 +32,8 @@ onomatopoeias. Delivered: `work/capsules-v1/out/12a…12e`. Script: `work/capsul
 Ask: same #12, plain background with the vibrant yellow→orange gradient, several plain/gradient options, same artifact, shareable publicly.
 Delivered: `work/capsules-v1/out/12g1…12g8`. Script: `work/capsules-v1/c12g.py`.
 **Verdict round 4:** _pending_
+
+## Logo — 3 new directions
+Ask: new logo, thorough, hand-made/SVG, analyse Steam game logos, 3 options + look-and-feel recommendation.
+Delivered: `work/logo-lab/` (A Popcorn Pop, B Going Viral, C Capy Planet). Recommended: B + C icon.
+**Verdict:** _pending_

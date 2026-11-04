@@ -1,0 +1,162 @@
+<title>Capyverse Logo Lab</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,500;0,800;1,900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap">
+<style>
+/* Layout: one reading column; each logo direction is a self-contained "card" with its art large, then evidence (mockup, sizes). */
+:root {
+  --bg: #fbf4e6;
+  --panel: #ffffff;
+  --ink: #160f26;
+  --muted: #5d5470;
+  --line: #e7dcc6;
+  --brand-y: #ffd426;
+  --brand-o: #ff7814;
+  --pink: #ff3d7f;
+  --red: #ff2d4b;
+  --blue: #2e8bff;
+  --cream: #fff3dc;
+  --display: "Rubik", "Arial Black", system-ui, sans-serif;
+  --body: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #17121f; --panel: #211a2c; --ink: #f6eedf; --muted: #b8aec8; --line: #3a3048; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #17121f; --panel: #211a2c; --ink: #f6eedf; --muted: #b8aec8; --line: #3a3048; color-scheme: dark; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.6 var(--body); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 48px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 56px; }
+h1 { font: italic 900 clamp(40px, 7vw, 76px)/0.95 var(--display); margin: 0; letter-spacing: -0.02em; text-wrap: balance; }
+h1 span { color: var(--pink); }
+h2 { font: 800 30px/1.1 var(--display); margin: 0; text-wrap: balance; }
+h3 { font: 800 19px/1.2 var(--display); margin: 0; }
+p { margin: 0; max-width: 68ch; }
+.muted { color: var(--muted); }
+.lede { font-size: 18px; color: var(--muted); max-width: 64ch; }
+section { display: grid; gap: 18px; }
+figure { margin: 0; display: grid; gap: 8px; }
+figcaption { font-size: 13px; color: var(--muted); }
+img { display: block; max-width: 100%; height: auto; border-radius: 8px; }
+.findings { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 28px; padding: 0; margin: 0; list-style: none; }
+.findings li { border-top: 3px solid var(--ink); padding-top: 10px; min-width: 0; }
+.findings b { display: block; font-family: var(--display); font-weight: 800; }
+.dir { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: grid; gap: 20px; }
+.dir header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.letter { font: italic 900 46px/1 var(--display); color: var(--pink); }
+.stage { border-radius: 10px; padding: 28px; display: grid; place-items: center; }
+.stage.brand { background: linear-gradient(180deg, var(--brand-y), var(--brand-o)); }
+.stage.dark { background: #1b2838; }
+.stage img { border-radius: 0; max-height: 360px; width: auto; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.two > * { min-width: 0; }
+.notes { display: grid; gap: 6px; padding-left: 20px; margin: 0; }
+.score { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 14px; }
+.score dt { font-weight: 700; }
+.score dd { margin: 0; color: var(--muted); }
+.pick { background: var(--ink); color: var(--bg); border-radius: 14px; padding: 28px; display: grid; gap: 16px; }
+.pick h2 { color: var(--brand-y); }
+.pick p { color: inherit; opacity: 0.9; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { display: grid; gap: 4px; font-size: 12px; min-width: 96px; }
+.chip i { display: block; height: 52px; border-radius: 8px; border: 1px solid rgba(127,127,127,.35); }
+.chip code { font-size: 12px; }
+.badge { display: inline-block; font: 800 12px/1 var(--display); letter-spacing: .06em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px; background: var(--red); color: #fff; }
+a { color: var(--blue); }
+.files { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 14px; }
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:16px">
+    <span class="badge">Logo exploration · 3 directions</span>
+    <h1>Capyverse <span>Logo Lab</span></h1>
+    <p class="lede">Three new logos for Capyverse Odyssey, drawn as vector art (no AI): real font outlines re-set letter by letter, plus hand-drawn shapes for the capybara, popcorn, verified badge and planet. Every one is a clean SVG with no font dependency, tested on the #12 capsule and at Steam's smallest sizes.</p>
+  </header>
+
+  <section>
+    <h2>What the Steam hits do</h2>
+    <p class="muted">21 library logos from comparable games: Fall Guys, Stumble Guys, Party Animals, Goat Simulator, TABS, Human Fall Flat, Untitled Goose Game, Content Warning, Crab Champions, Risk of Rain 2, Hades, Brotato, Balatro, Roboquest, Gunfire Reborn and more.</p>
+    <figure><img src="steam_logos.jpg" alt="Grid of 21 Steam game logos" width="1920" height="1740" loading="lazy"><figcaption>Steam library logos (transparent PNGs from each store page).</figcaption></figure>
+    <ul class="findings">
+      <li><b>One idea, not a scene</b>The hits are type plus one twist: Brotato's bandana O, Balatro's playing card, Omori's light bulb, TABS' weapons. The current Capyverse logo is a whole illustrated sign (planks, gear, vines, compass).</li>
+      <li><b>Flat beats rendered</b>The quirky-3D games (Fall Guys, Stumble Guys, Party Animals) use chunky rounded type with a thick outline and one shadow. Painted wood and metal texture turns to mush at 231 px.</li>
+      <li><b>Short name, huge</b>Crab Champions, TABS and Brotato make the first word the logo and shrink the rest. "CAPYVERSE" should carry it; "ODYSSEY" is a tag.</li>
+      <li><b>Personality in one letter</b>Most swap a single glyph for a story object. Capyverse has three natural candidates: Cappy, popcorn, the viral video.</li>
+      <li><b>An icon that stands alone</b>Untitled Goose Game and Content Warning ship a mark that works without words: favicon, Discord, small capsule.</li>
+    </ul>
+    <figure><img src="specimen.jpg" alt="CAPYVERSE set in ten display typefaces" width="1800" height="1740" loading="lazy"><figcaption>Type audition: ten chunky display faces. Titan One, Rubik Black and Chango went through to the three directions.</figcaption></figure>
+  </section>
+
+  <section class="dir" id="a">
+    <header><span class="letter">A</span><h2>Popcorn Pop</h2><span class="muted">Party-game sticker logo</span></header>
+    <div class="stage brand"><img src="logo_a.png" alt="Logo A: Popcorn Pop" width="1404" height="445"></div>
+    <ol class="notes">
+      <li>Titan One letters, each re-set by hand on a bouncing baseline with its own tilt, so the word looks like it's mid-jetpack.</li>
+      <li>The first C is Cappy's head: ear, eye, brow and nostril drawn onto the letter.</li>
+      <li>The O of ODYSSEY is a popcorn kernel, sitting on a red-and-white popcorn-bucket band.</li>
+      <li>Jetpack speed streaks behind the word; a cream sticker outline holds it together on any background.</li>
+    </ol>
+    <div class="two">
+      <figure><img src="mock_a.jpg" alt="Logo A on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
+      <dl class="score"><dt>Feels like</dt><dd>Fall Guys, Stumble Guys. Warm, toy-like, instantly "family-friendly party game".</dd><dt>Strength</dt><dd>Most Cappy-forward of the three; the popcorn band ties straight to his weapon.</dd><dt>Weakness</dt><dd>The most detail, so it gets busy at 231 px. Party-game sticker logos are a crowded look on Steam.</dd></dl>
+    </div>
+  </section>
+
+  <section class="dir" id="b">
+    <header><span class="letter">B</span><h2>Going Viral</h2><span class="muted">The story in one mark</span></header>
+    <div class="stage brand"><img src="logo_b.png" alt="Logo B: Going Viral" width="1429" height="450"></div>
+    <ol class="notes">
+      <li>Rubik Black, sheared forward like a fast-scrolling feed, white with an ink outline and one hard hot-pink shadow.</li>
+      <li>CAPYVERSE has a blue verified badge: the capybaras are the famous ones now, which is the whole plot.</li>
+      <li>ODYSSEY is a red notification pill, and its O is a play button: the viral video.</li>
+      <li>A heart reaction pops off the C, and the A's counter is tinted the same red.</li>
+    </ol>
+    <div class="two">
+      <figure><img src="mock_b.jpg" alt="Logo B on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule.</figcaption></figure>
+      <dl class="score"><dt>Feels like</dt><dd>Crab Champions' confidence plus internet culture: fast, loud, a little cheeky.</dd><dt>Strength</dt><dd>Tells the store pitch ("capybaras went viral, Ophelia took it personally") without a sentence. Flat colors, so it reads best at every size and on both backgrounds.</dd><dt>Weakness</dt><dd>No capybara in the mark itself; it leans on the art to show Cappy. Pair it with C's emblem as the icon.</dd></dl>
+    </div>
+  </section>
+
+  <section class="dir" id="c">
+    <header><span class="letter">C</span><h2>Capy Planet</h2><span class="muted">Emblem + wordmark system</span></header>
+    <div class="stage dark"><img src="logo_c.png" alt="Logo C: Capy Planet horizontal lockup" width="1667" height="428"></div>
+    <div class="two">
+      <div class="stage brand"><img src="logo_c_stacked.png" alt="Logo C stacked" width="1120" height="910" loading="lazy"></div>
+      <div class="stage dark"><img src="logo_c_icon.png" alt="Logo C icon" width="508" height="462" loading="lazy" style="max-height:220px"></div>
+    </div>
+    <ol class="notes">
+      <li>The mark is Cappy's head as a planet: "Capy-verse" in one picture. Boxy capybara profile, a jetpack-cyan orbit ring crossing in front of the snout, stars inside.</li>
+      <li>It works alone from 512 px down to a 32 px favicon (see the size test).</li>
+      <li>The wordmark is Chango, tightened by hand, in Cappy orange over a cream ODYSSEY with cyan rules.</li>
+    </ol>
+    <div class="two">
+      <figure><img src="mock_c.jpg" alt="Logo C on capsule 12" width="1232" height="706" loading="lazy"><figcaption>On the #12 capsule (stacked lockup).</figcaption></figure>
+      <dl class="score"><dt>Feels like</dt><dd>Untitled Goose Game, Content Warning: a brand with a mascot icon.</dd><dt>Strength</dt><dd>The only one with a standalone icon: app icon, Discord, merch, loading screen.</dd><dt>Weakness</dt><dd>The orange wordmark disappears on the orange brand background; it needs dark or cool backgrounds.</dd></dl>
+    </div>
+  </section>
+
+  <section>
+    <h2>Size test</h2>
+    <p class="muted">Rows: current logo, A, B, C. Columns: small capsule 462×174 on brand gradient and on Steam's dark UI, then the 231×87 list size.</p>
+    <figure><img src="sizes.jpg" alt="All logos at Steam small capsule sizes" width="1436" height="760" loading="lazy"></figure>
+    <p>At 231 px, B stays fully legible, C's icon still reads as a capybara, A starts to clump, and the current logo's planks, gear and vines turn into texture.</p>
+  </section>
+
+  <section class="pick">
+    <h2>Recommendation: B as the logo, C's planet as the icon</h2>
+    <p><b>Use B "Going Viral" as the main logo.</b> The game's hook isn't "fantasy adventure", which is what the wooden sign says. It's "the internet's favorite animals in a fast, absurd shooter". B says that in one look, works at every Steam size, and doesn't clash with the 3D renders, because it's flat and graphic like Crab Champions' type. <b>Keep C's Capy Planet as the app icon</b>, favicon, Discord avatar and loading spinner; B has no picture of Cappy, and the planet fills that gap.</p>
+    <h3>Look and feel: "loud internet pop"</h3>
+    <p>Flat, chunky, sheared type with an ink outline and one hard hot-pink shadow. Social-UI objects as the graphic language: verified badges, play buttons, hearts, notification pills, view counts. Use them for UI, store banners and trailer titles (e.g. "1.2M CAPYS WATCHING", a verified check on each hero's name card). The 3D game stays as rendered; the graphics on top speak "feed".</p>
+    <div class="chips">
+      <span class="chip"><i style="background:#ffd426"></i>Brand yellow <code>#FFD426</code></span>
+      <span class="chip"><i style="background:#ff7814"></i>Brand orange <code>#FF7814</code></span>
+      <span class="chip"><i style="background:#160f26"></i>Ink <code>#160F26</code></span>
+      <span class="chip"><i style="background:#ff3d7f"></i>Shadow pink <code>#FF3D7F</code></span>
+      <span class="chip"><i style="background:#ff2d4b"></i>Notification red <code>#FF2D4B</code></span>
+      <span class="chip"><i style="background:#2e8bff"></i>Verified blue <code>#2E8BFF</code></span>
+      <span class="chip"><i style="background:#fff3dc"></i>Popcorn cream <code>#FFF3DC</code></span>
+    </div>
+    <p>Type: Rubik Black Italic for headlines and the logo family, Nunito Sans for body text. Both are free (OFL) Google Fonts.</p>
+  </section>
+
+  <section>
+    <h2>Files</h2>
+    <p class="muted">Pure vector SVGs (letters converted to paths, no fonts needed). Open in Illustrator, Figma or a browser.</p>
+    <div class="files"><a href="logo_a.svg" target="_blank" rel="noopener">logo_a.svg</a><a href="logo_b.svg" target="_blank" rel="noopener">logo_b.svg</a><a href="logo_c.svg" target="_blank" rel="noopener">logo_c.svg</a><a href="logo_c_stacked.svg" target="_blank" rel="noopener">logo_c_stacked.svg</a><a href="logo_c_icon.svg" target="_blank" rel="noopener">logo_c_icon.svg</a></div>
+  </section>
+</div>

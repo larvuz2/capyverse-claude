@@ -15,7 +15,7 @@ def hue_shift(im, deg, sat=1.0):
     return Image.fromarray((cv2.cvtColor(hsv, cv2.COLOR_HSV2RGB) * 255).astype(np.uint8)).convert("RGBA")
 
 
-def build(name, plate_hue=0, horde=False, ink=False, sfx_set="classic", logo_w=900, oph_s=1.55, cap_s=1.28, grade=None, plate=None, rim=None):
+def build(name, plate_hue=0, horde=False, ink=False, sfx_set="classic", logo_w=900, oph_s=1.55, cap_s=1.28, grade=None, plate=None, rim=None, logo_path=None, logo_xy=(600, 270)):
     plate = plate if plate is not None else load("plates_used/01_sunburst_gpt_0.jpg")
     if plate_hue: plate = hue_shift(plate, plate_hue, 1.05)
     c = Comp(plate, focus=(0.5, 0.3))
@@ -63,7 +63,7 @@ def build(name, plate_hue=0, horde=False, ink=False, sfx_set="classic", logo_w=9
     if sfx_set == "tiny":
         sfx(c, "POP!", gtx + 300, gty - 20, 58, rot=-10, fill=(255, 245, 210))
         sfx(c, "FORE!", 1540, 570, 62, rot=8, fill=(255, 230, 60))
-    c.logo(600, 270, logo_w, glow=(255, 250, 220) if not ink else None, shadow=0.6)
+    c.logo(logo_xy[0], logo_xy[1], logo_w, path=logo_path, glow=(255, 250, 220) if not ink else None, shadow=0.6)
     c.grade(**(grade or dict(contrast=1.05, sat=1.07, vignette=0.4)))
     c.save(name, "out")
 
