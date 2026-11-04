@@ -51,7 +51,7 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5vw, 
 <div class="wrap" id="app">
   <header>
     <h1>Capyverse Capsules</h1>
-    <p class="lede">Round 4: #12 on plain gradients, five in the brand yellow-to-orange and three off-brand color tests. Round 3: five variations of #12 Showdown Stack, with Cappy moved clear of the worm, bigger side-belt thrusters, a detailed golf shot and small comic sound effects. Round 2: ten capsules in the direction of the round 1 picks (01, 04, 09), Cappy always the hero, plus four art-style shaders. Steam main capsule size (1232×706). In every one, <b>the characters are the real Unreal render, not AI</b>. Only the backgrounds, Axie and the clown pin came from image models, then everything was composited by hand.</p>
+    <p class="lede">Round 6: five capsules built as a real 3D scene in Blender with the game's enemy meshes, rigs, animations and textures, the real hero renders composited in front. Round 4: #12 on plain gradients, five in the brand yellow-to-orange and three off-brand color tests. Round 3: five variations of #12 Showdown Stack, with Cappy moved clear of the worm, bigger side-belt thrusters, a detailed golf shot and small comic sound effects. Round 2: ten capsules in the direction of the round 1 picks (01, 04, 09), Cappy always the hero, plus four art-style shaders. Steam main capsule size (1232×706). In every one, <b>the characters are the real Unreal render, not AI</b>. Only the backgrounds, Axie and the clown pin came from image models, then everything was composited by hand.</p>
     <div class="bar">
       <div class="toggle" role="group" aria-label="Preview size">
         <button type="button" id="size-full" aria-pressed="true">Full size</button>
@@ -89,6 +89,13 @@ const V2 = [
   ["19_print_run_riso", "Print Run", "Shader: three-ink risograph poster in pink, yellow and blue on cream paper.", ["Shader", "Riso print"]],
   ["20_bleached_sun_painted", "Bleached Sun", "Shader: Risk of Rain 2 style painted key art, pale haze and a huge red sun.", ["Shader", "Painted"]],
 ];
+const V6 = [
+  ["3d_L1", "3D · Showdown", "Real Blender scene: bowling pins, worm (hit-ground anim), golfer (swing anim + hand-modelled club) and two posed Warboys charge left over the sunburst; Cappy dominates the front, Ophelia towers behind.", ["Round 6", "3D real assets"]],
+  ["3d_L2", "3D · Canyon Colossus", "The real worm rig scaled to boss size erupting from the canyon crater, pins scattering, golfer mid-swing on the right.", ["Round 6", "3D real assets"]],
+  ["3d_L3", "3D · Strike!", "A real 10-pin rack of bowling-pin enemies down the cosmic lane; the golfer swings in the foreground, Warboys cheer from the sides.", ["Round 6", "3D real assets"]],
+  ["3d_L4", "3D · Surrounded", "High camera: the enemies close in a ring around Cappy on the brand gradient, worm rising at the back.", ["Round 6", "3D real assets"]],
+  ["3d_L5", "3D · The March", "Ophelia's crew marches single-file into the dusk; Cappy turns to face them.", ["Round 6", "3D real assets"]],
+];
 const V4 = [
   ["12g1_vertical", "12g1 Vertical", "Vertical: golden yellow on top to vibrant orange at the bottom (the original gradient).", ["Round 4", "Brand gradient"]],
   ["12g2_diagonal", "12g2 Diagonal", "Diagonal: bright yellow top-left to deep orange bottom-right.", ["Round 4", "Brand gradient"]],
@@ -122,13 +129,13 @@ const card = ([id, name, idea, tags], i) => `
   <article class="cap" id="${id.replace(/_/g, "-")}">
     <figure><img src="caps/${id}.jpg" alt="${name} capsule" width="1232" height="706" loading="${i < 2 ? "eager" : "lazy"}"></figure>
     <div class="meta">
-      <span class="num">${id.match(/^\d+(g\d|[a-e])?/)[0]}</span>
+      <span class="num">${(id.match(/^3d_L\d|^\d+(g\d|[a-e])?/)||[''])[0].replace('3d_','')}</span>
       <h2>${name}</h2>
       <p>${idea}</p>
       <div class="tags">${tags.map(t => `<span class="tag${t === "Picked" ? " pick" : ""}">${t}</span>`).join("")}</div>
     </div>
   </article>`;
-document.getElementById("list").innerHTML = `<h2 class="round">Round 4 · #12 on plain gradients</h2>` + V4.map(card).join("") + `<h2 class="round">Round 3 · #12 variations</h2>` + V3.map((x, i) => card(x, i + 8)).join("") + `<h2 class="round">Round 2</h2>` + V2.map((x, i) => card(x, i + 5)).join("");
+document.getElementById("list").innerHTML = `<h2 class="round">Round 6 · 3D scene with real game assets</h2>` + V6.map(card).join("") + `<h2 class="round">Round 4 · #12 on plain gradients</h2>` + V4.map(card).join("") + `<h2 class="round">Round 3 · #12 variations</h2>` + V3.map((x, i) => card(x, i + 8)).join("") + `<h2 class="round">Round 2</h2>` + V2.map((x, i) => card(x, i + 5)).join("");
 document.getElementById("list1").innerHTML = `<h2 class="round">Round 1</h2>` + V1.map((x, i) => card(x, i + 10)).join("");
 const app = document.getElementById("app");
 const full = document.getElementById("size-full"), small = document.getElementById("size-small");

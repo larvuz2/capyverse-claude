@@ -59,11 +59,11 @@ def L4():  # SURROUNDED: enemies in an arc around an empty centre where Cappy la
     ring = [(-4.0, 1.4), (-3.2, 3.4), (-1.4, 4.6), (2.8, 4.2), (4.2, 2.2), (4.8, 0.0), (-4.6, -0.8)]
     for x, y in ring:
         add_pin((x, y, 0), rot_z=math.degrees(math.atan2(-y, -x)) - 90 + random.uniform(-10, 10), scale=1.8, frame=random.choice([3, 8, 12]))
-    add_worm((0.4, 6.6, 0), rot_z=-90, scale=2.6, frame=35, anim="hit")
+    add_worm((-1.8, 6.6, 0), rot_z=-70, scale=2.6, frame=35, anim="hit")
     add_warboy((-2.4, 0.6, 0), rot_z=35, scale=1.05, pose=WARBOY_POSES["taunt"])
     add_warboy((2.6, 1.0, 0), rot_z=-35, scale=1.05, pose=WARBOY_POSES["fists"])
     add_golfer((3.6, 5.6, 0), rot_z=-30, scale=1.0, frame=70)
-    add_axie((-4.2, -1.5, 3.4), rot_z=40, scale=1.4, tilt=-10)
+    add_axie((3.4, -1.5, 3.6), rot_z=140, scale=1.3, tilt=-10)
     shadow_catcher(); lights(key=(55, 0, -10))
     camera((0, -8.6, 3.8), (0, 2.0, 1.0), lens=27)
 
@@ -79,7 +79,7 @@ def L5():  # THE MARCH: Ophelia's crew in a single file marching left in profile
         else: add_golfer((x, y, 0), rot_z=rz, scale=sc, frame=55)
         x += 1.35; y += 1.25
     add_worm((7.0, 9.0, 0), rot_z=-90, scale=2.4, frame=60, anim="idle")
-    add_axie((-3.2, -2.0, 2.4), rot_z=95, scale=1.3, tilt=-5)
+    add_axie((-1.2, -2.4, 2.9), rot_z=95, scale=1.2, tilt=-5)
     shadow_catcher(); lights(key=(45, 0, -60))
     camera((0.2, -8.2, 1.2), (2.8, 3.0, 1.6), lens=30)
 
