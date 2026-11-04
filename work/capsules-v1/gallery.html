@@ -48,6 +48,30 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5vw, 
 .method b { color: var(--fg); }
 @media (prefers-reduced-motion: no-preference) { .cap img { transition: width .25s ease; } }
 
+
+[hidden] { display: none !important; }
+/* ---------- logos tab ---------- */
+.logos { background: #14110e; color: #efe6d8; font: 15px/1.55 "Nunito Sans", "Segoe UI", system-ui, sans-serif; min-height: 100vh; }
+.lg-wrap { max-width: 1180px; margin: 0 auto; padding-block: 36px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 28px; }
+.lg-head h1 { font-family: "Lilita One", "Trebuchet MS", sans-serif; font-weight: 400; font-size: clamp(34px, 5vw, 52px); color: #f6c33b; margin: 0 0 8px; line-height: 1; }
+.lg-head p { margin: 0; max-width: 72ch; color: #b5a48e; }
+.lg-h2 { font-family: "Lilita One", "Trebuchet MS", sans-serif; font-weight: 400; font-size: 26px; margin: 18px 0 0; border-bottom: 1px solid #3a3027; padding-bottom: 8px; }
+.lg-card { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 18px 24px; align-items: start; background: #1d1813; border: 1px solid #332a22; border-radius: 12px; padding: 18px; }
+.lg-stage { border-radius: 8px; padding: 22px; display: grid; place-items: center; background: radial-gradient(circle at 50% 40%, #3a2e24, #1a1511); min-height: 220px; }
+.lg-stage.light { background: radial-gradient(circle at 50% 40%, #fbf3e3, #e9dcc3); }
+.lg-stage img { max-width: 100%; max-height: 260px; width: auto; height: auto; display: block; }
+.lg-meta { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; }
+.lg-n { font-family: "Lilita One", sans-serif; font-size: 34px; color: #f6c33b; line-height: 1; }
+.lg-meta h3 { margin: 0 0 4px; font-size: 20px; }
+.lg-meta p { margin: 0 0 8px; color: #cdbfa9; }
+.lg-meta .lg-s { font-size: 13px; color: #b5a48e; } .lg-meta b { color: #efe6d8; }
+.lg-meta a { color: #f6c33b; }
+.lg-card figure { margin: 0; grid-column: 2; grid-row: 1 / span 2; } .lg-card figure img { width: 100%; height: auto; border-radius: 6px; display: block; }
+.lg-card figcaption { font-size: 12px; color: #8f8172; margin-top: 4px; }
+.lg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.lg-old { margin: 0; } .lg-old .lg-stage { min-height: 150px; background: linear-gradient(#ffd426, #ff7814); } .lg-old img { max-height: 150px; }
+.lg-old figcaption { font-size: 13px; color: #b5a48e; margin-top: 6px; }
+@media (max-width: 820px) { .lg-card { grid-template-columns: 1fr; } .lg-card figure { grid-column: auto; grid-row: auto; } }
 /* ---------- tab bar ---------- */
 .tabbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; display: flex; gap: 4px; align-items: center; padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); background: #0e1116; border-bottom: 1px solid #2a3442; }
 .tabbar .lbl { font: 700 12px/1 Arial, Helvetica, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: #8f98a0; margin-right: 10px; }
@@ -151,7 +175,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 }
 </style>
 
-<nav class="tabbar" aria-label="Views"><span class="lbl">Capyverse capsules</span><a href="#store" data-v="store">Store preview</a><a href="#rounds" data-v="rounds">Capsule rounds</a></nav>
+<nav class="tabbar" aria-label="Views"><span class="lbl">Capyverse capsules</span><a href="#store" data-v="store">Store preview</a><a href="#rounds" data-v="rounds">Capsule rounds</a><a href="#logos" data-v="logos">Logos</a></nav>
 
 <section class="store" id="view-store">
   <div class="s-top"><div class="in"><span class="brand">Store page preview · mockup</span><div class="nav"><span>Store</span><span>Community</span><span>About</span><span>Support</span></div></div></div>
@@ -219,6 +243,51 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   </div>
 </section>
 
+
+<section class="logos" id="view-logos" hidden>
+  <div class="lg-wrap">
+    <header class="lg-head"><h1>Logos</h1><p>Round 4 · crafted indie-PC direction, after feedback that the earlier logos read too "mobile". Five title treatments, each with its own material and soul, like a movie title card. Generated with image models, cleaned, cut out and vectorized; every one is shown on capsule C.</p></header>
+    <h2 class="lg-h2">New · indie-PC title treatments</h2>
+    
+  <article class="lg-card">
+    <div class="lg-stage"><img src="logos/new_1_carved.png" alt="Carved Walnut &amp; Brass logo" loading="lazy"></div>
+    <div class="lg-meta"><span class="lg-n">01</span><div><h3>Carved Walnut &amp; Brass</h3><p>Walnut letters with chisel marks and grain, hammered-brass trim and rivets, a brass jetpack flame off the final E; ODYSSEY engraved on a riveted plank. Museum-object lighting.</p>
+      <p class="lg-s"><b>Feels like:</b> Adventure-film prop, tactile and warm. <b>Watch out:</b> Busiest at 231 px; the SVG is a flattened poster version.</p>
+      <p class="lg-s"><a href="logos/new_1_carved.svg" target="_blank" rel="noopener">Vector SVG</a> · <a href="logos/new_1_carved.png" target="_blank" rel="noopener">Transparent PNG</a></p></div></div>
+    <figure><img src="logos/mock_1_carved.jpg" alt="Carved Walnut &amp; Brass on capsule C" width="1232" height="706" loading="lazy"><figcaption>On capsule C (1232×706).</figcaption></figure>
+  </article>
+  <article class="lg-card">
+    <div class="lg-stage light"><img src="logos/new_2_ink.png" alt="Ink &amp; Gouache Brush logo" loading="lazy"></div>
+    <div class="lg-meta"><span class="lg-n">02</span><div><h3>Ink &amp; Gouache Brush</h3><p>Hand-lettered in wide sumi brush with burnt-orange gouache, dry-brush texture and splatter; the O of ODYSSEY is a capybara face in three strokes, closed by a brush swash.</p>
+      <p class="lg-s"><b>Feels like:</b> An animated indie film&#x27;s title card. <b>Watch out:</b> Dark ink needs a light or warm background.</p>
+      <p class="lg-s"><a href="logos/new_2_ink.svg" target="_blank" rel="noopener">Vector SVG</a> · <a href="logos/new_2_ink.png" target="_blank" rel="noopener">Transparent PNG</a></p></div></div>
+    <figure><img src="logos/mock_2_ink.jpg" alt="Ink &amp; Gouache Brush on capsule C" width="1232" height="706" loading="lazy"><figcaption>On capsule C (1232×706).</figcaption></figure>
+  </article>
+  <article class="lg-card">
+    <div class="lg-stage light"><img src="logos/new_3_deco.png" alt="Art-Deco Space Poster logo" loading="lazy"></div>
+    <div class="lg-meta"><span class="lg-n">03</span><div><h3>Art-Deco Space Poster</h3><p>Tall engraved deco capitals in midnight navy and gold foil, an orbit ring sweeping through the word with a ringed planet and stars, ODYSSEY between thin gold rules.</p>
+      <p class="lg-s"><b>Feels like:</b> 1930s cinema title meets premium sci-fi indie; the most &#x27;odyssey&#x27;. <b>Watch out:</b> Navy disappears on dark backgrounds; needs warm or light.</p>
+      <p class="lg-s"><a href="logos/new_3_deco.svg" target="_blank" rel="noopener">Vector SVG</a> · <a href="logos/new_3_deco.png" target="_blank" rel="noopener">Transparent PNG</a></p></div></div>
+    <figure><img src="logos/mock_3_deco.jpg" alt="Art-Deco Space Poster on capsule C" width="1232" height="706" loading="lazy"><figcaption>On capsule C (1232×706).</figcaption></figure>
+  </article>
+  <article class="lg-card">
+    <div class="lg-stage light"><img src="logos/new_4_linocut.png" alt="Linocut Print logo" loading="lazy"></div>
+    <div class="lg-meta"><span class="lg-n">04</span><div><h3>Linocut Print</h3><p>Hand-carved block letters with gouge marks, two-ink print (red-orange and teal) slightly misregistered, a carved sun and desert mesas rising behind the word.</p>
+      <p class="lg-s"><b>Feels like:</b> Artisanal folk print / adventure poster; ties to the desert worlds. <b>Watch out:</b> Texture-heavy SVG (largest file).</p>
+      <p class="lg-s"><a href="logos/new_4_linocut.svg" target="_blank" rel="noopener">Vector SVG</a> · <a href="logos/new_4_linocut.png" target="_blank" rel="noopener">Transparent PNG</a></p></div></div>
+    <figure><img src="logos/mock_4_linocut.jpg" alt="Linocut Print on capsule C" width="1232" height="706" loading="lazy"><figcaption>On capsule C (1232×706).</figcaption></figure>
+  </article>
+  <article class="lg-card">
+    <div class="lg-stage"><img src="logos/new_5_diorama.png" alt="Papercraft Diorama logo" loading="lazy"></div>
+    <div class="lg-meta"><span class="lg-n">05</span><div><h3>Papercraft Diorama</h3><p>Layered card stock with real depth and cut edges, paper popcorn and stars tucked between letters, ODYSSEY on a dark paper ribbon.</p>
+      <p class="lg-s"><b>Feels like:</b> Stop-motion handmade; closest to the game&#x27;s playful tone. <b>Watch out:</b> Still the most &#x27;friendly&#x27; of the five.</p>
+      <p class="lg-s"><a href="logos/new_5_diorama.svg" target="_blank" rel="noopener">Vector SVG</a> · <a href="logos/new_5_diorama.png" target="_blank" rel="noopener">Transparent PNG</a></p></div></div>
+    <figure><img src="logos/mock_5_diorama.jpg" alt="Papercraft Diorama on capsule C" width="1232" height="706" loading="lazy"><figcaption>On capsule C (1232×706).</figcaption></figure>
+  </article>
+    <h2 class="lg-h2">Earlier logos (kept for reference)</h2>
+    <div class="lg-grid"><figure class="lg-old"><div class="lg-stage"><img src="logos/old_logo_e4.png" alt="E · Stumble, one overlap" loading="lazy"></div><figcaption>E · Stumble, one overlap</figcaption></figure><figure class="lg-old"><div class="lg-stage"><img src="logos/old_logo_h3.png" alt="H · Viral Stumble" loading="lazy"></div><figcaption>H · Viral Stumble</figcaption></figure><figure class="lg-old"><div class="lg-stage"><img src="logos/old_logo_d3.png" alt="D · Toybox" loading="lazy"></div><figcaption>D · Toybox</figcaption></figure><figure class="lg-old"><div class="lg-stage"><img src="logos/old_logo_e3.png" alt="E · Stumble, overlaps" loading="lazy"></div><figcaption>E · Stumble, overlaps</figcaption></figure><figure class="lg-old"><div class="lg-stage"><img src="logos/old_logo_gpt_backed.png" alt="GPT Stumble style" loading="lazy"></div><figcaption>GPT Stumble style</figcaption></figure><figure class="lg-old"><div class="lg-stage"><img src="logos/old_logo_f2.png" alt="F · Marquee" loading="lazy"></div><figcaption>F · Marquee</figcaption></figure><figure class="lg-old"><div class="lg-stage"><img src="logos/old_logo_g.png" alt="G · Popcorn Band" loading="lazy"></div><figcaption>G · Popcorn Band</figcaption></figure><figure class="lg-old"><div class="lg-stage"><img src="logos/old_logo_i.png" alt="I · Jetpack" loading="lazy"></div><figcaption>I · Jetpack</figcaption></figure><figure class="lg-old"><div class="lg-stage"><img src="logos/old_logo_b.png" alt="B · Going Viral" loading="lazy"></div><figcaption>B · Going Viral</figcaption></figure><figure class="lg-old"><div class="lg-stage"><img src="logos/old_logo_a.png" alt="A · Popcorn Pop" loading="lazy"></div><figcaption>A · Popcorn Pop</figcaption></figure></div>
+  </div>
+</section>
 <div class="wrap" id="app" hidden>
   <header>
     <h1>Capyverse Capsules</h1>
@@ -365,9 +434,10 @@ try { if (localStorage.getItem("capsize") === "small") setSmall(true); } catch (
   }
   // tabs: #store (default) and #rounds
   function route() {
-    const r = location.hash === "#rounds" ? "rounds" : "store";
+    const r = location.hash === "#rounds" ? "rounds" : location.hash === "#logos" ? "logos" : "store";
     document.getElementById("view-store").hidden = r !== "store";
     document.getElementById("app").hidden = r !== "rounds";
+    document.getElementById("view-logos").hidden = r !== "logos";
     document.querySelectorAll(".tabbar a").forEach(a => a.setAttribute("aria-current", a.dataset.v === r ? "page" : "false"));
     window.scrollTo(0, 0);
   }
