@@ -1,0 +1,12 @@
+STEAM CAPSULE BACKGROUND PLATE: MINIMAL BOLD COLOR.
+
+A flat, clean, saturated TEAL-TURQUOISE background with a soft lighter glow behind the right-center and a gentle darker vignette at the edges. Scattered across the RIGHT half only: about 25 fluffy popcorn kernels flying outward from the right-center, at different sizes and depths, a few motion-blurred, simple game-asset popcorn (cream white with yellow butter tips).
+
+The LEFT half is completely empty flat teal for the logo. Ultra clean, minimal, graphic.
+
+PLATE RULES — VERY IMPORTANT:
+* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.
+* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.
+* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.
+* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.
+* Wide 16:9 frame, readable at Steam thumbnail size.

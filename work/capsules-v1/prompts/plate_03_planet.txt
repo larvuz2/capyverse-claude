@@ -1,0 +1,12 @@
+STEAM CAPSULE BACKGROUND PLATE: THE CAPYVERSE PLANET HORIZON.
+
+The planet from the first image attached, seen VERY CLOSE: its curved horizon arcs across the BOTTOM 35% of the frame like we are flying in low orbit just above it. On its surface we can see the colorful biome islands from the reference: purple candy forest, orange desert canyon, red crystal city, golden temple, blue ocean between them. A thin glowing blue atmosphere rim and a green-purple aurora along the curve.
+
+Above the horizon: deep space with purple and teal nebula, scattered stars, and the gray cratered moon small in the upper right. The upper-center is clear dark space for the logo.
+
+PLATE RULES — VERY IMPORTANT:
+* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.
+* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.
+* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.
+* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.
+* Wide 16:9 frame, readable at Steam thumbnail size.

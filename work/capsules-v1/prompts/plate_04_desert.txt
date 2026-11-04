@@ -1,0 +1,12 @@
+STEAM CAPSULE BACKGROUND PLATE: DESERT CANYON RUN.
+
+The orange low-poly desert world from the attached screenshots: towering faceted red-orange canyon mesas on the left and right edges, wind-swept sand dunes in the middle ground, a rusty wasteland crane and scrap towers small in the distance. Late golden-hour sun low behind the canyon at the upper center, hazy warm light, long shadows, drifting sand dust.
+
+The sand floor in the lower-right foreground is churned and cracked, as if something huge just burst out of it. Bright warm sky in the upper-left for the logo.
+
+PLATE RULES — VERY IMPORTANT:
+* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.
+* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.
+* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.
+* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.
+* Wide 16:9 frame, readable at Steam thumbnail size.

@@ -1,0 +1,55 @@
+{
+ "01_sunburst": {
+  "prompt": "STEAM CAPSULE BACKGROUND PLATE: a bold comic-book SUNBURST.\n\nRadial rays explode outward from a point at the upper center of the frame. Alternate bright golden yellow and rich saturated orange rays, with a hot cream-white glow at the burst center. Very subtle halftone dot texture inside the rays, fading toward the edges. Slight vignette into deep orange-red at the four corners.\n\nClean, graphic, energetic. Flat-shaded like a game's victory screen. No scenery, no ground, no objects.\n\nPLATE RULES \u2014 VERY IMPORTANT:\n* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.\n* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.\n* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.\n* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.\n* Wide 16:9 frame, readable at Steam thumbnail size.",
+  "refs": []
+ },
+ "02_attention_kingdom": {
+  "prompt": "STEAM CAPSULE BACKGROUND PLATE: OPHELIA'S ATTENTION KINGDOM.\n\nInspired by the first image attached: a dark throne room whose walls are covered in DOZENS of tilted, floating TV screens and monitors of different sizes, arranged in a curved wall that wraps around the frame. The screens glow with cold white-blue static, a few glow hot pink and red. Deep navy and violet shadows between them. Thin cables hang down. A glossy black floor at the bottom reflects the screens.\n\nBrightest cluster of screens on the RIGHT half. The LEFT third is darker and calmer for the logo.\n\nPLATE RULES \u2014 VERY IMPORTANT:\n* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.\n* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.\n* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.\n* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.\n* Wide 16:9 frame, readable at Steam thumbnail size.",
+  "refs": [
+   "refs/ss26.jpg"
+  ]
+ },
+ "03_planet": {
+  "prompt": "STEAM CAPSULE BACKGROUND PLATE: THE CAPYVERSE PLANET HORIZON.\n\nThe planet from the first image attached, seen VERY CLOSE: its curved horizon arcs across the BOTTOM 35% of the frame like we are flying in low orbit just above it. On its surface we can see the colorful biome islands from the reference: purple candy forest, orange desert canyon, red crystal city, golden temple, blue ocean between them. A thin glowing blue atmosphere rim and a green-purple aurora along the curve.\n\nAbove the horizon: deep space with purple and teal nebula, scattered stars, and the gray cratered moon small in the upper right. The upper-center is clear dark space for the logo.\n\nPLATE RULES \u2014 VERY IMPORTANT:\n* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.\n* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.\n* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.\n* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.\n* Wide 16:9 frame, readable at Steam thumbnail size.",
+  "refs": [
+   "refs/planet_worlds_reference.png"
+  ]
+ },
+ "04_desert": {
+  "prompt": "STEAM CAPSULE BACKGROUND PLATE: DESERT CANYON RUN.\n\nThe orange low-poly desert world from the attached screenshots: towering faceted red-orange canyon mesas on the left and right edges, wind-swept sand dunes in the middle ground, a rusty wasteland crane and scrap towers small in the distance. Late golden-hour sun low behind the canyon at the upper center, hazy warm light, long shadows, drifting sand dust.\n\nThe sand floor in the lower-right foreground is churned and cracked, as if something huge just burst out of it. Bright warm sky in the upper-left for the logo.\n\nPLATE RULES \u2014 VERY IMPORTANT:\n* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.\n* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.\n* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.\n* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.\n* Wide 16:9 frame, readable at Steam thumbnail size.",
+  "refs": [
+   "refs/ss35.jpg",
+   "refs/ss8.jpg"
+  ]
+ },
+ "05_carnival": {
+  "prompt": "STEAM CAPSULE BACKGROUND PLATE: CARNIVAL OF CHAOS AT NIGHT.\n\nThe night carnival from the attached screenshots: a giant green neon ferris wheel at the upper center, striped circus tents in purple, teal and yellow on both sides, string lights, prize booths, carved pumpkin lanterns, low-poly gray rock arches, a starry night sky with purple clouds. A wide open dirt fairground plaza in the lower half, lit by colorful booth lights.\n\nLots of colorful light, but the plaza floor stays open and uncluttered.\n\nPLATE RULES \u2014 VERY IMPORTANT:\n* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.\n* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.\n* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.\n* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.\n* Wide 16:9 frame, readable at Steam thumbnail size.",
+  "refs": [
+   "refs/ss12.jpg",
+   "refs/ss19.jpg"
+  ]
+ },
+ "06_strike": {
+  "prompt": "STEAM CAPSULE BACKGROUND PLATE: COSMIC BOWLING LANE.\n\nInspired by the first image attached: a glossy polished-wood BOWLING LANE floating in outer space, seen from a low camera at the foot of the lane, receding straight to a vanishing point slightly right of center. Warm orange-amber wood planks with bright reflections and lane arrows. Glowing gutters on both sides. Beyond the lane: deep purple space, stars, a ringed planet and a huge teal moon on the right.\n\nThe far end of the lane is EMPTY (no pins). The upper-left sky is clear for the logo.\n\nPLATE RULES \u2014 VERY IMPORTANT:\n* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.\n* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.\n* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.\n* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.\n* Wide 16:9 frame, readable at Steam thumbnail size.",
+  "refs": [
+   "refs/ss30.jpg"
+  ]
+ },
+ "07_portal": {
+  "prompt": "STEAM CAPSULE BACKGROUND PLATE: THE LOBBY PORTAL.\n\nThe game's lobby from the attached images: a round stone ritual plaza with glowing blue rune circles on the floor, ancient stone pillars, a mystical twilight forest with an aurora sky. At the CENTER: one huge glowing stone portal arch, its opening a swirling bright green-and-cyan vortex blasting light toward the camera, with sparks and glowing particles flying out of it.\n\nSymmetrical composition. Strong light from the portal. Top center is darker sky for the logo.\n\nPLATE RULES \u2014 VERY IMPORTANT:\n* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.\n* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.\n* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.\n* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.\n* Wide 16:9 frame, readable at Steam thumbnail size.",
+  "refs": [
+   "refs/Lobby.png",
+   "refs/ss2.jpg"
+  ]
+ },
+ "08_minimal": {
+  "prompt": "STEAM CAPSULE BACKGROUND PLATE: MINIMAL BOLD COLOR.\n\nA flat, clean, saturated TEAL-TURQUOISE background with a soft lighter glow behind the right-center and a gentle darker vignette at the edges. Scattered across the RIGHT half only: about 25 fluffy popcorn kernels flying outward from the right-center, at different sizes and depths, a few motion-blurred, simple game-asset popcorn (cream white with yellow butter tips).\n\nThe LEFT half is completely empty flat teal for the logo. Ultra clean, minimal, graphic.\n\nPLATE RULES \u2014 VERY IMPORTANT:\n* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.\n* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.\n* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.\n* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.\n* Wide 16:9 frame, readable at Steam thumbnail size.",
+  "refs": []
+ },
+ "10_disco": {
+  "prompt": "STEAM CAPSULE BACKGROUND PLATE: DISCO INFERNO.\n\nThe disco arena from the first image attached: a huge glowing LED DANCE FLOOR of rainbow squares (magenta, cyan, yellow, green, purple) receding in strong perspective from the bottom of the frame, glossy reflections. Above: a black starry void with colorful laser beams (green, pink, cyan) slashing diagonally across the sky, haze, and a giant mirrored disco ball high in the upper-right corner throwing light spots everywhere.\n\nCenter and upper-left stay darker for the logo.\n\nPLATE RULES \u2014 VERY IMPORTANT:\n* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.\n* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.\n* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.\n* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.\n* Wide 16:9 frame, readable at Steam thumbnail size.",
+  "refs": [
+   "refs/ss10.jpg"
+  ]
+ }
+}

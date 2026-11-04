@@ -43,7 +43,17 @@ key art, logo placement. All generation happens in **Shot Forge** (Gus's Lovable
    When the model ignores something, escalate it: plain line → `VERY IMPORTANT` heading → caps → a
    repeated bullet in the rules list → a number (e.g. "2–3% of the image width").
 
+## Steam capsule method (since Nov 4, 2026)
+
+Never send the in-engine characters through an image model again: players spot it. Cut the real Unreal
+render into layers, let AI paint only empty background plates (with real gameplay screenshots as world
+references), generate only missing assets (e.g. Axie) as solo renders matched to the base, then
+composite by hand with `work/capsules-v1/compose.py`. Details: `work/capsules-v1/README.md`.
+The current logo is `media/library/logos/Logo_3_new.jpg` (cutout: `Logo_3_new_cutout.png`); it is not in Shot Forge yet.
+
 ## Generating media
+
+- **FAL is available directly** (`FAL_KEY` in the environment): `python3 scripts/fal.py <endpoint> <out_prefix> --prompt-file p.txt --image a.png`.
 
 - **Shot Forge MCP server** can generate images/video directly
   (`https://zvuqjqilmokxcnhorrsa.supabase.co/functions/v1/mcp-server`, Bearer `shotforge_pat_...`).

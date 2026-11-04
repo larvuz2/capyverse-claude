@@ -1,0 +1,12 @@
+STEAM CAPSULE BACKGROUND PLATE: OPHELIA'S ATTENTION KINGDOM.
+
+Inspired by the first image attached: a dark throne room whose walls are covered in DOZENS of tilted, floating TV screens and monitors of different sizes, arranged in a curved wall that wraps around the frame. The screens glow with cold white-blue static, a few glow hot pink and red. Deep navy and violet shadows between them. Thin cables hang down. A glossy black floor at the bottom reflects the screens.
+
+Brightest cluster of screens on the RIGHT half. The LEFT third is darker and calmer for the logo.
+
+PLATE RULES — VERY IMPORTANT:
+* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.
+* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.
+* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.
+* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.
+* Wide 16:9 frame, readable at Steam thumbnail size.

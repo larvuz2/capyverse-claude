@@ -1,0 +1,12 @@
+STEAM CAPSULE BACKGROUND PLATE: DISCO INFERNO.
+
+The disco arena from the first image attached: a huge glowing LED DANCE FLOOR of rainbow squares (magenta, cyan, yellow, green, purple) receding in strong perspective from the bottom of the frame, glossy reflections. Above: a black starry void with colorful laser beams (green, pink, cyan) slashing diagonally across the sky, haze, and a giant mirrored disco ball high in the upper-right corner throwing light spots everywhere.
+
+Center and upper-left stay darker for the logo.
+
+PLATE RULES — VERY IMPORTANT:
+* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.
+* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.
+* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.
+* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.
+* Wide 16:9 frame, readable at Steam thumbnail size.

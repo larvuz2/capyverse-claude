@@ -1,0 +1,14 @@
+Enhance the attached Unreal Engine render while preserving the exact composition, characters, meshes, textures, poses, proportions, and the plain gray background. DO NOT move any existing characters. DO NOT change the background.
+
+ADDITIONAL CHARACTER — VERY IMPORTANT: Add the purple axolotl from the second image attached (@Axie_flying) as ONE additional flying character on the far left, in the empty gray area between the pink hippo with the disco ball and the large orange capybara, slightly behind them. Keep its EXACT design from the second image: lilac skin with soft blue spots, pink frilly gills, grumpy brows, leather harness, wooden ballista with red bolts mounted on its back, and the small jetpack thrusters on the sides of its belt.
+
+SCALE AND POSE: Axie is about the same size as the pink hippo. Body horizontal, head leading toward the right, flying in the same direction as the squad, front and back limbs swept backward. Three-quarter gameplay angle.
+
+RENDER MATCH: Axie must look like the same real-time Unreal Engine frame as the other characters: same soft gray studio light from the upper left, same simple materials, same modest texture resolution, same soft contact-free shadows. No glow, no flames, no extra effects.
+
+CRITICAL COMPOSITION RULES:
+* Exactly one new character: Axie. Do not add anything else.
+* Do not move, resize, replace, recolor, or remove any existing character.
+* Keep the gray background exactly as it is.
+* Keep the center empty.
+* Authentic Unreal Engine look, not concept art, not AI-art polish.

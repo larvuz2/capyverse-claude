@@ -1,0 +1,12 @@
+STEAM CAPSULE BACKGROUND PLATE: THE LOBBY PORTAL.
+
+The game's lobby from the attached images: a round stone ritual plaza with glowing blue rune circles on the floor, ancient stone pillars, a mystical twilight forest with an aurora sky. At the CENTER: one huge glowing stone portal arch, its opening a swirling bright green-and-cyan vortex blasting light toward the camera, with sparks and glowing particles flying out of it.
+
+Symmetrical composition. Strong light from the portal. Top center is darker sky for the logo.
+
+PLATE RULES — VERY IMPORTANT:
+* This is an EMPTY BACKGROUND PLATE. Characters will be composited on top later.
+* NO characters, NO animals, NO creatures, NO people, NO enemies, NO mascots anywhere.
+* NO UI, NO HUD, NO health bars, NO icons, NO text, NO letters, NO logos, NO watermark.
+* Match the attached gameplay screenshots' real-time Unreal Engine look: stylized low-poly shapes, simple materials, saturated colors, practical game lighting. NOT concept art, NOT a painting, NOT AI-art polish.
+* Wide 16:9 frame, readable at Steam thumbnail size.

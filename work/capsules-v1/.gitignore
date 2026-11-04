@@ -1,0 +1,8 @@
+# intermediates (re-creatable from FAL runs; see README)
+plates/
+layers/hd_src_*
+layers/hd_cut_*
+layers/*_biref*
+layers/L_popcorn_field.png
+axie/*.json
+__pycache__/

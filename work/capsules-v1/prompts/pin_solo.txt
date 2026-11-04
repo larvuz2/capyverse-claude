@@ -1,0 +1,7 @@
+RAW UNREAL ENGINE RENDER / IN-ENGINE CAPTURE of ONE single enemy on a plain flat medium-gray background.
+
+CHARACTER: ONE of the clown-faced BOWLING PIN minions from the attached image. Keep its EXACT low-poly design: blue faceted bowling-pin body with yellow diamond patches, white clown face with red nose and red smile, red-orange bow tie collar, small black bowler hat. DO NOT REDESIGN IT. DO NOT ADD DETAIL.
+
+POSE: standing upright, three-quarter front view, slightly from above, the same camera angle and lighting as the attached image. The whole pin fully visible and centered, filling about 70% of the frame height.
+
+Match the attached render exactly: same soft studio light, same simple flat-shaded low-poly materials. No other characters, no white cat fur, no shadow on the floor, no text.

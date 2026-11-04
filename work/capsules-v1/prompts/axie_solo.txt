@@ -1,0 +1,9 @@
+RAW UNREAL ENGINE RENDER / IN-ENGINE CAPTURE of ONE character on a plain flat medium-gray background.
+
+CHARACTER: the purple axolotl from the second image attached (@Axie_flying). Keep its EXACT design: lilac skin with soft blue spots, pink frilly gills, grumpy brows, leather harness, wooden ballista with red bolts mounted on its back, small jetpack thrusters on the left and right sides of its belt. DO NOT REDESIGN IT. DO NOT BEAUTIFY IT. DO NOT ADD DETAIL.
+
+POSE: flying toward the RIGHT side of the frame, body horizontal, head leading, front and back limbs swept backward, three-quarter gameplay angle seen slightly from above — the SAME flight pose and camera angle as the capybara, hippo, and bulldog in the first image attached.
+
+RENDER MATCH — VERY IMPORTANT: Use the first image attached ONLY as the render reference. Match its exact real-time Unreal Engine look: soft gray studio light from the upper left, simple materials, modest texture resolution, practical exposure, soft ambient occlusion. The axolotl must look like it was captured in that SAME frame.
+
+The whole character is fully visible, centered, filling about 60% of the frame width, with clean gray space around it. No thruster flames, no glow, no shadow on the floor, no other characters, no text.
