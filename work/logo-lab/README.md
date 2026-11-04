@@ -39,3 +39,7 @@ capsule mocks via `mock.py` (uses `work/capsules-v1/c12g.py`, `build(logo_path=.
 `logo_v4.py` + `lockup.overlap_kern()` / `draw_layered()`: instead of pushing letters apart, every neighbour pair is tuned
 to a target overlap (1.2–3.5% of the smaller glyph), and each letter is drawn as its own outlined object in z-order, so
 overlaps get a clean outline seam (Stumble Guys style). Rows overlap by 12–14 px. H3 adds jetpack thruster streaks.
+
+## Round 5
+- `logo_v5.py` E4: `selective_kern` — only CAPYVERSE Y/V overlap (1.5–3.5%); all other pairs 3–9 px apart (shapely distance).
+- `out/logo_gpt_stumble_backed.png`: GPT Stumble version with a solid navy backing (morphological close r≈45px, holes filled, smoothed).
