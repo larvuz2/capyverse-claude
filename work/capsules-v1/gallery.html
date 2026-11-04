@@ -55,6 +55,14 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5vw, 
 .tabbar a[aria-current="page"] { background: #f6c33b; color: #17130f; }
 .tabbar a:focus-visible { outline: 2px solid #66c0f4; outline-offset: 2px; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: #0e1116; }
+
+.scap .snav { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 54px; border: 0; border-radius: 4px; background: rgba(0,0,0,.6); color: #fff; font: 700 30px/1 Arial, sans-serif; cursor: pointer; opacity: 0; transition: opacity .15s, background .15s; z-index: 2; }
+.scap .snav.prev { left: 6px; } .scap .snav.next { right: 6px; }
+.scap:hover .snav, .scap:focus-within .snav { opacity: 1; }
+.scap .snav:hover { background: #f6c33b; color: #17130f; }
+.scap .snav:focus-visible { opacity: 1; outline: 2px solid #66c0f4; }
+@media (hover: none) { .scap .snav { opacity: .85; } }
+.result .scap .snav { width: 22px; height: 36px; font-size: 20px; } .mini .scap .snav { width: 26px; height: 42px; font-size: 24px; }
 /* ---------- store mock ---------- */
 .store { --s-bg: #1b2838; --s-top: #171a21; --s-text: #c6d4df; --s-dim: #8f98a0; --s-link: #66c0f4; --s-panel: rgba(0,0,0,.2);
   background: linear-gradient(to bottom, rgba(27,40,56,.45) 0, rgba(27,40,56,.82) 420px, #1b2838 820px), url(store/page_bg.jpg) center top / 1438px auto no-repeat, #1b2838; color: var(--s-text); font: 14px/1.5 Arial, Helvetica, sans-serif; min-height: 100vh; }
@@ -149,13 +157,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   <div class="s-top"><div class="in"><span class="brand">Store page preview · mockup</span><div class="nav"><span>Store</span><span>Community</span><span>About</span><span>Support</span></div></div></div>
   <div class="s-sub"><div class="in"><div class="bar"><span>Your Store</span><span>New &amp; Noteworthy</span><span>Categories</span><span>Points Shop</span><span>News</span><span>Labs</span><span class="search">search</span></div></div></div>
   <div class="s-page">
-    <div class="legend">This is a mockup for judging capsules in context. <b>Hover any capsule and click to switch to the next proposal</b>; every slot changes together. Showing <b id="propName">C · Sunburst + Mesas</b>.</div>
+    <div class="legend">This is a mockup for judging capsules in context. <b>Hover any capsule and use ‹ › to go back and forth between proposals</b> (click the image or use the arrow keys too); every slot changes together. Showing <b id="propName">C · Sunburst + Mesas</b>.</div>
     <p class="crumbs" style="margin-top:14px"><a>All Games</a> &gt; <a>Action Games</a> &gt; <a>Capyverse Odyssey</a></p>
     <div class="s-title"><h1>Capyverse Odyssey</h1><span class="comm">Community Hub</span></div>
     <div class="highlight">
       <div class="media"><div class="player"><img id="player" src="store/ss1.jpg" alt="Capyverse Odyssey screenshot" width="1200" height="675"></div><div class="strip" id="strip"></div></div>
       <div class="side">
-        <button type="button" class="scap header" data-size="header" aria-label="Header capsule, click for next proposal"><img alt="Header capsule" width="920" height="430"><span class="badge"></span><span class="shint">Header capsule 920×430 · <b>click for next proposal ▸</b></span></button>
+        <div role="group" tabindex="0" class="scap header" data-size="header" aria-label="Header capsule, click for next proposal"><img alt="Header capsule" width="920" height="430"><span class="badge"></span><span class="shint">Header capsule 920×430 · <b>‹ › to switch proposals</b></span><button type="button" class="snav prev" aria-label="Previous proposal">‹</button><button type="button" class="snav next" aria-label="Next proposal">›</button></div>
         <div class="snip">Capybaras went viral and a cat called Ophelia took it personally. As her internet fame begins to fade, she spreads her influence across increasingly bizarre worlds to reclaim the spotlight. Now wholesome hero Capy and their crew must stop her in this co-op action roguelite for 1–4 players.</div>
         <div class="smeta"><div>All reviews:</div><div>No user reviews</div><div>Release date:</div><div>Coming soon</div><div>Developer:</div><div><a>Metazooie Studios</a></div><div>Publisher:</div><div><a>Metazooie Studios</a></div></div>
         <div class="stags-l">Popular user-defined tags for this product:</div>
@@ -200,13 +208,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <h2 class="sideh">How the capsules show up elsewhere in the store</h2>
       <div class="lab">Front page · featured carousel (main capsule 1232×706, shown at 616×353)</div>
       <div class="carousel">
-        <button type="button" class="scap" data-size="main" aria-label="Main capsule, click for next proposal"><img alt="Main capsule" width="1232" height="706"><span class="badge"></span><span class="shint">Main capsule 1232×706 · <b>click for next proposal ▸</b></span></button>
+        <div role="group" tabindex="0" class="scap" data-size="main" aria-label="Main capsule, click for next proposal"><img alt="Main capsule" width="1232" height="706"><span class="badge"></span><span class="shint">Main capsule 1232×706 · <b>‹ › to switch proposals</b></span><button type="button" class="snav prev" aria-label="Previous proposal">‹</button><button type="button" class="snav next" aria-label="Next proposal">›</button></div>
         <div class="info"><h3>Capyverse Odyssey</h3><div class="shots"><img src="store/ss2_t.jpg" alt="" width="232" height="130"><img src="store/ss3_t.jpg" alt="" width="232" height="130"><img src="store/ss4_t.jpg" alt="" width="232" height="130"><img src="store/ss5_t.jpg" alt="" width="232" height="130"></div><div class="rel">Coming soon</div><div class="stags"><span class="t">Third-Person Shooter</span><span class="t">Action Roguelike</span><span class="t">Capybaras</span><span class="t">Roguelike</span></div></div>
       </div>
       <div class="lab">Search results / lists (small capsule 462×174, shown at 184×69)</div>
-      <div class="result"><button type="button" class="scap" data-size="small" aria-label="Small capsule, click for next proposal"><img alt="Small capsule" width="462" height="174"><span class="shint"><b>next ▸</b></span></button><div><div class="nm">Capyverse Odyssey</div><div class="sub">Third-Person Shooter, Action Roguelike, Co-op</div></div><div class="dt">Coming soon</div></div>
+      <div class="result"><div role="group" tabindex="0" class="scap" data-size="small" aria-label="Small capsule, click for next proposal"><img alt="Small capsule" width="462" height="174"><span class="shint"><b>‹ ›</b></span><button type="button" class="snav prev" aria-label="Previous proposal">‹</button><button type="button" class="snav next" aria-label="Next proposal">›</button></div><div><div class="nm">Capyverse Odyssey</div><div class="sub">Third-Person Shooter, Action Roguelike, Co-op</div></div><div class="dt">Coming soon</div></div>
       <div class="lab">Wishlist / recommendation rows (small capsule at 231×87)</div>
-      <div class="mini"><button type="button" class="scap" data-size="small" aria-label="Small capsule, click for next proposal"><img alt="Small capsule" width="462" height="174"><span class="shint"><b>next ▸</b></span></button></div>
+      <div class="mini"><div role="group" tabindex="0" class="scap" data-size="small" aria-label="Small capsule, click for next proposal"><img alt="Small capsule" width="462" height="174"><span class="shint"><b>‹ ›</b></span><button type="button" class="snav prev" aria-label="Previous proposal">‹</button><button type="button" class="snav next" aria-label="Next proposal">›</button></div></div>
     </div>
   </div>
 </section>
@@ -341,7 +349,11 @@ try { if (localStorage.getItem("capsize") === "small") setSmall(true); } catch (
     });
     document.getElementById("propName").textContent = p.name;
   }
-  document.querySelectorAll(".store .scap").forEach(b => b.addEventListener("click", () => { i = (i + 1) % PROPS.length; paint(); }));
+  const go = d => { i = (i + d + PROPS.length) % PROPS.length; paint(); };
+  document.querySelectorAll(".store .scap").forEach(b => {
+    b.addEventListener("click", e => { const n = e.target.closest(".snav"); go(n && n.classList.contains("prev") ? -1 : 1); });
+    b.addEventListener("keydown", e => { if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); } else if (e.key === "ArrowRight" || e.key === "Enter" || e.key === " ") { if (e.target.closest(".snav")) return; e.preventDefault(); go(1); } });
+  });
   paint();
   // screenshot strip
   const strip = document.getElementById("strip"), player = document.getElementById("player");
