@@ -89,6 +89,11 @@ const V2 = [
   ["19_print_run_riso", "Print Run", "Shader: three-ink risograph poster in pink, yellow and blue on cream paper.", ["Shader", "Riso print"]],
   ["20_bleached_sun_painted", "Bleached Sun", "Shader: Risk of Rain 2 style painted key art, pale haze and a huge red sun.", ["Shader", "Painted"]],
 ];
+const V8 = [
+  ["8_A", "Your composition · original background", "Your layout and gradient untouched. The logo is auto-fitted as big as possible in the centre without touching any character (~52% of the width). Added popcorn burst + muzzle flash, disco flares, trumpet confetti, crown sparkle, red eye glints, golf-ball glint, dust at the worm.", ["Round 8", "Take A"]],
+  ["8_B", "Your composition · desert floor", "Same gradient sky, plus a low-poly desert floor with heat haze where it meets the sky, contact shadows under the enemies and a faint one under Cappy. Onomatopoeias rebuilt as clean layers.", ["Round 8", "Take B"]],
+  ["8_C", "Your composition · sunburst + mesas", "Sunburst rays radiate from behind the logo, hazy mesas on the horizon, desert floor in front: the logo becomes the light source of the scene.", ["Round 8", "Take C"]],
+];
 const V7 = [
   ["7_C1", "Clash", "Layered canyon (sky / mesas / rock ledge). Packed enemy mass with a full-body 3D Ophelia; heroes stacked at the front line; logo ~3x bigger with shadow and rim light.", ["Round 7", "Layered bg"]],
   ["7_C2", "King of the Hill", "Layered wasteland (storm sky / scrap skyline / junk piles). The horde stands its ground under Ophelia.", ["Round 7", "Layered bg"]],
@@ -136,13 +141,13 @@ const card = ([id, name, idea, tags], i) => `
   <article class="cap" id="${id.replace(/_/g, "-")}">
     <figure><img src="caps/${id}.jpg" alt="${name} capsule" width="1232" height="706" loading="${i < 2 ? "eager" : "lazy"}"></figure>
     <div class="meta">
-      <span class="num">${(id.match(/^7_C\d|^3d_L\d|^\d+(g\d|[a-e])?/)||[''])[0].replace('3d_','').replace('7_','')}</span>
+      <span class="num">${(id.match(/^8_[ABC]|^7_C\d|^3d_L\d|^\d+(g\d|[a-e])?/)||[''])[0].replace('3d_','').replace('7_','').replace('8_','')}</span>
       <h2>${name}</h2>
       <p>${idea}</p>
       <div class="tags">${tags.map(t => `<span class="tag${t === "Picked" ? " pick" : ""}">${t}</span>`).join("")}</div>
     </div>
   </article>`;
-document.getElementById("list").innerHTML = `<h2 class="round">Round 7 · crafted 3D compositions</h2>` + V7.map(card).join("") + `<h2 class="round">Round 6 · 3D scene with real game assets</h2>` + V6.map(card).join("") + `<h2 class="round">Round 4 · #12 on plain gradients</h2>` + V4.map(card).join("") + `<h2 class="round">Round 3 · #12 variations</h2>` + V3.map((x, i) => card(x, i + 8)).join("") + `<h2 class="round">Round 2</h2>` + V2.map((x, i) => card(x, i + 5)).join("");
+document.getElementById("list").innerHTML = `<h2 class="round">Round 8 · your composition, 3 takes</h2>` + V8.map(card).join("") + `<h2 class="round">Round 7 · crafted 3D compositions</h2>` + V7.map(card).join("") + `<h2 class="round">Round 6 · 3D scene with real game assets</h2>` + V6.map(card).join("") + `<h2 class="round">Round 4 · #12 on plain gradients</h2>` + V4.map(card).join("") + `<h2 class="round">Round 3 · #12 variations</h2>` + V3.map((x, i) => card(x, i + 8)).join("") + `<h2 class="round">Round 2</h2>` + V2.map((x, i) => card(x, i + 5)).join("");
 document.getElementById("list1").innerHTML = `<h2 class="round">Round 1</h2>` + V1.map((x, i) => card(x, i + 10)).join("");
 const app = document.getElementById("app");
 const full = document.getElementById("size-full"), small = document.getElementById("size-small");
