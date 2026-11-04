@@ -86,3 +86,9 @@ since the golfer is in follow-through); small comic onomatopoeias (`sfx()`, Bang
 | 12c | Horde | second worm + back row of pins, CHOMP! |
 | 12d | Ink | `shaders.ink_cel`, bigger lettering |
 | 12e | Clean | bigger logo + Ophelia, two tiny sound effects, for thumbnail readability |
+
+## Round 4 — #12 on plain gradients (`c12g.py`)
+
+Same layout as 12a; the sunburst is replaced by a generated gradient (`grad()`, with a tiny grain to avoid banding).
+g1 vertical yellow→orange (the original brief), g2 diagonal, g3 radial glow, g4 yellow→orange→red, g5 near-flat orange,
+plus off-brand tests g6 sky blue, g7 teal, g8 magenta→purple. `build()` in `c12v.py` now takes `plate=` and `rim=`.

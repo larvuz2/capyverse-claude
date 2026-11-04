@@ -15,11 +15,11 @@ def hue_shift(im, deg, sat=1.0):
     return Image.fromarray((cv2.cvtColor(hsv, cv2.COLOR_HSV2RGB) * 255).astype(np.uint8)).convert("RGBA")
 
 
-def build(name, plate_hue=0, horde=False, ink=False, sfx_set="classic", logo_w=900, oph_s=1.55, cap_s=1.28, grade=None):
-    plate = load("plates_used/01_sunburst_gpt_0.jpg")
+def build(name, plate_hue=0, horde=False, ink=False, sfx_set="classic", logo_w=900, oph_s=1.55, cap_s=1.28, grade=None, plate=None, rim=None):
+    plate = plate if plate is not None else load("plates_used/01_sunburst_gpt_0.jpg")
     if plate_hue: plate = hue_shift(plate, plate_hue, 1.05)
     c = Comp(plate, focus=(0.5, 0.3))
-    rim_col = (255, 238, 190) if not plate_hue else (255, 200, 240)
+    rim_col = rim or ((255, 238, 190) if not plate_hue else (255, 200, 240))
     RR = dict(color=rim_col, dir=(-1, -1), width=7, strength=0.7)
     # Ophelia towers behind, anchored on the right edge
     ox, oy = W - 613 * oph_s + 40, -150 - (oph_s - 1.55) * 600

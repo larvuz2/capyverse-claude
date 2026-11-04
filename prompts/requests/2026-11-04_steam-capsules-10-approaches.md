@@ -27,3 +27,8 @@ Delivered: `work/capsules-v1/out/11_…` to `20_…`, see README "Round 2". Plat
 Ask: Cappy must not overlap the worm (room on the left), more detail on the golf ball, bigger jetpack thrusters,
 onomatopoeias. Delivered: `work/capsules-v1/out/12a…12e`. Script: `work/capsules-v1/c12v.py`.
 **Verdict round 3:** _pending_
+
+## Round 4 — #12 on plain gradients
+Ask: same #12, plain background with the vibrant yellow→orange gradient, several plain/gradient options, same artifact, shareable publicly.
+Delivered: `work/capsules-v1/out/12g1…12g8`. Script: `work/capsules-v1/c12g.py`.
+**Verdict round 4:** _pending_
