@@ -20,3 +20,10 @@ Ask: same direction as 01/04/09, Cappy bigger than other heroes, subtle popcorn 
 disco ball, subtle backward thrusters from the side-belt jetpacks, 3–4 shader/artistic versions, roguelite references.
 Delivered: `work/capsules-v1/out/11_…` to `20_…`, see README "Round 2". Plate prompts: `work/capsules-v1/v2/prompts/`.
 **Verdict round 2:** _pending_
+
+**Verdict round 2:** Gus picked 12.
+
+## Round 3 — 5 variations of 12
+Ask: Cappy must not overlap the worm (room on the left), more detail on the golf ball, bigger jetpack thrusters,
+onomatopoeias. Delivered: `work/capsules-v1/out/12a…12e`. Script: `work/capsules-v1/c12v.py`.
+**Verdict round 3:** _pending_

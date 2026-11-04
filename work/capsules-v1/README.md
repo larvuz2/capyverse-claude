@@ -72,3 +72,17 @@ jetpack cylinders, pointing backward** (anchors fixed in `THRUSTERS` after zoomi
 References studied: Steam capsules of Crab Champions, Risk of Rain 2, Risk of Rain Returns, Hades, Roboquest,
 Gunfire Reborn, Ravenswatch, Brotato, Dave the Diver, Vampire Survivors, Balatro. Common thread: one dominant
 hero, a big logo, a strong single-hue background, the cast as a crowd behind.
+
+## Round 3 — five variations of #12 (`c12v.py a|b|c|d|e`)
+
+Gus picked 12. Fixes in all five: Cappy moved left so he no longer overlaps the worm; side-belt thrusters ~1.6× wider and
+longer; a detailed golf shot (`golf_shot()`: shaded dimpled ball, curved speed trail, impact puff and turf chips at the tee,
+since the golfer is in follow-through); small comic onomatopoeias (`sfx()`, Bangers font) placed next to the action.
+
+| Var | Name | Change |
+|---|---|---|
+| 12a | Classic | the fixed #12 |
+| 12b | Dusk | sunburst hue-shifted to hot pink/red |
+| 12c | Horde | second worm + back row of pins, CHOMP! |
+| 12d | Ink | `shaders.ink_cel`, bigger lettering |
+| 12e | Clean | bigger logo + Ophelia, two tiny sound effects, for thumbnail readability |

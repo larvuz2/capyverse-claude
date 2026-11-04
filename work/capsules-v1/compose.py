@@ -71,7 +71,7 @@ class Comp:
 
     # ---------- placement ----------
     def place(self, name, x, y, scale=1.0, flip=False, match=0.15, wrap=0.35, rim=None,
-              shadow=None, trail=None, flames=False, flame_len=1.0, opacity=1.0, bright=1.0, sat=1.0, src=None):
+              shadow=None, trail=None, flames=False, flame_len=1.0, flame_w=1.0, opacity=1.0, bright=1.0, sat=1.0, src=None):
         L, k = (src, 1.0) if src is not None else layer(name)
         if flip: L = L.transpose(Image.FLIP_LEFT_RIGHT)
         L = L.resize((max(1, round(L.width * scale / k)), max(1, round(L.height * scale / k))), Image.LANCZOS)
@@ -121,7 +121,7 @@ class Comp:
         if flames and name in THRUSTERS:
             for (fx, fy, ang) in THRUSTERS[name]:
                 if flip: fx, ang = L.width / scale - fx, 180 - ang
-                self.flame(x + fx * scale, y + fy * scale, ang, 190 * scale * flame_len, 50 * scale)
+                self.flame(x + fx * scale, y + fy * scale, ang, 190 * scale * flame_len, 50 * scale * flame_w)
 
     def _trail(self, L, x, y, length=300, color=(255, 255, 255), opacity=0.35, angle=180):
         a = L.getchannel("A")
@@ -349,7 +349,8 @@ LW = {"cappy": 1029, "moody": 432, "jim": 293, "axie": 2233}
 
 def cappy(c, x, y, s, flip=False, popcorn=True, **kw):
     kw.setdefault("rim", dict(color=(255, 238, 190), dir=(-1 if flip else 1, -1), width=8, strength=0.85))
-    c.place("cappy", x, y, scale=s, flip=flip, flames=True, flame_len=1.1, **kw)
+    kw.setdefault("flame_len", 1.1)
+    c.place("cappy", x, y, scale=s, flip=flip, flames=True, **kw)
     if popcorn:
         gx, gy = anchor("cappy", "cappy_gatling", x, y, s, flip=flip, lw=LW["cappy"])
         popcorn_burst(c, gx, gy, s * 0.85, angle=162 if flip else 18)
@@ -369,3 +370,78 @@ def jim(c, x, y, s, flip=False, confetti_n=35, **kw):
 
 def axie(c, x, y, s, flip=False, **kw):
     c.place("axie", x, y, scale=s, flip=flip, flames=True, **kw)
+
+
+# ---------- comic lettering + golf shot ----------
+FONTS = {"bangers": f"{ROOT}/fonts/Bangers.ttf", "luckiest": f"{ROOT}/fonts/LuckiestGuy.ttf"}
+
+
+def sfx(c, text, x, y, size, rot=-8, fill=(255, 230, 60), stroke=(30, 15, 35), font="bangers", stroke_w=None, shadow=True):
+    """Small comic onomatopoeia centred at (x, y)."""
+    f = ImageFont.truetype(FONTS[font], int(size))
+    sw = stroke_w or max(3, int(size * 0.09))
+    pad = int(size * 0.8)
+    tw = int(f.getlength(text)) + 2 * pad
+    t = Image.new("RGBA", (tw, int(size * 1.6) + pad), (0, 0, 0, 0)); d = ImageDraw.Draw(t)
+    if shadow:
+        d.text((tw / 2 + size * 0.05, t.height / 2 + size * 0.06), text, font=f, anchor="mm", fill=stroke + (255,),
+               stroke_width=sw, stroke_fill=stroke + (255,))
+    d.text((tw / 2, t.height / 2), text, font=f, anchor="mm", fill=fill + (255,), stroke_width=sw, stroke_fill=stroke + (255,))
+    t = t.rotate(rot, Image.BICUBIC, expand=True)
+    c.canvas.alpha_composite(t, (int(x - t.width / 2), int(y - t.height / 2)))
+
+
+def golf_ball_sprite(r):
+    """A shaded golf ball with dimples, 4x supersampled."""
+    S = int(r * 2 * 4 + 8); R = r * 4
+    yy, xx = np.mgrid[0:S, 0:S].astype(np.float32)
+    cx = cy = S / 2
+    dx, dy = (xx - cx) / R, (yy - cy) / R
+    rr = dx ** 2 + dy ** 2
+    inside = rr <= 1
+    dz = np.sqrt(np.clip(1 - rr, 0, 1))
+    L = np.array([-0.45, -0.55, 0.7]); L = L / np.linalg.norm(L)
+    lam = np.clip(dx * L[0] + dy * L[1] + dz * L[2], 0, 1)
+    # dimples: hex-ish grid on the sphere's projected surface
+    u, v = dx / (dz + 0.35), dy / (dz + 0.35)
+    g = 7.0
+    du = (u * g) - np.round(u * g); dv = (v * g + 0.5 * (np.round(u * g) % 2)) - np.round(v * g + 0.5 * (np.round(u * g) % 2))
+    dimple = np.clip(1 - np.sqrt(du ** 2 + dv ** 2) / 0.42, 0, 1) * dz
+    shade = 0.55 + 0.45 * lam - 0.18 * dimple
+    spec = np.clip(lam, 0, 1) ** 40 * 0.9
+    col = np.clip(shade + spec, 0, 1)
+    rgb = np.dstack([col * 252, col * 250, col * 244])
+    edge = np.clip((1 - np.sqrt(rr)) * R / 1.5, 0, 1)
+    a = (inside * edge * 255)
+    im = Image.fromarray(np.dstack([rgb, a]).astype(np.uint8), "RGBA")
+    return im.resize((S // 4, S // 4), Image.LANCZOS)
+
+
+def golf_shot(c, x0, y0, x1, y1, r=26, bend=-160, trail=(255, 255, 255)):
+    """Ball struck at (x0, y0) flying to (x1, y1) on a curved arc with a speed trail and an impact puff."""
+    # impact puff at the tee
+    for i, (rr, a) in enumerate(((70, 0.55), (45, 0.8))):
+        c.glow(x0, y0, rr * 2, (255, 250, 230), a)
+    sparkle(c, x0, y0, 120, (255, 255, 240), 0.9, rot=20)
+    rnd = np.random.default_rng(3)
+    ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
+    for k in range(10):  # little turf/dust chips kicked up
+        a = math.radians(rnd.uniform(100, 170)); dd = rnd.uniform(25, 80)
+        px, py = x0 + math.cos(a) * dd, y0 - math.sin(a) * dd * 0.6
+        s_ = rnd.uniform(4, 9); d.ellipse([px - s_, py - s_, px + s_, py + s_], fill=(225, 205, 160, 220))
+    c.canvas.alpha_composite(ov.filter(ImageFilter.GaussianBlur(1)))
+    # quadratic arc
+    mx, my = (x0 + x1) / 2, (y0 + y1) / 2 + bend
+    pts = [((1 - t) ** 2 * x0 + 2 * (1 - t) * t * mx + t ** 2 * x1, (1 - t) ** 2 * y0 + 2 * (1 - t) * t * my + t ** 2 * y1)
+           for t in np.linspace(0, 1, 60)]
+    ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
+    for i in range(len(pts) - 1):
+        t = i / (len(pts) - 1)
+        w = max(1, int(r * 1.5 * t ** 1.4)); a = int(220 * t ** 1.2)
+        d.line([pts[i], pts[i + 1]], fill=trail + (a,), width=w)
+    c.screen(ov.filter(ImageFilter.GaussianBlur(3)))
+    c.canvas.alpha_composite(ov.filter(ImageFilter.GaussianBlur(1.2)).point(lambda v: v) if False else ov.filter(ImageFilter.GaussianBlur(2)))
+    c.glow(x1, y1, r * 4, (255, 255, 235), 0.6)
+    b = golf_ball_sprite(r)
+    c._shadow(b, x1 - b.width / 2, y1 - b.height / 2, dx=4, dy=6, blur=5, opacity=0.4)
+    c.canvas.alpha_composite(b, (int(x1 - b.width / 2), int(y1 - b.height / 2)))
