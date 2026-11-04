@@ -45,6 +45,16 @@ def tex_mat(name, img_path, emissive=0.0, rough=0.75):
     return m
 
 
+def freeze(objs, frame):
+    """Evaluate this actor's own animation at `frame`, then drop the action so later frame_set calls can't change it."""
+    bpy.context.scene.frame_set(int(frame))
+    for o in objs:
+        if o.type == "ARMATURE" and o.animation_data and o.animation_data.action:
+            mats = {pb.name: pb.matrix_basis.copy() for pb in o.pose.bones}
+            o.animation_data.action = None
+            for pb in o.pose.bones: pb.matrix_basis = mats[pb.name]
+
+
 def _group(objs, name, loc, rot_z, scale):
     root = bpy.data.objects.new(name, None); bpy.context.scene.collection.objects.link(root)
     for o in objs:
@@ -77,7 +87,7 @@ def add_pin(loc, rot_z=0, scale=1.0, frame=1, name="pin"):
     for o in objs:
         if o.type == "MESH":
             for i, s in enumerate(o.material_slots): s.material = glow if "Emmisive" in (s.material.name if s.material else "") else atlas
-    bpy.context.scene.frame_set(frame)
+    freeze(objs, frame)
     return _group(objs, name, loc, rot_z, scale)
 
 
@@ -90,7 +100,7 @@ def add_worm(loc, rot_z=0, scale=1.0, frame=60, anim="idle", name="worm"):
         if o.type == "MESH":
             o.data.materials.clear(); o.data.materials.append(m)
             for p in o.data.polygons: p.use_smooth = False
-    bpy.context.scene.frame_set(frame)
+    freeze(objs, frame)
     return _group(objs, name, loc, rot_z, scale)
 
 
@@ -101,7 +111,7 @@ def add_golfer(loc, rot_z=0, scale=1.0, frame=70, head=dict(), name="golfer", cl
         if o.type == "MESH": o.data.materials.clear(); o.data.materials.append(tex_mat("golfer", TEX["golfer_body"]))
     _attach_head(arm, R + "Golfer/ST_CatHead.FBX", TEX["golfer_head"], **head)
     if club: add_golf_club(arm)
-    bpy.context.scene.frame_set(frame)
+    freeze(objs, frame)
     return _group(objs + [], name, loc, rot_z, scale), arm
 
 
@@ -202,3 +212,27 @@ WARBOY_POSES = {
     "cheer": {"UpperArm_L": (0, 0, 70), "UpperArm_R": (0, 0, 70)},
     "fists": {"UpperArm_L": (0, 0, -55), "UpperArm_R": (0, 0, -55), "lowerarm_l": (0, 0, -60), "lowerarm_r": (0, 0, -60)},
 }
+
+
+def add_glb(path, loc, rot_z=0, scale=1.0, tilt=0, name="glb"):
+    before = set(bpy.data.objects)
+    bpy.ops.import_scene.gltf(filepath=path)
+    objs = [o for o in bpy.data.objects if o not in before]
+    root = _group(objs, name, loc, rot_z, scale)
+    root.rotation_euler = (math.radians(tilt), 0, math.radians(rot_z))
+    return root
+
+
+def add_ophelia(loc, rot_z=0, scale=1.0, name="ophelia"):
+    """Ophelia full body: Trellis image-to-3D from her character sheet (3/4 view). Grounded on z=loc.z."""
+    r = add_glb(os.path.dirname(os.path.abspath(__file__)) + "/oph3d/ophelia_trellis.glb", loc, rot_z, scale, tilt=0, name=name)
+    bpy.context.view_layer.update(); mn, mx = bounds(r); r.location.z += loc[2] - mn.z
+    return r
+
+
+WARBOY_POSES.update({
+    "punch": {"UpperArm_R": (0, -75, -10), "lowerarm_r": (0, 0, 0), "UpperArm_L": (0, 0, -50), "lowerarm_l": (0, 0, -70), "spine_02": (0, 0, -12)},
+    "point": {"UpperArm_R": (0, -80, 20), "UpperArm_L": (0, 0, -70), "spine_01": (0, 0, 8)},
+    "both_point": {"UpperArm_R": (0, -80, 20), "UpperArm_L": (0, 80, -20), "spine_01": (0, 0, -6)},
+    "fist_up": {"UpperArm_R": (0, 0, 72), "lowerarm_r": (0, 0, 10), "UpperArm_L": (0, 0, -55), "lowerarm_l": (0, 0, -60)},
+})
