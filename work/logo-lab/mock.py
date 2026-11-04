@@ -18,6 +18,9 @@ cfg = {
   "h": dict(logo_path=f"{L}/logo_h_trim.png", logo_w=960, logo_xy=(580, 250)),
   "i": dict(logo_path=f"{L}/logo_i_trim.png", logo_w=920, logo_xy=(570, 250)),
   "gpt": dict(logo_path=f"{L}/logo_gpt_stumble_trim.png", logo_w=900, logo_xy=(560, 260)),
+  "d3": dict(logo_path=f"{L}/logo_d3_trim.png", logo_w=880, logo_xy=(560, 240)),
+  "e3": dict(logo_path=f"{L}/logo_e3_trim.png", logo_w=900, logo_xy=(570, 250)),
+  "h3": dict(logo_path=f"{L}/logo_h3_trim.png", logo_w=960, logo_xy=(580, 250)),
   "old": dict(),
 }[which]
 build(f"logo_mock_{which}", plate=OPTIONS["g1_vertical"][0], grade=dict(contrast=1.04, sat=1.05, vignette=0.32), **cfg)

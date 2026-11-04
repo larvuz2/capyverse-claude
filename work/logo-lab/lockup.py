@@ -138,3 +138,61 @@ def draw(rows, fills, ink, stroke, depth, sticker=None, sticker_w=2.6, shine=Tru
     return (f'<defs>{"".join(defs)}</defs>{stk}'
             f'<g fill="{ink}" stroke="{ink}" stroke-width="{stroke}" stroke-linejoin="round">{ext}{allp}</g>'
             f'{"".join(fill_layers)}{extra_over}')
+
+
+# ---------- round 4: designed overlaps (Stumble Guys style) ----------
+def pair_overlaps(row):
+    """[(i, ratio)] overlap area of neighbours i/i+1 relative to the smaller glyph's area."""
+    ps = row.polys(); out = []
+    for i in range(len(ps) - 1):
+        a, b = ps[i][1], ps[i + 1][1]
+        out.append((i, a.intersection(b).area / min(a.area, b.area)))
+    return out
+
+
+def overlap_kern(make, lo=0.012, hi=0.035, step=2.0, limit=80):
+    """Tune per-pair kerning so every neighbour pair overlaps by a designed amount (lo..hi of the smaller glyph)."""
+    kern = {}
+    for _ in range(limit):
+        r = make(kern); changed = False
+        for i, ratio in pair_overlaps(r):
+            if ratio > hi: kern[i + 1] = kern.get(i + 1, 0) + step; changed = True
+            elif ratio < lo: kern[i + 1] = kern.get(i + 1, 0) - step; changed = True
+        if not changed: return r, kern
+    return r, kern
+
+
+def draw_layered(rows, fills, ink, stroke, depth, sticker=None, sticker_w=2.6, shine=True, depth_dx=0.35,
+                 under="", over="", order="ltr"):
+    """Shared sticker + 3D block + gap-closing silhouette, then every letter drawn as its own outlined object
+    in z-order, so overlaps get a clean outline seam (the front letter's outline cuts over the back letter)."""
+    allp = "".join(r.svg_paths() for r in rows)
+    U = unary_union([p for r in rows for _, p in r.polys()])
+    sil = U.buffer(stroke * 1.9, join_style=1).buffer(-stroke * 1.45, join_style=1)
+    geoms = getattr(sil, "geoms", [sil])
+    sil_d = "".join("M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in g.exterior.coords) + "Z" for g in geoms)
+    silp = f'<path d="{sil_d}"/>'
+    defs = []
+    for k, (r, stops) in enumerate(zip(rows, fills)):
+        top = -r.size * 0.74
+        g = "".join(f'<stop offset="{o}" stop-color="{c}"/>' for o, c in stops)
+        defs.append(f'<linearGradient id="L{k}" gradientUnits="userSpaceOnUse" x1="0" y1="{top}" x2="0" y2="0">{g}</linearGradient>')
+        defs.append(f'<linearGradient id="H{k}" gradientUnits="userSpaceOnUse" x1="0" y1="{top}" x2="0" y2="0">'
+                    f'<stop offset="0" stop-color="#fff" stop-opacity="0.6"/><stop offset="0.36" stop-color="#fff" stop-opacity="0"/></linearGradient>')
+    ext = "".join(f'<g transform="translate({k * depth_dx:.1f},{k})">{silp}{allp}</g>' for k in range(2, depth + 1, 2))
+    stk = ""
+    if sticker:
+        stk = (f'<g fill="{sticker}" stroke="{sticker}" stroke-width="{stroke * sticker_w}" stroke-linejoin="round">'
+               f'{silp}{allp}<g transform="translate({depth * depth_dx:.1f},{depth})">{silp}{allp}</g></g>')
+    letters = []
+    for k, r in enumerate(rows):
+        items = list(r.items)
+        if order == "rtl": items = items[::-1]
+        for _, d, M, _ in items:
+            t = svgm(M)
+            letters.append(f'<path d="{d}" transform="{t}" fill="{ink}" stroke="{ink}" stroke-width="{stroke}" stroke-linejoin="round"/>'
+                           f'<path d="{d}" transform="{t}" fill="url(#L{k})"/>'
+                           + (f'<path d="{d}" transform="{t}" fill="url(#H{k})"/>' if shine else ""))
+    return (f'<defs>{"".join(defs)}</defs>{stk}{under}'
+            f'<g fill="{ink}" stroke="{ink}" stroke-width="{stroke}" stroke-linejoin="round">{ext}{silp}</g>'
+            + "".join(letters) + over)

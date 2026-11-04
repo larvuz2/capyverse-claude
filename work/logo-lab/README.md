@@ -33,3 +33,9 @@ capsule mocks via `mock.py` (uses `work/capsules-v1/c12g.py`, `build(logo_path=.
   take `gpt25_2` upscaled 3x (SeedVR) and cleaned by `clean_gpt.py` (even navy outline, black blobs removed, transparent)
   -> `out/logo_gpt_stumble.png`.
 - `page/steam_logos_with_winner.jpg`: the 21 research logos + H at the end.
+
+## Round 4 — designed overlaps (D3, E3, H3)
+
+`logo_v4.py` + `lockup.overlap_kern()` / `draw_layered()`: instead of pushing letters apart, every neighbour pair is tuned
+to a target overlap (1.2–3.5% of the smaller glyph), and each letter is drawn as its own outlined object in z-order, so
+overlaps get a clean outline seam (Stumble Guys style). Rows overlap by 12–14 px. H3 adds jetpack thruster streaks.
