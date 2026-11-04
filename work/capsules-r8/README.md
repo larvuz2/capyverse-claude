@@ -6,3 +6,8 @@ dilated character mask, nearest to upper-centre. FX: popcorn burst, disco flares
 eye glints, golf-ball glint, worm dust.
 - A: original background untouched.  B: same gradient + low-poly desert floor (`floorkey0.png`), haze, contact shadows.
 - C: sunburst from behind the logo + hazy mesas + desert floor.
+
+## Store sizes (`r8_sizes.py [ABC] [header main small]`)
+Each take rebuilt natively at 920x430 (header), 1232x706 (main) and 462x174 (small): heroes anchored left, enemies
+right, logo auto-fitted per size, rendered at 2x. Vertical 748x896 needs its own layout (not shipped).
+The capsule gallery artifact now opens on a "Store preview" tab (mock store page, click any capsule to cycle C → A → B).

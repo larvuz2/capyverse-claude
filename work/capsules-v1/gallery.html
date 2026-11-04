@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Capyverse Capsules</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,9 +47,171 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5vw, 
 .method ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; color: var(--muted); }
 .method b { color: var(--fg); }
 @media (prefers-reduced-motion: no-preference) { .cap img { transition: width .25s ease; } }
+
+/* ---------- tab bar ---------- */
+.tabbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; display: flex; gap: 4px; align-items: center; padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); background: #0e1116; border-bottom: 1px solid #2a3442; }
+.tabbar .lbl { font: 700 12px/1 Arial, Helvetica, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: #8f98a0; margin-right: 10px; }
+.tabbar a { font: 600 14px/1 Arial, Helvetica, sans-serif; color: #c6d4df; text-decoration: none; padding: 9px 14px; border-radius: 6px; }
+.tabbar a[aria-current="page"] { background: #f6c33b; color: #17130f; }
+.tabbar a:focus-visible { outline: 2px solid #66c0f4; outline-offset: 2px; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: #0e1116; }
+/* ---------- store mock ---------- */
+.store { --s-bg: #1b2838; --s-top: #171a21; --s-text: #c6d4df; --s-dim: #8f98a0; --s-link: #66c0f4; --s-panel: rgba(0,0,0,.2);
+  background: linear-gradient(to bottom, rgba(27,40,56,.45) 0, rgba(27,40,56,.82) 420px, #1b2838 820px), url(store/page_bg.jpg) center top / 1438px auto no-repeat, #1b2838; color: var(--s-text); font: 14px/1.5 Arial, Helvetica, sans-serif; min-height: 100vh; }
+.store a { color: var(--s-link); text-decoration: none; }
+.s-top { background: var(--s-top); }
+.s-top .in, .s-sub .in, .s-page { max-width: 940px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.s-top .in { display: flex; gap: 26px; align-items: center; height: 104px; font-size: 15px; letter-spacing: .03em; text-transform: uppercase; color: #dcdedf; flex-wrap: wrap; }
+.s-top .brand { font: 700 13px/1.2 Arial, sans-serif; color: #8f98a0; text-transform: none; letter-spacing: 0; border: 1px dashed #3d4450; padding: 6px 10px; border-radius: 4px; }
+.s-top .nav span:first-child { color: #1a9fff; border-bottom: 3px solid #1a9fff; padding-bottom: 4px; }
+.s-top .nav { display: flex; gap: 22px; }
+.s-sub { padding-top: 10px; }
+.s-sub .bar { display: flex; gap: 2px; align-items: center; height: 35px; background: linear-gradient(90deg, rgba(62,126,167,.8) 11%, rgba(57,114,157,0) 100%); box-shadow: 0 0 3px rgba(0,0,0,.4); font-size: 13px; color: #e5e5e5; overflow-x: auto; }
+.s-sub .bar span { padding: 0 14px; white-space: nowrap; }
+.s-sub .search { margin-left: auto; background: #316282; border-radius: 3px; padding: 4px 10px; color: #0e1c25; min-width: 160px; }
+.s-page { padding-block: 22px 60px; }
+.crumbs { font-size: 12px; color: var(--s-dim); }
+.crumbs a { color: var(--s-dim); }
+.s-title { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; margin: 6px 0 12px; }
+.s-title h1 { font: 400 26px/1.2 Arial, Helvetica, sans-serif; color: #fff; margin: 0; text-shadow: none; }
+.s-title .comm { font-size: 13px; background: rgba(103,193,245,.2); color: #67c1f5; padding: 6px 12px; border-radius: 2px; }
+.highlight { display: grid; grid-template-columns: 600px 324px; gap: 16px; background: linear-gradient(to right, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 100%); padding: 0 0 6px; }
+.media { min-width: 0; }
+.media .player { aspect-ratio: 16/9; background: #000; overflow: hidden; }
+.media .player img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.strip { display: flex; gap: 4px; margin-top: 4px; overflow-x: auto; padding-bottom: 6px; }
+.strip button { flex: 0 0 116px; padding: 0; border: 2px solid transparent; background: none; cursor: pointer; opacity: .75; }
+.strip button[aria-pressed="true"] { border-color: #fff; opacity: 1; }
+.strip img { display: block; width: 100%; aspect-ratio: 116/65; object-fit: cover; }
+.side { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: 10px; }
+.side .snip { font-size: 13px; line-height: 18px; color: #c6d4df; }
+.smeta { display: grid; grid-template-columns: 110px 1fr; gap: 6px 8px; font-size: 11px; text-transform: uppercase; color: #556772; }
+.smeta div:nth-child(even) { color: #8f98a0; text-transform: none; font-size: 12px; }
+.smeta a { text-transform: none; font-size: 12px; }
+.stags { display: flex; flex-wrap: wrap; gap: 2px 4px; }
+.stags .t { background: rgba(103,193,245,.2); color: #67c1f5; font-size: 11px; padding: 0 7px; line-height: 19px; border-radius: 2px; }
+.tags-l { font-size: 12px; color: #556772; }
+/* capsule slots: hover hint, click to cycle */
+.scap { position: relative; display: block; padding: 0; margin: 0; border: 0; background: #000; cursor: pointer; line-height: 0; }
+.scap img { display: block; width: 100%; height: auto; }
+.scap .shint { position: absolute; inset: auto 0 0 0; padding: 8px 10px; background: linear-gradient(transparent, rgba(0,0,0,.85)); color: #fff; font: 600 12px/1.3 Arial, sans-serif; text-align: left; opacity: 0; transition: opacity .15s; }
+.scap .shint b { color: #f6c33b; }
+.scap:hover .shint, .scap:focus-visible .shint { opacity: 1; }
+.scap:focus-visible { outline: 2px solid #66c0f4; outline-offset: 2px; }
+.scap .badge { position: absolute; top: 6px; left: 6px; background: #f6c33b; color: #17130f; font: 700 11px/1 Arial, sans-serif; padding: 4px 6px; border-radius: 3px; opacity: 0; transition: opacity .15s; }
+.scap:hover .badge, .scap:focus-visible .badge { opacity: 1; }
+.scap.header { width: 324px; aspect-ratio: 920/430; }
+.wish { margin: 20px 0; background: rgba(0,0,0,.2); padding: 12px 16px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.wish .btn { background: linear-gradient(to bottom, rgba(103,193,245,1) 5%, rgba(65,123,163,1) 95%); color: #fff; padding: 0 15px; line-height: 30px; border-radius: 2px; font-size: 14px; }
+.wish .btn.ghost { background: rgba(103,193,245,.2); color: #67c1f5; }
+.cols { display: grid; grid-template-columns: 616px 308px; gap: 16px; }
+.cols > * { min-width: 0; }
+.buy { background: linear-gradient(-60deg, rgba(226,244,255,.3) 5%, rgba(84,107,115,.3) 95%); padding: 16px 16px 26px; position: relative; margin-bottom: 26px; }
+.buy h2 { font: 400 21px/1.2 Arial, sans-serif; color: #fff; margin: 0 0 6px; }
+.buy .soon { font-size: 13px; color: #8f98a0; }
+.buy .act { position: absolute; right: 16px; bottom: -16px; display: flex; background: #000; padding: 2px; border-radius: 2px; }
+.buy .act span { background: linear-gradient(to right, #75b022 5%, #588a1b 95%); color: #d2efa9; padding: 0 15px; line-height: 32px; font-size: 15px; border-radius: 2px; }
+.about h2, .sideh { font: 400 14px/1 Arial, sans-serif; text-transform: uppercase; letter-spacing: .03em; color: #fff; border-bottom: 1px solid; border-image: linear-gradient(to right, #3b6e8c 0%, #3b6e8c 260px, rgba(0,0,0,0) 100%) 1; padding-bottom: 6px; margin: 0 0 12px; }
+.about { font-size: 14px; line-height: 1.6; color: #acb2b8; }
+.about h3 { color: #fff; font-size: 15px; margin: 22px 0 6px; letter-spacing: .02em; }
+.about p { margin: 0 0 12px; max-width: none; }
+.about ul { padding-left: 18px; margin: 0 0 12px; }
+.about li { margin-bottom: 6px; }
+.feat { background: rgba(0,0,0,.2); padding: 12px; font-size: 13px; color: #67c1f5; display: grid; gap: 6px; margin-bottom: 20px; }
+.disc { margin-top: 40px; display: grid; gap: 14px; }
+.disc .lab { font-size: 12px; color: var(--s-dim); text-transform: uppercase; letter-spacing: .05em; }
+.carousel { display: grid; grid-template-columns: 616px 1fr; background: rgba(0,0,0,.25); box-shadow: 0 0 8px rgba(0,0,0,.6); }
+.carousel .scap { aspect-ratio: 1232/706; }
+.carousel .info { padding: 14px 16px; display: grid; align-content: start; gap: 10px; background: linear-gradient(to right, rgba(0,0,0,.4), rgba(0,0,0,.1)); min-width: 0; }
+.carousel .info h3 { color: #fff; font-size: 22px; margin: 0; font-weight: 400; }
+.carousel .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.carousel .shots img { width: 100%; height: auto; display: block; }
+.carousel .info .rel { color: #fff; font-size: 13px; }
+.result { display: grid; grid-template-columns: 184px 1fr auto; gap: 12px; align-items: center; background: rgba(0,0,0,.2); padding: 6px; }
+.result .scap { width: 184px; aspect-ratio: 462/174; }
+.result .nm { color: #c7d5e0; font-size: 15px; }
+.result .sub { font-size: 11px; color: #4c6b22; }
+.result .dt { font-size: 11px; color: #8f98a0; }
+.mini { display: flex; gap: 10px; flex-wrap: wrap; }
+.mini .scap { width: 231px; aspect-ratio: 462/174; }
+.legend { font-size: 12px; color: #8f98a0; background: rgba(0,0,0,.35); padding: 10px 12px; border-left: 3px solid #f6c33b; }
+.legend b { color: #fff; }
+@media (max-width: 960px) {
+  .highlight, .cols, .carousel { grid-template-columns: 1fr; }
+  .scap.header { width: 100%; max-width: 460px; }
+  .s-top .in { height: auto; padding-block: 14px; }
+}
 </style>
 
-<div class="wrap" id="app">
+<nav class="tabbar" aria-label="Views"><span class="lbl">Capyverse capsules</span><a href="#store" data-v="store">Store preview</a><a href="#rounds" data-v="rounds">Capsule rounds</a></nav>
+
+<section class="store" id="view-store">
+  <div class="s-top"><div class="in"><span class="brand">Store page preview · mockup</span><div class="nav"><span>Store</span><span>Community</span><span>About</span><span>Support</span></div></div></div>
+  <div class="s-sub"><div class="in"><div class="bar"><span>Your Store</span><span>New &amp; Noteworthy</span><span>Categories</span><span>Points Shop</span><span>News</span><span>Labs</span><span class="search">search</span></div></div></div>
+  <div class="s-page">
+    <div class="legend">This is a mockup for judging capsules in context. <b>Hover any capsule and click to switch to the next proposal</b>; every slot changes together. Showing <b id="propName">C · Sunburst + Mesas</b>.</div>
+    <p class="crumbs" style="margin-top:14px"><a>All Games</a> &gt; <a>Action Games</a> &gt; <a>Capyverse Odyssey</a></p>
+    <div class="s-title"><h1>Capyverse Odyssey</h1><span class="comm">Community Hub</span></div>
+    <div class="highlight">
+      <div class="media"><div class="player"><img id="player" src="store/ss1.jpg" alt="Capyverse Odyssey screenshot" width="1200" height="675"></div><div class="strip" id="strip"></div></div>
+      <div class="side">
+        <button type="button" class="scap header" data-size="header" aria-label="Header capsule, click for next proposal"><img alt="Header capsule" width="920" height="430"><span class="badge"></span><span class="shint">Header capsule 920×430 · <b>click for next proposal ▸</b></span></button>
+        <div class="snip">Capybaras went viral and a cat called Ophelia took it personally. As her internet fame begins to fade, she spreads her influence across increasingly bizarre worlds to reclaim the spotlight. Now wholesome hero Capy and their crew must stop her in this co-op action roguelite for 1–4 players.</div>
+        <div class="smeta"><div>All reviews:</div><div>No user reviews</div><div>Release date:</div><div>Coming soon</div><div>Developer:</div><div><a>Metazooie Studios</a></div><div>Publisher:</div><div><a>Metazooie Studios</a></div></div>
+        <div class="stags-l">Popular user-defined tags for this product:</div>
+        <div class="stags"><span class="t">Third-Person Shooter</span><span class="t">Action Roguelike</span><span class="t">Capybaras</span><span class="t">Roguelike</span><span class="t">Co-op</span><span class="t">Looter Shooter</span><span class="t">Roguelite</span><span class="t">Online Co-Op</span><span class="t">Funny</span><span class="t">Fast-Paced</span><span class="t">Shooter</span><span class="t">Stylized</span></div>
+      </div>
+    </div>
+    <div class="wish"><span class="btn">Add to your wishlist</span><span class="btn ghost">Follow</span><span class="btn ghost">Ignore</span></div>
+    <div class="cols">
+      <div>
+        <div class="buy"><h2>Capyverse Odyssey</h2><div class="soon">Coming soon. Planned release date: To be announced</div><div class="act"><span>Add to your wishlist</span></div></div>
+        <div class="about"><h2>About This Game</h2><p>Cats ruled the internet for decades.<br>Then capybaras won the hearts of millions and Ophelia took it personally.<br>Capyverse Odyssey is a co-op action roguelite for 1-4 players that sees a crew of wholesome heroes battle through increasingly absurd worlds and ending up with out of control loadouts across a series of short, unpredictable runs.</p>
+<h3>ENTER THE CAPYVERSE</h3>
+<p>For a long time, cats were the internet’s favorite animals. For Ophelia, a cat who rules a kingdom powered by attention and adoration, this arrangement was working pretty well.<br>Then capybaras went viral.<br>Now Ophelia is losing her grip on the spotlight, and she’s willing to twist worlds into increasingly bizarre versions of themselves just to stay relevant.<br>The only ones who can stop her are Capy and a crew of wholesome animal heroes fighting through surreal worlds, bizarre enemies, and chaos that somehow keeps escalating.<br>Good thing everyone has jetpacks.</p>
+<h3>EVERYBODY GETS A JETPACK</h3>
+<p>You want a jetpack? You’ve got it. Standing still isn’t really something that happens a lot in Capyverse Odyssey. Instead, you and your crew will be taking to the skies and fighting off haunted slot machines, killer clowns, and more from whichever angle works best. Stop moving for too long and an aggressive suitcase might make you regret it.</p>
+<h3>ADORABLE BUT SOMEHOW DEADLY</h3>
+<p>With support for up to four players, you’ll each take control of one of four wholesome heroes. Each of them is adorable, but somehow they’re all also pretty deadly, even if they don’t look it.<br>• Capy - Comes from an ancient, peace-loving civilization of advanced capybaras. He’s pretty chill but he’s got a job to do.</p>
+<ul><li>Moody - Built like a tank and fights like one too. A hippo that has definitely seen some wild things but will not talk about them.</li></ul>
+<ul><li>Jim - Fast, aggressive and only possibly house-trained. Often more chaos than dog.</li></ul>
+<ul><li>Axie - Who doesn’t love an Axolotl that is prepared to support their whole team? Probably doesn’t get enough credit.</li></ul>
+<p>No matter what squad you end up with, you’ll be fighting through surreal worlds and stacking up character builds that start out ‘a little weird’ and end up as ‘truly ridiculous and a little alarming’.</p>
+<h3>THINGS WILL GET OUT OF HAND AND THAT’S OK</h3>
+<p>Each run is a series of maps with different objectives - things like zone defence, elimination arenas, mini-boss fights and more - and the chaos builds with every new world you encounter.<br>Every map cleared adds a new layer - power-ups stack, wearables boost your stats and by the time you reach the end of a run, your build that started simple has become complete chaos.</p>
+<h3>AND IT ONLY GETS WEIRDER</h3>
+<p>With each new world you visit, you’ll see something new and surreal. From an oversized casino with hostile playing cards and ATMs that can really do some damage, to a nightmare carnival with a giant clown that launches bumper cars, things start strange and only get bizarre - and we haven’t even mentioned the weaponized golf cart yet.</p>
+<h3>FEATURES</h3>
+<ul><li>Jetpack capybara action. Always airborne, always moving, and always about three seconds from something exploding.</li></ul>
+<ul><li>Play solo or with friends. Full 1-4 player online co-op. Coordinate your character’s abilities or embrace the chaos, it’s your choice.</li></ul>
+<ul><li>Four wholesome heroes. Pick your favorites but don’t let Ophelia hear you.</li></ul>
+<ul><li>Build-stacking progression. Earn power-ups and wearables after every map. Stack upgrades across the run until it feels like it might be broken, then stack a little more.</li></ul>
+<ul><li>Objective-based maps. Something new every time, from zone defence to mini-boss fights.</li></ul>
+<ul><li>Short, replayable runs. Drop in, stack your build, create some chaos. Easy to pick up, hard to put down after just one run.</li></ul>
+<ul><li>Borderline unhinged enemies and worlds. Corrupted casinos, deadly wastelands, killer clowns, exploding suitcases and much more.</li></ul>
+<ul><li>A battle for the spotlight. A cat that can’t handle not being the center of attention and making it everyone else’s problem.</li></ul></div>
+      </div>
+      <div>
+        <div class="feat"><span>Single-player</span><span>Online Co-op</span><span>Steam Achievements</span><span>Full controller support</span></div>
+        <div class="sideh">Languages</div><p style="font-size:12px;color:#8f98a0">English</p>
+      </div>
+    </div>
+    <div class="disc">
+      <h2 class="sideh">How the capsules show up elsewhere in the store</h2>
+      <div class="lab">Front page · featured carousel (main capsule 1232×706, shown at 616×353)</div>
+      <div class="carousel">
+        <button type="button" class="scap" data-size="main" aria-label="Main capsule, click for next proposal"><img alt="Main capsule" width="1232" height="706"><span class="badge"></span><span class="shint">Main capsule 1232×706 · <b>click for next proposal ▸</b></span></button>
+        <div class="info"><h3>Capyverse Odyssey</h3><div class="shots"><img src="store/ss2_t.jpg" alt="" width="232" height="130"><img src="store/ss3_t.jpg" alt="" width="232" height="130"><img src="store/ss4_t.jpg" alt="" width="232" height="130"><img src="store/ss5_t.jpg" alt="" width="232" height="130"></div><div class="rel">Coming soon</div><div class="stags"><span class="t">Third-Person Shooter</span><span class="t">Action Roguelike</span><span class="t">Capybaras</span><span class="t">Roguelike</span></div></div>
+      </div>
+      <div class="lab">Search results / lists (small capsule 462×174, shown at 184×69)</div>
+      <div class="result"><button type="button" class="scap" data-size="small" aria-label="Small capsule, click for next proposal"><img alt="Small capsule" width="462" height="174"><span class="shint"><b>next ▸</b></span></button><div><div class="nm">Capyverse Odyssey</div><div class="sub">Third-Person Shooter, Action Roguelike, Co-op</div></div><div class="dt">Coming soon</div></div>
+      <div class="lab">Wishlist / recommendation rows (small capsule at 231×87)</div>
+      <div class="mini"><button type="button" class="scap" data-size="small" aria-label="Small capsule, click for next proposal"><img alt="Small capsule" width="462" height="174"><span class="shint"><b>next ▸</b></span></button></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" id="app" hidden>
   <header>
     <h1>Capyverse Capsules</h1>
     <p class="lede">Round 6: five capsules built as a real 3D scene in Blender with the game's enemy meshes, rigs, animations and textures, the real hero renders composited in front. Round 4: #12 on plain gradients, five in the brand yellow-to-orange and three off-brand color tests. Round 3: five variations of #12 Showdown Stack, with Cappy moved clear of the worm, bigger side-belt thrusters, a detailed golf shot and small comic sound effects. Round 2: ten capsules in the direction of the round 1 picks (01, 04, 09), Cappy always the hero, plus four art-style shaders. Steam main capsule size (1232×706). In every one, <b>the characters are the real Unreal render, not AI</b>. Only the backgrounds, Axie and the clown pin came from image models, then everything was composited by hand.</p>
@@ -159,4 +322,43 @@ function setSmall(on) {
 full.addEventListener("click", () => setSmall(false));
 small.addEventListener("click", () => setSmall(true));
 try { if (localStorage.getItem("capsize") === "small") setSmall(true); } catch (e) {}
+</script>
+
+<script>
+(() => {
+  const PROPS = [
+    { id: "C", name: "C · Sunburst + Mesas" },
+    { id: "A", name: "A · Original background" },
+    { id: "B", name: "B · Desert floor" },
+  ];
+  const SIZES = { header: "920x430", main: "1232x706", small: "462x174" };
+  let i = 0;
+  function paint() {
+    const p = PROPS[i];
+    document.querySelectorAll(".store .scap").forEach(b => {
+      const s = b.dataset.size; b.querySelector("img").src = `store/caps/${p.id}_${s}_${SIZES[s]}.jpg`;
+      const badge = b.querySelector(".badge"); if (badge) badge.textContent = `Proposal ${i + 1}/${PROPS.length}: ${p.name}`;
+    });
+    document.getElementById("propName").textContent = p.name;
+  }
+  document.querySelectorAll(".store .scap").forEach(b => b.addEventListener("click", () => { i = (i + 1) % PROPS.length; paint(); }));
+  paint();
+  // screenshot strip
+  const strip = document.getElementById("strip"), player = document.getElementById("player");
+  for (let k = 1; k <= 8; k++) {
+    const b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-pressed", k === 1); b.setAttribute("aria-label", `Screenshot ${k}`);
+    b.innerHTML = `<img src="store/ss${k}_t.jpg" alt="" width="232" height="130">`;
+    b.addEventListener("click", () => { player.src = `store/ss${k}.jpg`; strip.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); });
+    strip.appendChild(b);
+  }
+  // tabs: #store (default) and #rounds
+  function route() {
+    const r = location.hash === "#rounds" ? "rounds" : "store";
+    document.getElementById("view-store").hidden = r !== "store";
+    document.getElementById("app").hidden = r !== "rounds";
+    document.querySelectorAll(".tabbar a").forEach(a => a.setAttribute("aria-current", a.dataset.v === r ? "page" : "false"));
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", route); route();
+})();
 </script>
