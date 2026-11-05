@@ -1,0 +1,2 @@
+# Logo round 13 — One Plank, 100% code
+`python3 build.py` -> logo.svg / logo.png (no image model). Procedural wood via SVG feTurbulence (stretched along the grain, displacement-warped, banded into rings, lit with feDiffuse/feSpecularLighting), continuous across all letters. Letters: Luckiest Guy outlines via logo-lab/lockup.py, auto-spaced. Nails, knot (O), mandarin drawn as SVG. mock.py places it on capsule C (main/header/small).
