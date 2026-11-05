@@ -1,0 +1,23 @@
+{
+ "images": [
+  {
+   "url": "https://v3b.fal.media/files/b/0ab13467/BwOWgZNG5CqU0zFwnLz6t_GPndHR4F.png",
+   "content_type": "image/png",
+   "file_name": "BwOWgZNG5CqU0zFwnLz6t_GPndHR4F.png",
+   "file_size": null,
+   "width": 2752,
+   "height": 1536
+  },
+  {
+   "url": "https://v3b.fal.media/files/b/0ab13467/EVSpHpZsnub95duaI9RAc_KN6qLB4o.png",
+   "content_type": "image/png",
+   "file_name": "EVSpHpZsnub95duaI9RAc_KN6qLB4o.png",
+   "file_size": null,
+   "width": 2752,
+   "height": 1536
+  }
+ ],
+ "description": "",
+ "conversations": [],
+ "grounding_metadata": []
+}
