@@ -51,6 +51,11 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5vw, 
 
 [hidden] { display: none !important; }
 /* ---------- logos tab ---------- */
+.lg-proc { background: #1d1813; border: 1px solid #332a22; border-radius: 12px; padding: 12px 18px; }
+.lg-proc summary { cursor: pointer; font-weight: 800; color: #f6c33b; }
+.lg-proc p { color: #cdbfa9; max-width: 80ch; }
+.lg-proc figure { margin: 12px 0; } .lg-proc img { width: 100%; height: auto; border-radius: 6px; display: block; }
+.lg-proc figcaption { font-size: 12px; color: #8f8172; margin-top: 4px; }
 .logos { background: #14110e; color: #efe6d8; font: 15px/1.55 "Nunito Sans", "Segoe UI", system-ui, sans-serif; min-height: 100vh; }
 .lg-wrap { max-width: 1180px; margin: 0 auto; padding-block: 36px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 28px; }
 .lg-head h1 { font-family: "Lilita One", "Trebuchet MS", sans-serif; font-weight: 400; font-size: clamp(34px, 5vw, 52px); color: #f6c33b; margin: 0 0 8px; line-height: 1; }
@@ -247,7 +252,34 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 <section class="logos" id="view-logos" hidden>
   <div class="lg-wrap">
     <header class="lg-head"><h1>Logos</h1><p>Round 5 on top: five flat 2D indie-PC title treatments with vivid colour, no 3D, no layers, no stars, emblems, orbits or mountains. Earlier rounds below. All generated with image models, cut out and vectorized, and shown on capsule C.</p></header>
-    <h2 class="lg-h2">Round 8 · brown wood + metal (newest)</h2>
+    <h2 class="lg-h2">Round 9 · brown wood, three concepts with a story (newest)</h2>
+  <details class="lg-proc"><summary>Process: 18 takes → 3 picks → refinement → size test</summary>
+    <p>1. Three concepts with a story behind them (not just a material). 2. Six takes each, on two image models (18 total). 3. Picked one per concept for readability and character. 4. A refinement edit on each (warmer wood, bigger ODYSSEY, crisper bite marks / rings); kept only where it beat the original. 5. Cut out, vectorized, placed on capsule C, tested at Steam's 462 and 231 px sizes on orange and on the store's dark blue.</p>
+    <figure><img src="logos/r9_takes_raft.jpg" alt="Six raft takes" loading="lazy"><figcaption>Raft · six takes</figcaption></figure>
+    <figure><img src="logos/r9_takes_gnawed.jpg" alt="Six gnawed takes" loading="lazy"><figcaption>Gnawed · six takes</figcaption></figure>
+    <figure><img src="logos/r9_takes_rings.jpg" alt="Six tree-ring takes" loading="lazy"><figcaption>Tree rings · six takes</figcaption></figure>
+    <figure><img src="logos/r9_refine.jpg" alt="Refinement pass" loading="lazy"><figcaption>Refinement: original pick (left) vs three refined edits; kept raft GPT edit, gnawed and rings nano edits.</figcaption></figure>
+    <figure><img src="logos/r9_sizes.jpg" alt="Small size test" loading="lazy"><figcaption>Small capsule test: 462×174 and 231×87, on brand orange and the store's dark blue.</figcaption></figure>
+  </details>
+  <article class="lg-card">
+    <div class="lg-stage light"><img src="logos/r9_1_raft.png" alt="Raft Lashing logo" loading="lazy"></div>
+    <div class="lg-meta"><span class="lg-n">01</span><div><h3>Raft Lashing</h3><p>Every letter built from driftwood sticks and bent twigs, lashed at the joints with hemp rope; ODYSSEY made of twigs tied under a long driftwood pole. A capybara-by-the-river build: the logo looks like something the heroes made themselves.</p>
+      <p class="lg-s"><a href="logos/r9_1_raft.svg" target="_blank" rel="noopener">Vector SVG</a> · <a href="logos/r9_1_raft.png" target="_blank" rel="noopener">Transparent PNG</a></p></div></div>
+    <figure><img src="logos/r9mock_1_raft.jpg" alt="Raft Lashing on capsule C" width="1232" height="706" loading="lazy"><figcaption>On capsule C (1232×706).</figcaption></figure>
+  </article>
+  <article class="lg-card">
+    <div class="lg-stage light"><img src="logos/r9_2_gnawed.png" alt="Gnawed logo" loading="lazy"></div>
+    <div class="lg-meta"><span class="lg-n">02</span><div><h3>Gnawed</h3><p>Chunky honey-oak letters with rounded rodent bite marks taken out of several of them, and little shavings and chips falling underneath; ODYSSEY in walnut, untouched. The joke: Cappy has been chewing on his own logo.</p>
+      <p class="lg-s"><a href="logos/r9_2_gnawed.svg" target="_blank" rel="noopener">Vector SVG</a> · <a href="logos/r9_2_gnawed.png" target="_blank" rel="noopener">Transparent PNG</a></p></div></div>
+    <figure><img src="logos/r9mock_2_gnawed.jpg" alt="Gnawed on capsule C" width="1232" height="706" loading="lazy"><figcaption>On capsule C (1232×706).</figcaption></figure>
+  </article>
+  <article class="lg-card">
+    <div class="lg-stage light"><img src="logos/r9_3_rings.png" alt="Tree Rings logo" loading="lazy"></div>
+    <div class="lg-meta"><span class="lg-n">03</span><div><h3>Tree Rings</h3><p>Each letter cut from a log slice: growth rings on the face, each centred differently, natural radial cracks and a dark bark rim; ODYSSEY in pale end-grain. Tactile and very readable small.</p>
+      <p class="lg-s"><a href="logos/r9_3_rings.svg" target="_blank" rel="noopener">Vector SVG</a> · <a href="logos/r9_3_rings.png" target="_blank" rel="noopener">Transparent PNG</a></p></div></div>
+    <figure><img src="logos/r9mock_3_rings.jpg" alt="Tree Rings on capsule C" width="1232" height="706" loading="lazy"><figcaption>On capsule C (1232×706).</figcaption></figure>
+  </article>
+    <h2 class="lg-h2">Round 8 · brown wood + metal</h2>
   <article class="lg-card">
     <div class="lg-stage light"><img src="logos/r8_1_crate.png" alt="Crate Planks logo" loading="lazy"></div>
     <div class="lg-meta"><span class="lg-n">01</span><div><h3>Crate Planks</h3><p>Chunky letters built from brown crate planks with grain and nail holes, bound by dark-iron straps and rivets; ODYSSEY punched into a bent iron strip.</p>
