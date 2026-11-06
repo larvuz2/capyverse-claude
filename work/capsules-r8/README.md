@@ -24,3 +24,11 @@ odd, and the hippo/axolotl reflections looked AI. Everything inside his red circ
   bands), color-matched to the plate, rim-lit in the scene's light color, jet trails, belt flames, soft ground shadow.
 - Logo: `work/logo-tin/tin_hanging.png`, auto-fitted clear of every character.
 - Run: `python3 r9.py [1_golden_path ...]` → `r9/`.
+
+## Round 10 (r10.py): same backgrounds, only the back heroes rearranged
+
+Same five backgrounds, red-circle content and logo position as round 9 (the logo is fitted against the round-9
+hero boxes so it does not move). Five arrangements of Jim, Moody and Axie: Squadron (tight V + shared back-glow),
+Portal Exit (out of a glowing portal, far-to-near), Low Skim (Jim on the ground with shadow, dust, thruster light),
+Depth Stack (big soft Moody close, hazy Axie far), Contrails (glowing trails from the left edge).
+Run: `python3 r10.py [1_squadron ...]` → `r10/`.
