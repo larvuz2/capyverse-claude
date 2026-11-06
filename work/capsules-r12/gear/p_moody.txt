@@ -1,0 +1,8 @@
+Add equipment to the pygmy hippo in the first image. Keep the hippo EXACTLY as it is: same 3D render, same pose, same skin, same face, same eyes, same lighting, same position and size in the frame, same ground shadow, same plain gray background.
+
+EQUIPMENT — VERY IMPORTANT: Copy the exact gear the hippo wears in the second image attached (@Moody): the disco-ball cannon on its back (yellow telescope-like barrel with a mirrored disco ball), the green saddle pad, the navy and gold harness straps and the side-belt jetpack cylinders. Same colors, same materials, same proportions relative to the body. Fit the gear to the new pose and camera angle so the straps wrap around the body naturally. The cannon barrel points forward, toward the left of the image, the direction the hippo faces.
+
+CRITICAL RULES:
+* Only ADD the gear. Do not redraw, restyle, smooth, add gloss or move the hippo.
+* Same real-time Unreal Engine render look and the same lighting (warm orange light from the right, cool purple light from the left).
+* No flames, no effects, no background, no text.

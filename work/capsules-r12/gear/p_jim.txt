@@ -1,0 +1,8 @@
+Add equipment to the bulldog in the first image. Keep the bulldog EXACTLY as it is: same 3D render, same running pose, same fur, same face, same eyes, same lighting, same position and size in the frame, same ground shadow, same plain gray background.
+
+EQUIPMENT — VERY IMPORTANT: Copy the exact gear the bulldog wears in the second image attached (@Jim): the golden trumpet mounted on its back, the red, navy and gold harness/saddle with straps around the chest and belly, and the side-belt jetpack cylinders. Same colors, same materials, same proportions relative to the body. Fit the gear to the new pose and camera angle so the straps wrap around the body naturally. The trumpet bell points backward, toward the right of the image.
+
+CRITICAL RULES:
+* Only ADD the gear. Do not redraw, restyle, smooth or move the bulldog.
+* Same real-time Unreal Engine render look and the same lighting (warm orange light from the right, cool purple light from the left).
+* No flames, no effects, no background, no text.

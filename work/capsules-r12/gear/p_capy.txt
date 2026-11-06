@@ -1,0 +1,8 @@
+Add equipment to the capybara in the first image. Keep the capybara EXACTLY as it is: same 3D render, same pose, same fur, same face, same eyes, same lighting, same position and size in the frame, same plain gray background.
+
+EQUIPMENT — VERY IMPORTANT: Copy the exact gear the capybara wears in the second image attached (@Cappy): the red-white striped popcorn gatling gun with the red-and-white popcorn box mounted on its back, the navy blue saddle blanket with gold trim and red/yellow stars, the harness straps, and the red-white-yellow striped side-belt jetpack cylinders on its sides. Same colors, same materials, same proportions relative to the body. Fit the gear to the new pose and camera angle so the straps wrap around the body naturally. The gatling barrel points forward, toward the left of the image, the same direction the capybara faces.
+
+CRITICAL RULES:
+* Only ADD the gear. Do not redraw, restyle, smooth or move the capybara.
+* Same real-time Unreal Engine render look and the same lighting (warm orange light from the right, cool purple light from the left).
+* No flames, no effects, no background, no text.
