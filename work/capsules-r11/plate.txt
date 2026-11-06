@@ -1,0 +1,15 @@
+Create an EMPTY background plate for a Steam store capsule of the video game Capyverse Odyssey, matching the world of the game shown in the second and third images attached (real Unreal Engine lobby screenshots: stylized low-poly rocks, soft painterly grass, glowing purple and teal plants, purple starry night sky).
+
+COMPOSITION — VERY IMPORTANT: Follow the layout and mood of the first image attached, but with NO characters, NO logo, NO text and NO creatures of any kind.
+* Upper two thirds: deep purple-blue night sky full of small stars and a faint milky way, darker on the left.
+* Upper right corner: a huge warm orange-red glow, like a sunset or a fire on the horizon, bleeding up into the sky (a villain is going to loom there).
+* Lower third: a lush grassy meadow seen from low, gently rising toward the right, lit warm from the right, with a few stylized low-poly rocks on the left and right edges, small glowing mushrooms and tiny fireflies in the grass.
+* The ground line sits at about 70% of the image height.
+* Leave the center and the left half calm and uncluttered: characters and a big logo will be composited there later.
+
+STYLE: Authentic real-time Unreal Engine look of the game (same as the screenshots): soft stylized materials, clean shapes, not concept art, not AI-art polish, no heavy painterly texture.
+
+CRITICAL RULES:
+* NO characters, animals, people, statues, creatures or faces.
+* NO logo, NO text, NO UI.
+* 16:9 landscape.
