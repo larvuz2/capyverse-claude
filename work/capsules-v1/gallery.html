@@ -493,7 +493,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 <div class="wrap" id="app" hidden>
   <header>
     <h1>Capyverse Capsules</h1>
-    <p class="lede">Round 6: five capsules built as a real 3D scene in Blender with the game's enemy meshes, rigs, animations and textures, the real hero renders composited in front. Round 4: #12 on plain gradients, five in the brand yellow-to-orange and three off-brand color tests. Round 3: five variations of #12 Showdown Stack, with Cappy moved clear of the worm, bigger side-belt thrusters, a detailed golf shot and small comic sound effects. Round 2: ten capsules in the direction of the round 1 picks (01, 04, 09), Cappy always the hero, plus four art-style shaders. Steam main capsule size (1232×706). In every one, <b>the characters are the real Unreal render, not AI</b>. Only the backgrounds, Axie and the clown pin came from image models, then everything was composited by hand.</p>
+    <p class="lede">Round 9 (newest): the round-12 Tin-hanging capsule with everything inside the director's red circle kept pixel-identical (Cappy, enemies, Ophelia, logo, their FX). Only the back heroes and the environment changed: real lobby screenshots for depth, and the original Unreal renders of Moody, Jim and Axie with a matte pass, color match, rim light and ground shadows. Round 6: five capsules built as a real 3D scene in Blender with the game's enemy meshes, rigs, animations and textures, the real hero renders composited in front. Round 4: #12 on plain gradients, five in the brand yellow-to-orange and three off-brand color tests. Round 3: five variations of #12 Showdown Stack, with Cappy moved clear of the worm, bigger side-belt thrusters, a detailed golf shot and small comic sound effects. Round 2: ten capsules in the direction of the round 1 picks (01, 04, 09), Cappy always the hero, plus four art-style shaders. Steam main capsule size (1232×706). In every one, <b>the characters are the real Unreal render, not AI</b>. Only the backgrounds, Axie and the clown pin came from image models, then everything was composited by hand.</p>
     <div class="bar">
       <div class="toggle" role="group" aria-label="Preview size">
         <button type="button" id="size-full" aria-pressed="true">Full size</button>
@@ -530,6 +530,13 @@ const V2 = [
   ["18_night_run_pixel", "Night Run", "Shader: pixel art in the Risk of Rain Returns vein, a night raid on the canyon.", ["Shader", "Pixel art"]],
   ["19_print_run_riso", "Print Run", "Shader: three-ink risograph poster in pink, yellow and blue on cream paper.", ["Shader", "Riso print"]],
   ["20_bleached_sun_painted", "Bleached Sun", "Shader: Risk of Rain 2 style painted key art, pale haze and a huge red sun.", ["Shader", "Painted"]],
+];
+const V9 = [
+  ["9_1_golden_path", "Golden Path", "Real game lobby (Capyverse_Lobby 3) with depth of field, graded warm so it matches the sunlit characters. Back heroes swapped for the original Unreal renders (Moody and Axie with a matte pass to kill the glossy AI-looking reflection), color-matched, rim-lit from the scene light, with jet trails and a soft ground shadow so they read as flying, not floating.", ["Round 9", "Lobby bg"]],
+  ["9_2_portal_night", "Portal Night", "Lobby 2: the ruined arches with the purple portal glow. Moody leads big at the front, Jim smaller behind for depth, purple rim light from the portal.", ["Round 9", "Lobby bg"]],
+  ["9_3_glow_tree", "Glow Tree", "Capsule screenshot 9: the glowing mint tree behind the squad. Heroes a bit smaller and pushed back, teal rim light and a warm horizon haze for depth.", ["Round 9", "Lobby bg"]],
+  ["9_4_cave_glow", "Cave Glow", "Capsule screenshot 6: the rock arch and campfire light. Jim leads at the top, Moody below; no WHOOSH, fewer sound effects.", ["Round 9", "Lobby bg"]],
+  ["9_5_river_moon", "River Moon", "Lobby 4: night river and starry sky with lilac haze. Jim leads big, Moody higher and smaller behind him.", ["Round 9", "Lobby bg"]],
 ];
 const V8 = [
   ["8_A", "Your composition · original background", "Your layout and gradient untouched. The logo is auto-fitted as big as possible in the centre without touching any character (~52% of the width). Added popcorn burst + muzzle flash, disco flares, trumpet confetti, crown sparkle, red eye glints, golf-ball glint, dust at the worm.", ["Round 8", "Take A"]],
@@ -583,13 +590,13 @@ const card = ([id, name, idea, tags], i) => `
   <article class="cap" id="${id.replace(/_/g, "-")}">
     <figure><img src="caps/${id}.jpg" alt="${name} capsule" width="1232" height="706" loading="${i < 2 ? "eager" : "lazy"}"></figure>
     <div class="meta">
-      <span class="num">${(id.match(/^8_[ABC]|^7_C\d|^3d_L\d|^\d+(g\d|[a-e])?/)||[''])[0].replace('3d_','').replace('7_','').replace('8_','')}</span>
+      <span class="num">${(id.match(/^9_\d|^8_[ABC]|^7_C\d|^3d_L\d|^\d+(g\d|[a-e])?/)||[''])[0].replace('3d_','').replace('7_','').replace('8_','').replace('9_','')}</span>
       <h2>${name}</h2>
       <p>${idea}</p>
       <div class="tags">${tags.map(t => `<span class="tag${t === "Picked" ? " pick" : ""}">${t}</span>`).join("")}</div>
     </div>
   </article>`;
-document.getElementById("list").innerHTML = `<h2 class="round">Round 8 · your composition, 3 takes</h2>` + V8.map(card).join("") + `<h2 class="round">Round 7 · crafted 3D compositions</h2>` + V7.map(card).join("") + `<h2 class="round">Round 6 · 3D scene with real game assets</h2>` + V6.map(card).join("") + `<h2 class="round">Round 4 · #12 on plain gradients</h2>` + V4.map(card).join("") + `<h2 class="round">Round 3 · #12 variations</h2>` + V3.map((x, i) => card(x, i + 8)).join("") + `<h2 class="round">Round 2</h2>` + V2.map((x, i) => card(x, i + 5)).join("");
+document.getElementById("list").innerHTML = `<h2 class="round">Round 9 · round-12 capsule, new environments + fixed back heroes (newest)</h2>` + V9.map(card).join("") + `<h2 class="round">Round 8 · your composition, 3 takes</h2>` + V8.map(card).join("") + `<h2 class="round">Round 7 · crafted 3D compositions</h2>` + V7.map(card).join("") + `<h2 class="round">Round 6 · 3D scene with real game assets</h2>` + V6.map(card).join("") + `<h2 class="round">Round 4 · #12 on plain gradients</h2>` + V4.map(card).join("") + `<h2 class="round">Round 3 · #12 variations</h2>` + V3.map((x, i) => card(x, i + 8)).join("") + `<h2 class="round">Round 2</h2>` + V2.map((x, i) => card(x, i + 5)).join("");
 document.getElementById("list1").innerHTML = `<h2 class="round">Round 1</h2>` + V1.map((x, i) => card(x, i + 10)).join("");
 const app = document.getElementById("app");
 const full = document.getElementById("size-full"), small = document.getElementById("size-small");

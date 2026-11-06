@@ -11,3 +11,16 @@ eye glints, golf-ball glint, worm dust.
 Each take rebuilt natively at 920x430 (header), 1232x706 (main) and 462x174 (small): heroes anchored left, enemies
 right, logo auto-fitted per size, rendered at 2x. Vertical 748x896 needs its own layout (not shipped).
 The capsule gallery artifact now opens on a "Store preview" tab (mock store page, click any capsule to cycle C → A → B).
+
+## Round 9 (r9.py): round-12 capsule, new environments, fixed back heroes
+
+Director's notes: the back heroes (Axie, Moody, Jim) looked like they were floating, their materials looked
+odd, and the hippo/axolotl reflections looked AI. Everything inside his red circle stays identical.
+
+- `KEEP` = cut_0 minus the back-hero components, pasted untouched on top (Cappy, enemies, Ophelia, flames).
+- Backgrounds: real lobby screenshots from the env2 Drive folder (`assets_src/env2/Lobby/`, not committed, 63 MB),
+  cover-cropped, defocused, warm-graded to match the sunlit characters, with optional horizon haze.
+- Back heroes: original Unreal renders, Moody/Axie through `degloss.py` (kills bright low-chroma specular
+  bands), color-matched to the plate, rim-lit in the scene's light color, jet trails, belt flames, soft ground shadow.
+- Logo: `work/logo-tin/tin_hanging.png`, auto-fitted clear of every character.
+- Run: `python3 r9.py [1_golden_path ...]` → `r9/`.

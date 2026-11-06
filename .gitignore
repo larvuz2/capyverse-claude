@@ -1,3 +1,4 @@
 media/downloads/
 .DS_Store
 __pycache__/
+assets_src/
