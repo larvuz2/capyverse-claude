@@ -11,3 +11,8 @@ animations (CapyWalk, MoodyWalk, JimSprint, each with the in-game mesh) and Base
    `gear_merge.py` keeps ONLY the pixels the model added (difference mask touching the body); the body stays the 3D
    render. → `renders/<name>_gear.png`
 3. `r12.py`: composite on the round-11 plates, logo ~60% of the width, Axie stays 2D. → `out/`
+
+## Round 13 (r13.py): big 2D Cappy in the corner
+
+Same logo + plate as round 12. Cappy = the round-11 Unreal render (H_cappy, flipped), big in the lower-right corner.
+Jim = 3D render. Moody (3D) and Axie (2D) small and hazed into the background. Three arrangements → `out13/`.
