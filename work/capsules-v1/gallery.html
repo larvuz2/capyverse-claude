@@ -252,7 +252,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 <section class="logos" id="view-logos" hidden>
   <div class="lg-wrap">
     <header class="lg-head"><h1>Logos</h1><p>Round 5 on top: five flat 2D indie-PC title treatments with vivid colour, no 3D, no layers, no stars, emblems, orbits or mountains. Earlier rounds below. All generated with image models, cut out and vectorized, and shown on capsule C.</p></header>
-    <h2 class="lg-h2">Round 13 · One Plank, built entirely in code (newest)</h2>
+    <h2 class="lg-h2">Round 14 · Charred, built entirely in code (newest)</h2>
+  <article class="lg-card">
+    <div class="lg-stage" style="background:linear-gradient(#ffd426,#ff7814)"><img src="logos/r14_charred.png" alt="Charred logo, built in code" loading="lazy"></div>
+    <div class="lg-meta"><span class="lg-n">01</span><div><h3>Charred · built 100% in code</h3><p>Tall frontier letters (Sancreek, stretched 1.45× and re-spaced so the serifs breathe) made of shou-sugi-ban burnt timber: procedural dark wood grain, a matte carved surface with a cool moonlit edge, and alligator char cracks glowing with embers, hotter toward the bottom of each letter as if the word is still smouldering. ODYSSEY in wide-spaced ember letters between two charred rules. Bone keyline so it holds on bright art.</p>
+      <p class="lg-s">No image model; every value is a number in one script. <a href="logos/r14_charred.svg" target="_blank" rel="noopener">Source SVG</a> (open in a browser) · <a href="logos/r14_charred.png" target="_blank" rel="noopener">Transparent PNG</a></p></div></div>
+    <figure><img src="logos/r14mock_charred.jpg" alt="Charred logo on capsule C" width="1232" height="706" loading="lazy"><figcaption>On capsule C. Also in the Store preview tab as proposal 6.</figcaption></figure>
+  </article>
+    <h2 class="lg-h2">Round 13 · One Plank, built entirely in code</h2>
   <article class="lg-card">
     <div class="lg-stage" style="background:linear-gradient(#ffd426,#ff7814)"><img src="logos/r13_code_wood.png" alt="One Plank logo, built in code" loading="lazy"></div>
     <div class="lg-meta"><span class="lg-n">01</span><div><h3>One Plank · built 100% in code</h3><p>No image model. CAPYVERSE is carved from a single plank: the wood is generated procedurally in the SVG (stretched noise turned into growth rings, warped so the grain flows, lit for a carved bevel), and the grain runs continuously through every letter. Steel nails hold each letter. ODYSSEY is burned into a second, darker plank, and its O is a real knot in the wood. A mandarin sits on the A, the chill-capybara-with-an-orange joke.</p>
@@ -611,6 +618,7 @@ try { if (localStorage.getItem("capsize") === "small") setSmall(true); } catch (
     { id: "B", name: "B · Desert floor" },
     { id: "T", name: "C + Tin on Wood hanging sign logo" },
     { id: "K", name: "C + One Plank logo (built in code)" },
+    { id: "X", name: "C + Charred logo (built in code)" },
   ];
   const SIZES = { header: "920x430", main: "1232x706", small: "462x174" };
   let i = 0;
