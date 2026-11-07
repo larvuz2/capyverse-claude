@@ -1,0 +1,10 @@
+Render this exact character flying: the purple axolotl (@Axie): lilac skin with soft blue spots, pink frilly gills, grumpy brows, leather harness, the wooden ballista with red bolts mounted on its back and the small jetpack thrusters on the sides of its belt. The first image attached is the real in-game Unreal Engine render; the second image attached is another view of the same character. Copy its design EXACTLY: same proportions, same colors, same materials, same gear, same face. Do not redesign, beautify or add detail.
+
+POSE — VERY IMPORTANT: Flying through the air with its jetpack, body horizontal and slightly tilted up, head leading toward the LEFT of the image, front legs reaching forward and back legs swept backward, like a superhero flight. Three-quarter view from slightly below, so we see a bit of its side and belly. Small bright jet flames coming out of the belt thrusters toward the right.
+
+RENDER MATCH: Real-time Unreal Engine game render, same soft stylized materials and modest texture detail as the first image. MATTE skin, no wet or glossy reflections, no plastic sheen. Soft studio light from the upper left.
+
+CRITICAL RULES:
+* Exactly one character, the whole body visible with margin around it, nothing cropped.
+* Plain flat medium-gray background, no ground, no shadow, no props, no text.
+* Not concept art, not AI-art polish.
