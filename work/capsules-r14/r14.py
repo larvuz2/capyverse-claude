@@ -63,6 +63,8 @@ ARR = {
     "2_depth": [("axie", 980, 760, 300, 0.3), ("moody", 560, 830, 420, 0.12), ("jim", 30, 950, 640, 0.0)],
     # diagonal: the squad streams down from the logo's right end toward the lower-left, growing as it nears the camera
     "3_diagonal": [("axie", 1000, 745, 330, 0.25), ("moody", 600, 880, 430, 0.1), ("jim", 90, 1030, 560, 0.0)],
+    # Cappy alone: same frame as the others with the three heroes removed
+    "4_solo": [],
 }
 
 
