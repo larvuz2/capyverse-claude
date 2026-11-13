@@ -1,0 +1,14 @@
+Create a GROUND-ONLY foreground layer for a video game key art, in the stylized low-poly Unreal Engine look of the game shown in the two reference images attached (soft stylized materials, chunky low-poly rocks, clean shapes).
+
+CONTENT — VERY IMPORTANT: A rocky plateau of grey-violet low-poly stone slabs and boulders with patches of green moss and grass, a few orange autumn bushes, scattered pebbles.
+
+LAYOUT:
+* The ground fills only the LOWER 40% of the image, seen from a low camera, with a gently uneven horizon line (small hills and rocks breaking it). A few bigger rocks on the far left and far right edges, the middle of the ground open and uncluttered so characters can stand there.
+* Everything ABOVE the ground is a perfectly flat, solid, pure MAGENTA color (#FF00FF) with no gradient, no clouds, no haze, no sun: it is a chroma-key screen that will be replaced.
+* Lit by warm golden sunlight from above and behind, bright and saturated, daytime.
+
+CRITICAL RULES:
+* NO characters, animals, creatures, buildings, text or UI.
+* NO magenta or pink on the ground itself.
+* Sharp clean edge between the ground and the magenta. 16:9 landscape.
+* Authentic real-time game look, not concept art, not AI-art polish.
