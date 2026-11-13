@@ -7,3 +7,9 @@
   Q: Squad Burst (four heroes on the brand sunburst). U: Close-Up (Cappy on teal).
 - All characters are real renders (Axie = the matte-passed solo render). Backgrounds are procedural or a real
   game screenshot, except S's meadow plate. Layouts are in fractions of the canvas, one dict entry per size.
+
+## Round 16 (r16.py): heroes vs. enemies face-off
+
+Heroes left (Cappy lower-left corner, trio behind), enemy crew right (H_worm_bandits, H_golfer, L_pin), giant Ophelia
+behind, ground + sky plates (night meadow / desert canyon / carnival). The logo is auto-placed with r15's reserve
+system so nothing touches it. Main size only → `out16/`.
