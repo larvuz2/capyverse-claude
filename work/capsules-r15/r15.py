@@ -54,7 +54,7 @@ def put_cappy(c, x, y, width, flip=False, rim=(255, 200, 120), rim_dir=(-1, -1),
 def muzzle(c, p, size, ang, pop=7):
     c.glow(p[0], p[1], size, (255, 190, 80), 0.95)
     sparkle(c, p[0], p[1], size * 1.2, (255, 235, 160), 1.0, rot=12)
-    if pop: popcorn_burst(c, p[0], p[1], size / 250, angle=ang, n=pop, dist=300, flare=False, seed=3)
+    if pop: popcorn_burst(c, p[0], p[1], size / 250, angle=ang, n=pop, dist=190, flare=False, seed=3)
 
 
 def tracers(c, p0, ang, length, width, n=5, seed=3, spread=4):
@@ -97,7 +97,52 @@ def hero(c, kind, x, y, width, rim=(255, 240, 200)):
     if kind == "jim": confetti(c, x + 282 * s, y + 72 * s, s * 0.8, angle=5, n=28, dist=220)
 
 
+OBST = None      # everything the logo must stay clear of (Cappy + gatling, muzzle flash, popcorn, other heroes)
+
+
+def reserve(im, x, y):
+    global OBST
+    if OBST is None: OBST = np.zeros((C.H, C.W), bool)
+    a = np.asarray(im.getchannel("A")) > 40
+    x, y = round(x), round(y)
+    x0, y0, x1, y1 = max(0, x), max(0, y), min(C.W, x + im.width), min(C.H, y + im.height)
+    if x1 > x0 and y1 > y0: OBST[y0:y1, x0:x1] |= a[y0 - y:y1 - y, x0 - x:x1 - x]
+
+
+def reserve_muzzle(p, size, ang, pop):
+    global OBST
+    if OBST is None: OBST = np.zeros((C.H, C.W), bool)
+    m = Image.new("L", (C.W, C.H), 0); d = ImageDraw.Draw(m); r = size * 0.5
+    d.ellipse([p[0] - r, p[1] - r, p[0] + r, p[1] + r], fill=255)
+    if pop:
+        a = math.radians(ang); q = (p[0] + math.cos(a) * size * 1.0, p[1] - math.sin(a) * size * 1.0)
+        d.line([p, q], fill=255, width=int(size * 0.55))
+    OBST |= np.asarray(m) > 0
+
+
 def logo(c, cx, cy, width, rot=3, glow=(255, 200, 130), shadow=0.6):
+    """Place the logo at (cx, cy); if any part would touch a reserved shape, nudge it (then shrink it) until it is clear."""
+    global OBST
+    if OBST is not None and OBST.any():
+        q = 4; ob = np.asarray(Image.fromarray(OBST).resize((C.W // q, C.H // q)).convert("L").filter(ImageFilter.MaxFilter(2 * max(1, int(C.H * 0.012 / q)) + 1))) > 0
+        la = load(LOGO).getchannel("A"); best = None
+        for sc in (1.0, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6):
+            w = width * sc
+            m = la.resize((max(1, round(w / q)), max(1, round(la.height * w / la.width / q)))).rotate(rot, expand=True)
+            m = np.asarray(m) > 30; mh, mw = m.shape; mar = C.H * 0.02 / q
+            for dy in np.arange(-0.16, 0.161, 0.01) * C.H:
+                for dx in np.arange(-0.12, 0.121, 0.008) * C.W:
+                    x0 = int((cx + dx) / q - mw / 2); y0 = int((cy + dy) / q - mh / 2)
+                    if x0 < mar or y0 < mar or x0 + mw > C.W / q - mar or y0 + mh > C.H / q - mar: continue
+                    if (ob[y0:y0 + mh, x0:x0 + mw] & m).any(): continue
+                    d = math.hypot(dx / C.W, dy / C.H * 1.3)
+                    if best is None or d < best[0]: best = (d, cx + dx, cy + dy, w)
+            if best: break
+        if best:
+            if best[0] > 1e-6 or best[3] != width: print("   logo moved %.0f,%.0f  scale %.2f" % (best[1] - cx, best[2] - cy, best[3] / width))
+            _, cx, cy, width = best
+        else: print("   !! no clear logo spot")
+    OBST = None
     c.logo(cx, cy, width, shadow=shadow, glow=glow, rot=rot, path=LOGO)
 
 
@@ -153,9 +198,11 @@ def build_S(size, cw, ch):
     x, y, w = L["cap"]; w *= ch; x *= cw; y *= ch
     im, tip, thr = cappy_img(w, True)
     tracers(c, (x + tip[0], y + tip[1]), 152, ch * 0.7, ch / 160)
+    mp = (x + tip[0] - w * 0.015, y + tip[1] - w * 0.005); pop = 6 if size != "small" else 3
+    reserve(im, x, y); reserve_muzzle(mp, w * 0.2, 150, pop)
     lx, ly, lw = L["lg"]; logo(c, lx * cw, ly * ch, lw * cw)
-    mz = put_cappy(c, x, y, w, flip=True, rim=(255, 160, 80), rim_dir=(1, -1), match=0.12)
-    muzzle(c, (mz[0] - w * 0.015, mz[1] - w * 0.005), w * 0.2, 150, pop=6 if size != "small" else 3)
+    put_cappy(c, x, y, w, flip=True, rim=(255, 160, 80), rim_dir=(1, -1), match=0.12)
+    muzzle(c, mp, w * 0.2, 150, pop=pop)
     c.particles(60, (cw * 0.6, ch * 0.1, cw, ch * 0.8), [(255, 170, 60), (255, 220, 120)], size=(ch / 470, ch / 176), seed=4, shape="dot")
     c.particles(40, (0, ch * 0.7, cw, ch), [(200, 255, 150), (150, 240, 255)], size=(ch / 470, ch / 200), seed=8, shape="dot")
     return c, dict(vignette=0.3, bloom=0.1)
@@ -184,9 +231,11 @@ def build_D(size, cw, ch):
     p = (x + tip[0], y + tip[1])
     if size != "small":
         tracers(c, p, 12, ch * 0.3, ch / 150, n=5, spread=6)
+    mp = (p[0] + w * 0.012, p[1] - w * 0.004); pop = 7 if size != "small" else 0
+    reserve(im, x, y); reserve_muzzle(mp, w * 0.19, 14, pop)
     lx, ly, lw = L["lg"]; logo(c, lx * cw, ly * ch, lw * cw, rot=L["rot"], glow=(255, 190, 120))
     put_cappy(c, x, y, w, rim=(255, 120, 110), rim_dir=(1, -1), match=0.1)
-    muzzle(c, (p[0] + w * 0.012, p[1] - w * 0.004), w * 0.19, 14, pop=7 if size != "small" else 0)
+    muzzle(c, mp, w * 0.19, 14, pop=pop)
     c.particles(70, (cw * 0.3, 0, cw, ch), [(255, 120, 60), (255, 200, 120)], size=(ch / 470, ch / 190), seed=4, shape="dot")
     return c, dict(vignette=0.34, bloom=0.12, contrast=1.08)
 
@@ -205,10 +254,15 @@ def build_Q(size, cw, ch):
     c.speed_lines(L["burst"][0] * cw, L["burst"][1] * ch, n=70, inner=0.3, color=(255, 255, 255), opacity=0.16, width=ch / 200, seed=3)
     for kind, fx, fy, fw in L["sq"]: hero(c, kind, fx * cw, fy * ch, fw * ch)
     x, y, w = L["cap"]; x *= cw; y *= ch; w *= ch
+    im, tip, thr = cappy_img(w); mp = (x + tip[0] + w * 0.012, y + tip[1] - w * 0.004)
+    reserve(im, x, y)
+    if size != "small": reserve_muzzle(mp, w * 0.16, 16, 7)
+    for kind, fx, fy, fw in L["sq"]:      # squad boxes (incl. Jim's confetti and the disco flares)
+        hw = fw * ch; reserve(Image.new("RGBA", (round(hw * 1.25), round(hw * 0.8)), (0, 0, 0, 255)), fx * cw, fy * ch - hw * 0.08)
     lx, ly, lw = L["lg"]; logo(c, lx * cw, ly * ch, lw * cw, rot=-3, glow=(255, 255, 230), shadow=0.5)
-    mz = put_cappy(c, x, y, w, rim=(255, 250, 210), match=0.04)
+    put_cappy(c, x, y, w, rim=(255, 250, 210), match=0.04)
     if size != "small":
-        muzzle(c, (mz[0] + w * 0.012, mz[1] - w * 0.004), w * 0.16, 16, pop=7)
+        muzzle(c, mp, w * 0.16, 16, pop=7)
         big_popcorn(c, [(0.94, 0.82, 0.17, 5), (0.80, 0.94, 0.11, 3), (0.99, 0.56, 0.08, 2), (0.86, 0.66, 0.05, 0)])
     return c, dict(vignette=0.16, bloom=0.05, contrast=1.04, sat=1.08)
 
@@ -225,9 +279,11 @@ def build_U(size, cw, ch):
     im, tip, thr = cappy_img(w, True)
     p = (x + tip[0], y + tip[1])
     tracers(c, p, 155, ch * 0.9, ch / 130, n=5, spread=5)
+    mp = (p[0] - w * 0.012, p[1] - w * 0.004)
+    reserve(im, x, y); reserve_muzzle(mp, w * 0.15, 152, 0)
     lx, ly, lw = L["lg"]; logo(c, lx * cw, ly * ch, lw * cw, rot=3, glow=(220, 255, 240), shadow=0.55)
     put_cappy(c, x, y, w, flip=True, rim=(200, 255, 240), rim_dir=(-1, -1), match=0.03, flame=False)
-    muzzle(c, (p[0] - w * 0.012, p[1] - w * 0.004), w * 0.15, 152, pop=0)
+    muzzle(c, mp, w * 0.15, 152, pop=0)
     if size != "small":
         big_popcorn(c, [(0.05, 0.86, 0.20, 6), (0.21, 0.95, 0.13, 3), (0.36, 0.80, 0.085, 1), (0.13, 0.66, 0.06, 0), (0.44, 0.93, 0.07, 1), (0.30, 0.66, 0.045, 0)], seed=9)
     else:
