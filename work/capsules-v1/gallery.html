@@ -87,9 +87,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 .scap .snav { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 54px; border: 0; border-radius: 4px; background: rgba(0,0,0,.6); color: #fff; font: 700 30px/1 Arial, sans-serif; cursor: pointer; opacity: 0; transition: opacity .15s, background .15s; z-index: 2; }
 .scap .snav.prev { left: 6px; } .scap .snav.next { right: 6px; }
-.scap:hover .snav, .scap:focus-within .snav { opacity: 1; }
+.scap:hover .snav, .scap:focus-visible .snav, .scap:has(.snav:focus-visible) .snav { opacity: 1; }
 .scap .snav:hover { background: #f6c33b; color: #17130f; }
-.scap .snav:focus-visible { opacity: 1; outline: 2px solid #66c0f4; }
+.scap .snav:focus-visible { outline: 2px solid #66c0f4; }
 @media (hover: none) { .scap .snav { opacity: .85; } }
 .result .scap .snav { width: 22px; height: 36px; font-size: 20px; } .mini .scap .snav { width: 26px; height: 42px; font-size: 24px; }
 /* ---------- store mock ---------- */
@@ -663,6 +663,9 @@ try { if (localStorage.getItem("capsize") === "small") setSmall(true); } catch (
 <script>
 (() => {
   const PROPS = [
+    { id: "R18_1", name: "Round 18 · 1 Meadow" },
+    { id: "R18_2", name: "Round 18 · 2 Rock Plateau" },
+    { id: "R18_3", name: "Round 18 · 3 Arena" },
     { id: "R15S", name: "Round 14 · Cappy Solo" },
     { id: "R15D", name: "Round 15 · Duel" },
     { id: "R15Q", name: "Round 15 · Squad Burst" },

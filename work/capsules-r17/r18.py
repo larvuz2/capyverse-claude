@@ -66,11 +66,41 @@ def build_3():
 
 B18 = {"1": build_1, "2": build_2, "3": build_3}
 
+def build_small(t):
+    """462x174 thumbnail: same sky/ground/Ophelia per take, just Cappy + a big centred logo."""
+    cw, ch = C.W, C.H; S = Scene(confetti=False)
+    if t == "1":
+        c = sky((0.48, 0.3)); c.canvas.alpha_composite(ground("meadow", 0.50, 0.66, cut=[(0.475, 0.0, 0.88), (0.36, 0.0, 1.0)]))
+        ophelia(c, 0.755, 0.06, 0.86)
+    elif t == "2":
+        c = sky((0.5, 0.3), inner=(255, 228, 90), outer=(236, 70, 30)); c.canvas.alpha_composite(ground("rocks", 0.37, 0.62))
+        ophelia(c, 0.76, 0.10, 0.84)
+    else:
+        c = sky((0.5, 0.4), inner=(255, 240, 110), outer=(245, 120, 20), rays=30)
+        ophelia(c, 0.755, -0.02, 0.86); c.canvas.alpha_composite(ground("arena", 0.52, 0.74))
+    shade(c); spot(c, 0.48, 0.45, 1.0)
+    S.cappy(c, -0.01, 0.40, 0.82, RIM)
+    logo(c, 0.47 * cw, 0.45 * ch, 0.50 * cw, rot=-2, glow=(255, 255, 230), shadow=0.5)
+    S.draw(); return c, S
+
+
+SIZES = {"main": (1232, 706, 2), "header": (920, 430, 2), "small": (462, 174, 4)}
+
 if __name__ == "__main__":
-    for t in ([a for a in sys.argv[1:] if a in B18] or list(B18)):
-        C.W, C.H = 2464, 1412; r15.OBST = None
-        print("capsule", t)
-        c, S = B18[t](); S.check()
-        c.grade(contrast=1.05, sat=1.07, vignette=0.2, bloom=0.05)
-        os.makedirs(f"{D}/out18", exist_ok=True)
-        c.canvas.convert("RGB").resize((1232, 706), Image.LANCZOS).save(f"{D}/out18/{t}_main_1232x706.jpg", quality=94)
+    tags = [a for a in sys.argv[1:] if a in B18] or list(B18)
+    sizes = [a for a in sys.argv[1:] if a in SIZES] or ["main"]
+    for t in tags:
+        for sz in sizes:
+            tw, th, k = SIZES[sz]; C.W, C.H = tw * k, th * k; r15.OBST = None
+            print("capsule", t, sz)
+            hero0, enemy0, pins0 = Scene.hero, Scene.enemy, r17.pins
+            if sz == "small":      # thumbnail: only the logo, Cappy and Ophelia so it reads at 462x174
+                Scene.hero = lambda *a, **k: None; Scene.enemy = lambda *a, **k: None
+                globals()["pins"] = lambda *a, **k: None
+            try:
+                c, S = (build_small(t) if sz == "small" else B18[t]()); S.check()
+            finally:
+                Scene.hero, Scene.enemy = hero0, enemy0; globals()["pins"] = pins0
+            c.grade(contrast=1.05, sat=1.07, vignette=0.2, bloom=0.05)
+            os.makedirs(f"{D}/out18", exist_ok=True)
+            c.canvas.convert("RGB").resize((tw, th), Image.LANCZOS).save(f"{D}/out18/{t}_{sz}_{tw}x{th}.jpg", quality=94)

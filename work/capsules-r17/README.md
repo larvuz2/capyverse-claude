@@ -9,3 +9,4 @@ Run `python3 r17.py [1 2 3]` → `out/`.
 ## Round 18 (r18.py)
 
 Round 17 with Cappy ~0.92-0.98 canvas heights wide in the lower-left corner, the trio re-fitted into the free pocket above his back (or a left-edge column in #2), and `shade()` darkening the background ~10-15% with soft spots behind the logo and Cappy. Same checks. → `out18/`.
+Store sizes: `python3 r18.py header small` (small = own layout: Cappy + Ophelia + big logo only).
